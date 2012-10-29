@@ -1,0 +1,20 @@
+Peter:
+ohne modul (+,-,**)
+module ->numpy (sqrt,sin...)
+vektoren (arrays), liste (range von 0 weg, zugriff auf einzelwerte, funktion von array, zeilen,spalten vektoren)
+unterschied list und numpy-array
+zeichenketten (zusammenfügen von strings und strings und zahlen)
+
+Johannes:
+plot (matplotlib)
+funktionen (def, in selbes file oder anderes file und import)
+schleifen (while, for, if)
+Matritzen (zeros, ones, nan, Logische matritzen)
+Maskierung, indizierung
+
+
+Dokumentation:
+angabe (.mmd)
+lösung schreiben
+welche var. überprüfen (welche plot-eigenschaften)
+

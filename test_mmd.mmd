@@ -1,0 +1,551 @@
+
+# Syntax-Test
+Dieses Dokument soll einige der Möglichkeiten zeigen, wie man mit MultiMarkDown Texte
+schreiben kann, die sich im Umfeld von MLtutor bewähren.
+
+## Überschriften
+Man kann ein bis sechs Hashes verwenden um Überschriften verschiedener Tiefe zu generieren,
+wobei diese als h1 bis h6 in HTML codiert werden. Optional können sie auch mit der gleichen
+Anzahl von Hashes am Ende abgeschlossen werden.
+
+## Blockquotes
+Man kann Blockquotes im Email-Stil schreiben:
+> Das ist der erste Paragraph.
+>
+> Das ist der zweite Paragraph.
+
+Einfach geht es auch mit längeren Texten:
+> Wenn man also einen längeren Paragraph in dieser Form schreiben will, dann reicht es wenn
+man das Zeichen > nur am Beginn des Absatzes schreibt.
+
+Blockquotes können auch andere Markdown-Elemente beinhalten
+> 1. Erster Eintrag in einer numerierten Liste
+> 2. Zweiter Eintrag in einer numerierten Liste
+
+> Zeilen mit zwei Leerzeichen am Ende wie jetzt hier
+stellen sicher, dass dort ein Zeilenumbruch erfolgt.
+> > Man kann auch die Eirücktiefe erhöhen
+>
+> und dann wieder nach Außen rücken.
+
+## Listen
+Unnumerierte Listen können einfach mit den Zeichen *, +, - am Anfang der Zeile geschrieben
+werden. Dies wäre eine solche Liste:
+
+* Rot
+* Blau
+* Grün
+
+wobei nach dem Listenzeichen mindesten ein Leerzeichen oder ein Tabulatur folgen muss.
+Vor dem Listenzeichen können bis zu drei Leerzeichen stehen. Verwendet man Ziffern und einen
+Punkt, dann werden numerierte Listen erzeugt
+
+1. Rot
+2. Blau
+3. Grün
+
+wobei die Reihenfolge der Nummern egal ist. Damit aber auch das mmd-File leserlich bleibt,
+sollte man auch hier auf die Reihenfolge achten.
+
+Fügt man Leerzeilen ein, dann wird jeweils ein Paragraph aus den Einträgen gebildet und damit
+werden die Abstände größer.
+
+1. Rot
+
+2. Blau
+
+3. Grün
+
+Will man mehrere Absätze zu einem Eintrag schreiben, dann müssen alle folgenden Einträge um
+4 Leerzeichen oder einen Tabulator eingerückt sein
+
+1. Rot
+
+    Das ist die Farbe Rot.
+
+2. Blau
+
+    Das ist die Farbe Blau.
+
+3. Grün
+
+    usw.
+
+Will man Quotes in einer Liste, dann muss man sie 4 Leerzeichen oder einen Tabulator
+einrücken:
+
++ Liste mit einer Quotierung
+    > Fein, dass das so funktioniert
++ und dann geht es mit der Liste weiter.
+
+### Geschachtelte Listen
+
+Will man Listen schachteln, dann muss man um 5 Leerzeichen einrücken. Ganz habe ich die
+Situation mit den geschachtelten Schleifen nicht verstanden.
+
+1. Erstes Item
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
+2. Zweites Item
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
+
+Man kann das auch mit mehr Abstand machen
+
+1. Erstes Item
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
+
+2. Zweites Item (mehr Abstand)
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
+
+Mehr Abstand bei den inneren Items ist mir nicht geglückt.
+
+1. Erstes Item
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
+2. Zweites Item
+     * Erstes geschachteltes Item
+     und da kann man auch weiterschreiben.
+
+         Oder einen Absatz einfügen, der gehört aber zur äusseren Ebene. Wie man in der
+         inneren Ebene einen Absatz einfügt, habe ich nicht verstanden. Außerdem wird das
+         jetzt als Code erkannt.
+
+     * Zweites geschachteltes Item
+
+Ohne Nummerierung:
+
++ Erstes Item
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
++ Zweites Item
+     * Erstes geschachteltes Item
+     * Zweites geschachteltes Item
+
+Beides mit Nummerierung:
+
+1. Erstes Item
+     1. Erstes geschachteltes Item
+     2. Zweites geschachteltes Item
+
+2. Zweites Item
+     1. Erstes geschachteltes Item
+     2. Zweites geschachteltes Item
+
+### Verwendung in MatlabTutor
+
+Man könnte soetwas sinnvoll für Definition von Variablen verwenden:
+
+1. Erste Gruppe von Variablen
+     * °var_1°: Vektor mit den Zahlen °[1 3 7]°
+     * °var_2°: Vektor der Zahlen 1 bis 5
+     * °m°: Skalar 7
+
+2. Zweite Gruppe von Variablen
+     * °fun_1°: Anonyme Funktion $f(x) = sin^2 x$
+     * °x_a,x_e°: Grenzen mit $x_{a,e}=\mp\pi$
+     * °area°: Numerische Näherung für
+     $$\int_{x_a}^{x_e} f(x) dx$$
+     mit Hilfe von \matrefe{quadl}
+
+Kommen zwischendurch Codezeilen vor, dann sollte man sich besser mit Überschriften
+behelfen.
+
+#### Erste Gruppe von Variablen
+* °var_1°: Vektor mit den Zahlen °[1 3 7]°
+* °var_2°: Vektor der Zahlen 1 bis 5
+* °m°: Skalar 7
+
+#### Zweite Gruppe von Variablen
+* °fun_1°: Anonyme Funktion $f(x) = sin^2 x$
+
+        fun_1 = @(x) sin(x).^2;
+* °fun_2°: Anonyme Funktion $f(x) = cos^2 x$
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;°fun_2 = @(x) cos(x).^2°;
+(sehr künstlich erzwungen)
+
+* °x_a,x_e°: Grenzen mit $x_{a,e}=\mp\pi$
+* °area°: Numerische Näherung für $\int_{x_a}^{x_e} f(x) dx$ mit Hilfe von \matrefe{quadl}
+
+
+
+## Definitionen
+Definition kann man in folgender Form schreiben:
+
+Apfel
+: Computerfirma in Kalifornien, USA, die Computer, Laptops, Musikplayer, das Telefon iPhone
+und den Tabletcomputer iPad herstellt
+
+Birne
+: Obst
+
+°var_1°
+: \matlab-Variable mit dem Wert 9
+
+## Blöcke mit Code
+Im Gegensatz zu einem normalen Paragrafen wir eine Codeblock um 4 Lehrzeichen oder
+einen Tabulator eingerückt. Man muss aber eine Leerzeile zwischem normalen Absatz und
+einem Codeblock machen.
+
+    x = sin(3*pi/4);
+    y = cos(3*pi/4);
+
+Will man einen Zeilenumbruch, dann muss man wieder die zwei Leerzeichen am Ende machen
+
+    x = sin(3*pi/4);
+    y = cos(3*pi/4) / 2;
+    z = x <= y;
+    a = x \ y;
+    A = B & C;
+
+Im Prinzip kann man hier jede Arte von Code schreiben, da die Zeichen nicht verändert werden.
+Eine Schwierigkeit gibt es derzeit bei unserer Implementation, da wie das Prozentzeichen als
+Zeichen für einen Kommentar verwenden. Daher verschwindet alles hinter diesem Zeichen
+
+    x = sin(3*pi/4);     % Kommentar zu x
+    y = cos(3*pi/4) / 2; % Kommentar zu y
+
+Dies sollte aber noch behoben werden.
+
+Will man Code in einer Liste darstellen, dann muss man um 8 Leerzeichen oder zwei Tabulatoren
+einrücken.
+
+1. Man kann den Code so schreiben
+
+        x = a - 3i;
+2. oder so
+
+        x = a + 3*i;
+
+In einem Codeblock wird auch keine Mardown-Syntax umgesetzt, man kann also auch das hash-Zeichen
+verwenden:
+
+    # abc
+    # ijk
+    1. a
+    2. b
+
+## Code im Text
+In Ergänzung zur Markdown-Syntax haben wir für Code oder Verbatim-Text innerhalb einer normalen
+Zeile die Syntax mit dem Zeichen für Grad eingeführt. Dieses Zeichen kann man also derzeit nicht
+darstellen. Verwenden kann man das in folgender Form:
+
+Schreiben sie ein Skript °test_a.m°, dass aus den Variablen °x° und °y° den Wert °a = sin(x+y)°
+berechnet.
+
+Dies funktioniert ähnlich wie die in Markdown vorgesehene Art mit backticks. Auch hier kann man
+einfach Code wie `&#8212` in den Text einfügen. Will man einen backtick im Code schreiben, dann
+braucht man 2 backticks zur Abgrenzung also ``(a`)``oder wenn man einen backtick alleine schreiben
+will, dann braucht man `` ` `` unbedingt die Leerzeichen.
+
+## Code Probleme
+
+Dies ist ein Test, ob man damit das Grad-Zeichen schreiben kann: `°`
+
+Dies funktioniert aber nicht. Genausowenig kann man derzeit `%`
+schreiben.
+
+Ein Problem gibt es auch mit asterisk und backslash im Code, wenn das Grad-Zeichen verwendet
+wird. Da muss man das Ganze
+derzeit mit backticks schreiben, also `*`, `x*y` und `\`, `x\y`.
+
+## Hervorhebungen
+Man kann Text _hervorheben (italics)_, __stark hervorheben (fett)__, wobei dies auch mit einem
+asterisks funktioniert und dann so *hervorheben* oder so
+**stark hervorheben** geschrieben wird. Dies funktioniert auch mitten in einem Wort, also z.B. in
+Dach*decker*geselle.
+
+Will man wirklich die Zeichen asterisks und underscore schreiben, dann muss man diese Zeichen
+"escapen", also \* oder \_ schreiben. Offenbar funktioniert dies aber derzeit nicht mit dem
+underscore.
+
+Unterstreichen ist in der Markdown-Syntax nicht vorgesehen. Dies müsste man wohl mit HTML-Methoden
+machen. Ich weiß aber derzeit keine Methode.
+
+## Horizontale Balken
+Man kann horiziontale Balken erzeugen, wenn man drei oder mehr \* oder - in einer Zeile schreibt,
+wobei die Abstände egal sind:
+
+***
+
+* * *
+
+------------------------
+
+## Links
+### Inline Links
+Das ist [ein Beispiel](http://google.com/ "google.com") für einen Inline-Link.
+
+[Dieser Link](http://google.com/) hat kein Attribut.
+
+### Reference-Style Links
+Das ist [ein Beispiel][id] für eine Reference-Style Link. Dafür muss man dann eine eigene
+Zeile mit der Referenz schreiben.
+
+[id]: http://google.com/ "Optionaler Titel"
+
+Es funktioniert auch so:
+
+Man bekommt ein besseres Sucherergebnis mit [Google][1] als mit [Yahoo][2]
+oder [MSN][3].
+
+[1]: http://google.com/        "Google"
+[2]: http://search.yahoo.com/  "Yahoo Search"
+[3]: http://search.msn.com/    "MSN Search"
+
+Will man einfach den Namen als Identifizierung verwenden dann geht es auch so:
+
+Man bekommt ein besseres Sucherergebnis mit [Google][] als mit [Yahoo][]
+oder [msn][].
+
+[google]: http://google.com/        "Google"
+[yahoo]: http://search.yahoo.com/  "Yahoo Search"
+[msn]: http://search.msn.com/    "MSN Search"
+
+### Automatische Links
+Man kann auch einfach <http://google.com> schreiben, oder für eine Emailadresse einfach
+<winfried.kernbichler@tugraz.at> verwenden. Aus dem MatlabTutor heraus startet aber dann
+nicht das Email-Programm obwohl der Link korrekt zu sein scheint. Zur Erkennung ist es für
+den Link notwendig, dass man den Link mit http beginnt.
+
+## Images
+
+Nach der MarkdownSyntax kann man das so machen:
+
+![Test Bild](test.png "Matlab Plot")
+
+Alternativ geht es auch mit einem Identifikator:
+
+![Test Bild][bild1]
+[bild1]: test.png "Matlab Plot"
+
+Multimarkdown erlaubt auch die Angabe von Größen, das funktioniert hier aber nicht.
+
+![Test Bild][bild2]
+[bild2]: test.png "Matlab Plot" width=60px height=40px
+
+Zu diesem Thema kann man aber auf reines HTML zurückgreifen (siehe unten)
+
+Mir ist nicht klar, wie man am besten eine Bildunterschrift macht.
+
+## Reines HTML
+Man kann einfach HTML im Code schreiben
+<div>This is *not* MultiMarkdown</div>
+
+Damit kann man dann auch ein Image mit einer bestimmten Größe definieren
+
+<div align="center">
+<img src="test.png" alt="Test Image" width="800" border="2" name="Test"/>
+</div>
+
+Man kann Bilder in eine le einfügen.
+<div align="center">
+  <table border="0" cellpadding="4" width="800">
+    <tr>
+      <th valign="middle">Bild 1</th>
+      <th valign="middle">Bild 2</th>
+    </tr>
+    <tr>
+      <td align="center"><img src="test.png" width="360" alt="test1"></td>
+      <td align="center"><img src="test.png" width="360" alt="test1"></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top">Das ist die Unterschrift zu Bild 1</td>
+      <td align="center" valign="top">Das ist die Unterschrift zu Bild 2</td>
+    </tr>
+  </table>
+</div>
+
+## Backslash Escapes
+
+In manchen Bereichen braucht man Backslash Escapes für bestimmte Zeichen. Manche davon braucht man
+z.B. bei Verwendung am Zeilenanfang.
+
+escape | name
+------ | ----
+\\     | backslash
+\`     | backtick
+\*     | asterisk
+\_     | underscore
+\{\}   | curly brackets
+\[\]   | square brackets
+\(\)   | parenthesis
+\#     | hash mark
+\+     | plus sign
+\-     | minus sign
+\.     | dot
+\!     | exclamatioin point
+
+Momentan funktioniert underscore nicht!
+
+## Tabellen
+Eine einfache Tabelle
+
+| Left | Middle | Right |
+| :--- | :----: | ----: |
+| a    | b      | c     |
+| a    | b      | c     |
+| a    | b      | c     |
+
+Mit Gruppierung
+
+<div>&nbsp;</div> |          Grouping           ||
+First Header      | Second Header | Third Header |
+----------------  | :-----------: | -----------: |
+Content           |         *Long Cell*         ||
+Content           |  **Cell**     | **Cell**     |
+
+Die gleiche Tabelle mit | auch am Anfang.
+
+|                  |          Grouping           ||
+|First Header      | Second Header | Third Header |
+|----------------  | :-----------: | -----------: |
+|Content           |         *Long Cell*         ||
+|Content           |  **Cell**     | **Cell**     |
+
+Im MatlabTutor könnte man z.B. schreiben
+
+-----|-----------------------------------------
+ °x° | Vektor der ganzen Zahlen von $1$ bis $5$
+ °y° | Vektor der ganzen Zahlen von $2$ bis $6$
+ °a° | $2.5$
+ °b° | $3.1$
+
+Achtung hier funktiert die erste Zeile nicht richtig.
+
+## Cross Reference
+In Multimarkdown bringt einen ein Link der Form [Tabellen][] zu einem Kapitel
+mit dieser Überschrift. Dieses Feature funktioniert hier nicht.
+
+# Formeln
+Jegliche Latex-Formel kann sowohl Inline als auch in einer Mathematik-Umgebung
+geschriebnen werden. Dabei wird sowohl Latex als Amstex unterstützt. Verwendet werden
+dabei wie in Latex Dollar-Zeichen.
+
+Man kann also Formeln wie $y=\sin(x)$, $a=\pm\infty$, $y=x^2$ oder $A=\int_0^1 dx \; x^2$
+oder
+$$
+M = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+$$
+schreiben.
+
+Praktisch ist auch
+$$
+\begin{aligned}
+\verb°p°        & = \pi \\
+\verb°p_half°   & = \pi/2 \\
+\verb°two_p°    & = 2\pi \\
+\verb°e°        & = \exp(1)
+\end{aligned}
+$$
+wobei man in der Latex-Notation aber unbedingt $\verb°p°$ für Verbatim schreiben muss.
+
+Braucht man eine Nummerierung von Formeln, dann muss man das offenbar händisch machen.
+$$
+M = \begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix} \;\;\;\; (1)
+$$
+Dann kann man sich nachher auf Gleichung (1) beziehen. Automatisch geht das nicht.
+
+
+
+Hier ein Test, ob das Dollarzeichen in einer Code-Umgebung funktioniert:
+
+    x = 5;
+    y = (x);
+
+Es funktioniert nicht!
+
+# Matlab Tutor
+Hier werden eine Reihe von Latex-Befehlen verwendet, die durch entsprechenden
+Javascript-Code umgesetzt werden müssen.
+
+## Einfache Textblöcke und Farben
+
+Diese wären z.B.:
+
+\err für Fehlermeldungen
+
+\ein für eine Einführung
+
+\warn für Warnungen
+
+\default für Defaultwerte
+
+\graph für Graphische Ausgabe
+
+\bsp für Anschauungsbeispiel
+
+\zus für Zusammenfassung
+
+\hw für Hinweis
+
+\ab für Abgabe
+
+\geg für Gegeben:
+
+\ges für Gesucht:
+
+\bspneu
+
+Die Hauptfarben, z.B. \red{ROT} sollten definiert sein.
+
+\red{ROT}, \green{GRÜN}, \blue{BLAU}, \black{SCHWARZ}
+
+## Latex-Kommandos
+Einfache Latex-Kommandos können ganz leicht im Javascript definiert werden:
+
+\textbf{Fett}, \textit{Italics} oder \emph{Italics}
+
+\tt{Typewriter}
+
+## Probleme
+Probleme können entstehen, wenn in der Math-Umgebung Latex-Befehle verwendet werden, die
+in MathJAX nicht definiert sind, also z.B., $\red{x=sin(y)}$, oder auch umgekehrt
+\red{$x=sin(y)$}.
+
+Kann man irgendwo Latex-Kommandos für MathJAX konfigurieren?
+
+Das gleiche Problem gibt es mit Kombinationen von Befehlen: \red{\textbf{ROT-FETT}}
+
+Da muss man wohl die Hände davon lassen. Man könnte aber jederzeit ein Kommando dafür
+erzeugen und in Javascript coden \redtextbf{ROT-FETT}. Aber damit sollte man es nicht
+übertreiben.
+
+## Matlab-spezifische Dinge
+Für \matlab sollten eine Reihe von Kürzeln definiert sein, also z.B.:
+
+Wo ist eigentlich \matlab definiert. Ich habe es nicht im Javascript gefunden.
+
+\matrefe{sin}
+\matref{Die Funktion Cosinus}{cos}
+
+\appsoftkapitel{1}
+\appsoftskriptum
+\matlabpublish{simplestart1}{Matlab-Publish}
+\mltutorhint{Strichpunkt}{MLTutor Hints}
+
+\MatlabReferenceMathematics
+\MatlabReferenceMathematicsElementaryMath
+
+\itplink
+\wikilink
+\mltutorhintlink
+
+
+
+
+
+
+
+
