@@ -10,9 +10,6 @@ import matplotlib.pyplot as plt
 def sgauss(x,x_0,s):    
     return 1/(s*np.sqrt(2*np.pi))*np.exp(-(x-x_0)**2/(2*s**2))
     
-def smaxwell(v,m,T):
-    return 4*np.pi * (m/(2*np.pi*T))**(3.0/2) * v**2 * np.exp(-m*v**2/(2*T))
-    
 def secansh(x,x_0,s):
     return 1/(np.pi*s*np.cosh(-(x-x_0)/s))
     
