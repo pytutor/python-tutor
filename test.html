@@ -1,0 +1,623 @@
+<h1>Syntax-Test</h1>
+
+<p>Dieses Dokument soll einige der Möglichkeiten zeigen, wie man mit MultiMarkDown Texte
+schreiben kann, die sich im Umfeld von MLtutor bewähren.</p>
+
+<h2>Überschriften</h2>
+
+<p>Man kann ein bis sechs Hashes verwenden um Überschriften verschiedener Tiefe zu generieren,
+wobei diese als h1 bis h6 in HTML codiert werden. Optional können sie auch mit der gleichen
+Anzahl von Hashes am Ende abgeschlossen werden.</p>
+
+<h2>Blockquotes</h2>
+
+<p>Man kann Blockquotes im Email-Stil schreiben:</p>
+
+<blockquote>
+  <p>Das ist der erste Paragraph.</p>
+
+<p>Das ist der zweite Paragraph.</p>
+</blockquote>
+
+<p>Einfach geht es auch mit längeren Texten:</p>
+
+<blockquote>
+  <p>Wenn man also einen längeren Paragraph in dieser Form schreiben will, dann reicht es wenn
+man das Zeichen > nur am Beginn des Absatzes schreibt.</p>
+</blockquote>
+
+<p>Blockquotes können auch andere Markdown-Elemente beinhalten</p>
+
+<blockquote>
+  <ol>
+<li>Erster Eintrag in einer numerierten Liste</li>
+<li>Zweiter Eintrag in einer numerierten Liste</li>
+</ol>
+
+<p>Zeilen mit zwei Leerzeichen am Ende wie jetzt hier
+stellen sicher, dass dort ein Zeilenumbruch erfolgt.</p>
+
+<blockquote>
+  <p>Man kann auch die Eirücktiefe erhöhen</p>
+</blockquote>
+
+<p>und dann wieder nach Außen rücken.</p>
+
+<p></blockquote></p>
+
+<h2>Listen</h2>
+
+<p>Unnumerierte Listen können einfach mit den Zeichen *, +, - am Anfang der Zeile geschrieben
+werden. Dies wäre eine solche Liste:</p>
+
+<ul>
+<li>Rot</li>
+<li>Blau</li>
+<li>Grün</li>
+</ul>
+
+<p>wobei nach dem Listenzeichen mindesten ein Leerzeichen oder ein Tabulatur folgen muss.
+Vor dem Listenzeichen können bis zu drei Leerzeichen stehen. Verwendet man Ziffern und einen
+Punkt, dann werden numerierte Listen erzeugt</p>
+
+<ol>
+<li>Rot</li>
+<li>Blau</li>
+<li>Grün</li>
+</ol>
+
+<p>wobei die Reihenfolge der Nummern egal ist. Damit aber auch das mmd-File leserlich bleibt,
+sollte man auch hier auf die Reihenfolge achten.</p>
+
+<p>Fügt man Leerzeilen ein, dann wird jeweils ein Paragraph aus den Einträgen gebildet und damit
+werden die Abstände größer.</p>
+
+<ol>
+<li><p>Rot</p></li>
+<li><p>Blau</p></li>
+<li><p>Grün</p></li>
+</ol>
+
+<p>Will man mehrere Absätze zu einem Eintrag schreiben, dann müssen alle folgenden Einträge um
+4 Leerzeichen oder einen Tabulator eingerückt sein</p>
+
+<ol>
+<li><p>Rot</p>
+
+<p>Das ist die Farbe Rot.</p></li>
+<li><p>Blau</p>
+
+<p>Das ist die Farbe Blau.</p></li>
+<li><p>Grün</p>
+
+<p>usw.</p></li>
+</ol>
+
+<p>Will man Quotes in einer Liste, dann muss man sie 4 Leerzeichen oder einen Tabulator
+einrücken:</p>
+
+<ul>
+<li>Liste mit einer Quotierung
+<blockquote>
+  <p>Fein, dass das so funktioniert</li>
+<li>und dann geht es mit der Liste weiter.</li>
+</ul></p>
+
+<h3>Geschachtelte Listen</h3>
+</blockquote>
+
+Will man Listen schachteln, dann muss man um 5 Leerzeichen einrücken. Ganz habe ich die
+Situation mit den geschachtelten Schleifen nicht verstanden.
+
+<ol>
+<li>Erstes Item
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+<li>Zweites Item
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+</ol>
+Man kann das auch mit mehr Abstand machen
+
+<ol>
+<li><p>Erstes Item</p>
+
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+<li><p>Zweites Item (mehr Abstand)</p>
+
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+</ol>
+Mehr Abstand bei den inneren Items ist mir nicht geglückt.
+
+<ol>
+<li>Erstes Item
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+<li><p>Zweites Item</p>
+
+<ul>
+<li><p>Erstes geschachteltes Item
+und da kann man auch weiterschreiben.</p>
+
+<p>Oder einen Absatz einfügen, der gehört aber zur äusseren Ebene. Wie man in der
+ inneren Ebene einen Absatz einfügt, habe ich nicht verstanden. Außerdem wird das
+ jetzt als Code erkannt.</p></li>
+<li><p>Zweites geschachteltes Item</p></li>
+</ul></li>
+</ol>
+Ohne Nummerierung:
+
+<ul>
+<li>Erstes Item
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+<li>Zweites Item
+<ul>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ul></li>
+</ul>
+
+<p>Beides mit Nummerierung:</p>
+
+<ol>
+<li><p>Erstes Item</p>
+
+<ol>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ol></li>
+<li><p>Zweites Item</p>
+
+<ol>
+<li>Erstes geschachteltes Item</li>
+<li>Zweites geschachteltes Item</li>
+</ol></li>
+</ol>
+
+<h3>Verwendung in MatlabTutor</h3>
+
+<p>Man könnte soetwas sinnvoll für Definition von Variablen verwenden:</p>
+
+<ol>
+<li><p>Erste Gruppe von Variablen</p>
+
+<ul>
+<li>°var_1°: Vektor mit den Zahlen °[1 3 7]°</li>
+<li>°var_2°: Vektor der Zahlen 1 bis 5</li>
+<li>°m°: Skalar 7</li>
+</ul></li>
+<li><p>Zweite Gruppe von Variablen</p>
+
+<ul>
+<li>°fun_1°: Anonyme Funktion $f(x) = sin^2 x$</li>
+<li>°x<em>a,x</em>e°: Grenzen mit $x_{a,e}=\mp\pi$</li>
+<li>°area°: Numerische Näherung für
+$$\int<em>{x</em>a}^{x_e} f(x) dx$$
+mit Hilfe von \matrefe{quadl}</li>
+</ul></li>
+</ol>
+
+<p>Kommen zwischendurch Codezeilen vor, dann sollte man sich besser mit Überschriften
+behelfen.</p>
+
+<h4>Erste Gruppe von Variablen</h4>
+
+<ul>
+<li>°var_1°: Vektor mit den Zahlen °[1 3 7]°</li>
+<li>°var_2°: Vektor der Zahlen 1 bis 5</li>
+<li>°m°: Skalar 7</li>
+</ul>
+
+<h4>Zweite Gruppe von Variablen</h4>
+
+<ul>
+<li><p>°fun_1°: Anonyme Funktion $f(x) = sin^2 x$</p>
+
+<pre><code>fun_1 = @(x) sin(x).^2;
+</code></pre></li>
+<li><p>°fun<em>2°: Anonyme Funktion $f(x) = cos^2 x$
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;°fun</em>2 = @(x) cos(x).^2°;
+(sehr künstlich erzwungen)</p></li>
+<li><p>°x<em>a,x</em>e°: Grenzen mit $x_{a,e}=\mp\pi$</p></li>
+<li>°area°: Numerische Näherung für $\int<em>{x</em>a}^{x_e} f(x) dx$ mit Hilfe von \matrefe{quadl}</li>
+</ul>
+
+<h2>Definitionen</h2>
+
+<p>Definition kann man in folgender Form schreiben:</p>
+
+<p>Apfel
+: Computerfirma in Kalifornien, USA, die Computer, Laptops, Musikplayer, das Telefon iPhone
+und den Tabletcomputer iPad herstellt</p>
+
+<p>Birne
+: Obst</p>
+
+<p>°var_1°
+: \matlab-Variable mit dem Wert 9</p>
+
+<h2>Blöcke mit Code</h2>
+
+<p>Im Gegensatz zu einem normalen Paragrafen wir eine Codeblock um 4 Lehrzeichen oder
+einen Tabulator eingerückt. Man muss aber eine Leerzeile zwischem normalen Absatz und
+einem Codeblock machen.</p>
+
+<pre><code>x = sin(3*pi/4);
+y = cos(3*pi/4);
+</code></pre>
+
+<p>Will man einen Zeilenumbruch, dann muss man wieder die zwei Leerzeichen am Ende machen</p>
+
+<pre><code>x = sin(3*pi/4);
+y = cos(3*pi/4) / 2;
+z = x &lt;= y;
+a = x \ y;
+A = B &amp; C;
+</code></pre>
+
+<p>Im Prinzip kann man hier jede Arte von Code schreiben, da die Zeichen nicht verändert werden.
+Eine Schwierigkeit gibt es derzeit bei unserer Implementation, da wie das Prozentzeichen als
+Zeichen für einen Kommentar verwenden. Daher verschwindet alles hinter diesem Zeichen</p>
+
+<pre><code>x = sin(3*pi/4);     % Kommentar zu x
+y = cos(3*pi/4) / 2; % Kommentar zu y
+</code></pre>
+
+<p>Dies sollte aber noch behoben werden.</p>
+
+<p>Will man Code in einer Liste darstellen, dann muss man um 8 Leerzeichen oder zwei Tabulatoren
+einrücken.</p>
+
+<ol>
+<li><p>Man kann den Code so schreiben</p>
+
+<pre><code>x = a - 3i;
+</code></pre></li>
+<li><p>oder so</p>
+
+<pre><code>x = a + 3*i;
+</code></pre></li>
+</ol>
+
+<p>In einem Codeblock wird auch keine Mardown-Syntax umgesetzt, man kann also auch das hash-Zeichen
+verwenden:</p>
+
+<pre><code># abc
+# ijk
+1. a
+2. b
+</code></pre>
+
+<h2>Code im Text</h2>
+
+<p>In Ergänzung zur Markdown-Syntax haben wir für Code oder Verbatim-Text innerhalb einer normalen
+Zeile die Syntax mit dem Zeichen für Grad eingeführt. Dieses Zeichen kann man also derzeit nicht
+darstellen. Verwenden kann man das in folgender Form:</p>
+
+<p>Schreiben sie ein Skript °test_a.m°, dass aus den Variablen °x° und °y° den Wert °a = sin(x+y)°
+berechnet.</p>
+
+<p>Dies funktioniert ähnlich wie die in Markdown vorgesehene Art mit backticks. Auch hier kann man
+einfach Code wie <code>&amp;#8212</code> in den Text einfügen. Will man einen backtick im Code schreiben, dann
+braucht man 2 backticks zur Abgrenzung also <code>(a`)</code>oder wenn man einen backtick alleine schreiben
+will, dann braucht man <code>`</code> unbedingt die Leerzeichen.</p>
+
+<h2>Code Probleme</h2>
+
+<p>Dies ist ein Test, ob man damit das Grad-Zeichen schreiben kann: <code>°</code></p>
+
+<p>Dies funktioniert aber nicht. Genausowenig kann man derzeit <code>%</code>
+schreiben.</p>
+
+<p>Ein Problem gibt es auch mit asterisk und backslash im Code, wenn das Grad-Zeichen verwendet
+wird. Da muss man das Ganze
+derzeit mit backticks schreiben, also <code>*</code>, <code>x*y</code> und <code>\</code>, <code>x\y</code>.</p>
+
+<h2>Hervorhebungen</h2>
+
+<p>Man kann Text <em>hervorheben (italics)</em>, <strong>stark hervorheben (fett)</strong>, wobei dies auch mit einem
+asterisks funktioniert und dann so <em>hervorheben</em> oder so
+<strong>stark hervorheben</strong> geschrieben wird. Dies funktioniert auch mitten in einem Wort, also z.B. in
+Dach<em>decker</em>geselle.</p>
+
+<p>Will man wirklich die Zeichen asterisks und underscore schreiben, dann muss man diese Zeichen
+"escapen", also * oder _ schreiben. Offenbar funktioniert dies aber derzeit nicht mit dem
+underscore.</p>
+
+<p>Unterstreichen ist in der Markdown-Syntax nicht vorgesehen. Dies müsste man wohl mit HTML-Methoden
+machen. Ich weiß aber derzeit keine Methode.</p>
+
+<h2>Horizontale Balken</h2>
+
+<p>Man kann horiziontale Balken erzeugen, wenn man drei oder mehr * oder - in einer Zeile schreibt,
+wobei die Abstände egal sind:</p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<h2>Links</h2>
+
+<h3>Inline Links</h3>
+
+<p>Das ist <a href="http://google.com/" title="google.com">ein Beispiel</a> für einen Inline-Link.</p>
+
+<p><a href="http://google.com/">Dieser Link</a> hat kein Attribut.</p>
+
+<h3>Reference-Style Links</h3>
+
+<p>Das ist <a href="http://google.com/" title="Optionaler Titel">ein Beispiel</a> für eine Reference-Style Link. Dafür muss man dann eine eigene
+Zeile mit der Referenz schreiben.</p>
+
+<p>Es funktioniert auch so:</p>
+
+<p>Man bekommt ein besseres Sucherergebnis mit <a href="http://google.com/" title="Google">Google</a> als mit <a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a>
+oder <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+
+<p>Will man einfach den Namen als Identifizierung verwenden dann geht es auch so:</p>
+
+<p>Man bekommt ein besseres Sucherergebnis mit <a href="http://google.com/" title="Google">Google</a> als mit <a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a>
+oder <a href="http://search.msn.com/" title="MSN Search">msn</a>.</p>
+
+<h3>Automatische Links</h3>
+
+<p>Man kann auch einfach <a href="http://google.com">http://google.com</a> schreiben, oder für eine Emailadresse einfach
+<a href="&#x6D;&#97;&#105;&#108;&#x74;&#111;:w&#x69;n&#102;&#x72;&#x69;&#101;&#x64;&#x2E;&#107;&#101;&#114;&#x6E;&#98;&#105;&#99;&#104;&#108;e&#114;&#64;&#116;u&#x67;&#114;&#97;&#x7A;&#46;&#97;&#116;">w&#x69;n&#102;&#x72;&#x69;&#101;&#x64;&#x2E;&#107;&#101;&#114;&#x6E;&#98;&#105;&#99;&#104;&#108;e&#114;&#64;&#116;u&#x67;&#114;&#97;&#x7A;&#46;&#97;&#116;</a> verwenden. Aus dem MatlabTutor heraus startet aber dann
+nicht das Email-Programm obwohl der Link korrekt zu sein scheint. Zur Erkennung ist es für
+den Link notwendig, dass man den Link mit http beginnt.</p>
+
+<h2>Images</h2>
+
+<p>Nach der MarkdownSyntax kann man das so machen:</p>
+
+<p><img src="test.png" alt="Test Bild" title="Matlab Plot" /></p>
+
+<p>Alternativ geht es auch mit einem Identifikator:</p>
+
+<p><img src="test.png" alt="Test Bild" title="Matlab Plot" />
+Multimarkdown erlaubt auch die Angabe von Größen, das funktioniert hier aber nicht.</p>
+
+<p>![Test Bild][bild2]
+[bild2]: test.png "Matlab Plot" width=60px height=40px</p>
+
+<p>Zu diesem Thema kann man aber auf reines HTML zurückgreifen (siehe unten)</p>
+
+<p>Mir ist nicht klar, wie man am besten eine Bildunterschrift macht.</p>
+
+<h2>Reines HTML</h2>
+
+<p>Man kann einfach HTML im Code schreiben</p>
+
+<div>This is *not* MultiMarkdown</div>
+
+Damit kann man dann auch ein Image mit einer bestimmten Größe definieren
+
+<div align="center">
+<img src="test.png" alt="Test Image" width="800" border="2" name="Test"/>
+</div>
+
+<p>Man kann Bilder in eine le einfügen.</p>
+
+<div align="center">
+  <table border="0" cellpadding="4" width="800">
+    <tr>
+      <th valign="middle">Bild 1</th>
+      <th valign="middle">Bild 2</th>
+    </tr>
+    <tr>
+      <td align="center"><img src="test.png" width="360" alt="test1"></td>
+      <td align="center"><img src="test.png" width="360" alt="test1"></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top">Das ist die Unterschrift zu Bild 1</td>
+      <td align="center" valign="top">Das ist die Unterschrift zu Bild 2</td>
+    </tr>
+  </table>
+</div>
+
+<h2>Backslash Escapes</h2>
+
+<p>In manchen Bereichen braucht man Backslash Escapes für bestimmte Zeichen. Manche davon braucht man
+z.B. bei Verwendung am Zeilenanfang.</p>
+
+<p>escape | name
+------ | ----
+\     | backslash
+`     | backtick
+*     | asterisk
+_     | underscore
+{}   | curly brackets
+[]   | square brackets
+()   | parenthesis
+#     | hash mark
++     | plus sign
+-     | minus sign
+.     | dot
+!     | exclamatioin point</p>
+
+<p>Momentan funktioniert underscore nicht!</p>
+
+<h2>Tabellen</h2>
+
+<p>Eine einfache Tabelle</p>
+
+<p>| Left | Middle | Right |
+| :--- | :----: | ----: |
+| a    | b      | c     |
+| a    | b      | c     |
+| a    | b      | c     |</p>
+
+<p>Mit Gruppierung</p>
+
+<p><div>&nbsp;</div> |          Grouping           ||
+First Header      | Second Header | Third Header |
+----------------  | :-----------: | -----------: |
+Content           |         <em>Long Cell</em>         ||
+Content           |  <strong>Cell</strong>     | <strong>Cell</strong>     |</p>
+
+<p>Die gleiche Tabelle mit | auch am Anfang.</p>
+
+<p>|                  |          Grouping           ||
+|First Header      | Second Header | Third Header |
+|----------------  | :-----------: | -----------: |
+|Content           |         <em>Long Cell</em>         ||
+|Content           |  <strong>Cell</strong>     | <strong>Cell</strong>     |</p>
+
+<p>Im MatlabTutor könnte man z.B. schreiben</p>
+
+<p>-----|-----------------------------------------
+ °x° | Vektor der ganzen Zahlen von $1$ bis $5$
+ °y° | Vektor der ganzen Zahlen von $2$ bis $6$
+ °a° | $2.5$
+ °b° | $3.1$</p>
+
+<p>Achtung hier funktiert die erste Zeile nicht richtig.</p>
+
+<h2>Cross Reference</h2>
+
+<p>In Multimarkdown bringt einen ein Link der Form [Tabellen][] zu einem Kapitel
+mit dieser Überschrift. Dieses Feature funktioniert hier nicht.</p>
+
+<h1>Formeln</h1>
+
+<p>Jegliche Latex-Formel kann sowohl Inline als auch in einer Mathematik-Umgebung
+geschriebnen werden. Dabei wird sowohl Latex als Amstex unterstützt. Verwendet werden
+dabei wie in Latex Dollar-Zeichen.</p>
+
+<p>Man kann also Formeln wie $y=\sin(x)$, $a=\pm\infty$, $y=x^2$ oder $A=\int_0^1 dx \; x^2$
+oder
+$$
+M = \begin{bmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{bmatrix}
+$$
+schreiben.</p>
+
+<p>Praktisch ist auch
+$$
+\begin{aligned}
+\verb°p°        &amp; = \pi \
+\verb°p<em>half°   &amp; = \pi/2 \
+\verb°two</em>p°    &amp; = 2\pi \
+\verb°e°        &amp; = \exp(1)
+\end{aligned}
+$$
+wobei man in der Latex-Notation aber unbedingt $\verb°p°$ für Verbatim schreiben muss.</p>
+
+<p>Braucht man eine Nummerierung von Formeln, dann muss man das offenbar händisch machen.
+$$
+M = \begin{bmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{bmatrix} \;\;\;\; (1)
+$$
+Dann kann man sich nachher auf Gleichung (1) beziehen. Automatisch geht das nicht.</p>
+
+<p>Hier ein Test, ob das Dollarzeichen in einer Code-Umgebung funktioniert:</p>
+
+<pre><code>x = 5;
+y = (x);
+</code></pre>
+
+<p>Es funktioniert nicht!</p>
+
+<h1>Matlab Tutor</h1>
+
+<p>Hier werden eine Reihe von Latex-Befehlen verwendet, die durch entsprechenden
+Javascript-Code umgesetzt werden müssen.</p>
+
+<h2>Einfache Textblöcke und Farben</h2>
+
+<p>Diese wären z.B.:</p>
+
+<p>\err für Fehlermeldungen</p>
+
+<p>\ein für eine Einführung</p>
+
+<p>\warn für Warnungen</p>
+
+<p>\default für Defaultwerte</p>
+
+<p>\graph für Graphische Ausgabe</p>
+
+<p>\bsp für Anschauungsbeispiel</p>
+
+<p>\zus für Zusammenfassung</p>
+
+<p>\hw für Hinweis</p>
+
+<p>\ab für Abgabe</p>
+
+<p>\geg für Gegeben:</p>
+
+<p>\ges für Gesucht:</p>
+
+<p>\bspneu</p>
+
+<p>Die Hauptfarben, z.B. \red{ROT} sollten definiert sein.</p>
+
+<p>\red{ROT}, \green{GRÜN}, \blue{BLAU}, \black{SCHWARZ}</p>
+
+<h2>Latex-Kommandos</h2>
+
+<p>Einfache Latex-Kommandos können ganz leicht im Javascript definiert werden:</p>
+
+<p>\textbf{Fett}, \textit{Italics} oder \emph{Italics}</p>
+
+<p>\tt{Typewriter}</p>
+
+<h2>Probleme</h2>
+
+<p>Probleme können entstehen, wenn in der Math-Umgebung Latex-Befehle verwendet werden, die
+in MathJAX nicht definiert sind, also z.B., $\red{x=sin(y)}$, oder auch umgekehrt
+\red{$x=sin(y)$}.</p>
+
+<p>Kann man irgendwo Latex-Kommandos für MathJAX konfigurieren?</p>
+
+<p>Das gleiche Problem gibt es mit Kombinationen von Befehlen: \red{\textbf{ROT-FETT}}</p>
+
+<p>Da muss man wohl die Hände davon lassen. Man könnte aber jederzeit ein Kommando dafür
+erzeugen und in Javascript coden \redtextbf{ROT-FETT}. Aber damit sollte man es nicht
+übertreiben.</p>
+
+<h2>Matlab-spezifische Dinge</h2>
+
+<p>Für \matlab sollten eine Reihe von Kürzeln definiert sein, also z.B.:</p>
+
+<p>Wo ist eigentlich \matlab definiert. Ich habe es nicht im Javascript gefunden.</p>
+
+<p>\matrefe{sin}
+\matref{Die Funktion Cosinus}{cos}</p>
+
+<p>\appsoftkapitel{1}
+\appsoftskriptum
+\matlabpublish{simplestart1}{Matlab-Publish}
+\mltutorhint{Strichpunkt}{MLTutor Hints}</p>
+
+<p>\MatlabReferenceMathematics
+\MatlabReferenceMathematicsElementaryMath</p>
+
+<p>\itplink
+\wikilink
+\mltutorhintlink</p>

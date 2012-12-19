@@ -1,0 +1,9 @@
+allg_after.py
+a.txt
+ex_8_2.pyc
+ex_8_4.py
+ex_8_4.py~
+ex_8_4.pyc
+polyadd.py
+polyadd.pyc
+reell_after.py

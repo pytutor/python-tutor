@@ -1,0 +1,87 @@
+
+# Erstellen und Plotten eigener Funktionen
+Die Übung beschäftigt sich mit dem Erstellen und Plotten eigener Funktionen.
+Hierfür sind zwei Funktionen °sgauss° und
+°secansh°, zu erstellen.
+
+## Berechnung der Gaussschen Glockenkurve 
+Erzeugen sie eine python-funktion °sgauss°, 
+die mit folgendem Aufruf
+ 
+	g = sgauss(x,x_0,s)  
+	x   : Vektor von x-Werten  
+	x_0 : Skalar, Lage des Maximums  
+	s   : Skalar, Halbwertsbreite  
+die Funktion
+$$
+\begin{aligned}
+  g  &= \frac{1}{s\sqrt{2\pi}} \exp \left( -\frac{(x-x_0)^2}{2s^2} \right) 
+\end{aligned}
+$$
+berechnet.
+
+Die Gaussfunktion entspricht der
+Wahrscheinlichkeitsdichte einer Wahrscheinlichkeitsverteilung, nämlich der Normalverteilung.
+Eine Wahrscheinlichkeitsdichte genügt der Bedingung, dass die Fläche unter der gesamten Funktion
+den Wert 1 annimmt. Diese sogenannte **Normierung** wird durch den Normierungsfaktor sichergestellt.
+Der Normierungsfaktor der Funktionen °g° ist der
+Term $1/(s\sqrt{2\pi})$.
+
+\hw 
+
+Die Funktionen müssen vor dem eigenltichen Quellcode folgendermaßen definiert werden:
+	def funktionsname(parameter):
+
+Alle zur Funktion gehörigen Codezeilen müssen anschließend eingerückt werden.
+
+Die Funktion soll mit dem Befeht °return(output)° abgeschlossen werden, wobei output aus beliebig vielen variablen, beliebigen Typs bestehen kann.
+
+## Berechnung der Funktion Secans Hyperbolicus 
+Erzeugen sie eine python-Funktion °secansh°, 
+die mit folgendem Aufruf
+ 
+	h = secansh(x,x_0,s)  
+	x   : Vektor von x-Werten  
+	x_0 : Skalar, Lage des Maximums  
+	s   : Skalar, Halbwertsbreite  
+
+die Funktion
+$$
+\begin{aligned}
+  h  &= \frac{1}{\pi s} {\rm sech} \left( -\frac{x-x_0}{s} \right)
+\end{aligned}
+$$
+berechnet.
+
+Die Funktion Secans Hyperbolicus stellt wie die Gaussfunktion eine 
+Wahrscheinlichkeitsdichte dar und genügt daher ebenfalls der Bedingung, dass die
+Fläche unter der gesamten Funktion den Wert 1 annimmt. 
+Der Normierungsfaktor der Funktionen °h° ist der
+Term $1/(\pi s)$.
+
+## Berechnung und einfaches Plotten der Gaussschen Glockenkurve und des Secans Hyperbolicus
+Erzeugen sie im ein Programm, das die beiden Funktionen berechnet und graphisch darstellt.
+
+Gegeben sind die Variablen °x_0° und °s°, wobei $x_0$ die Lage des Maximums und $s$ die
+Halbwertsbreite sind.
+
+Erzeugen sie mit den Formeln
+$$
+\begin{aligned}
+  x_a  &= x_0 - 5s \\
+  x_e  &= x_0 + 5s \\
+  x_n  &= 300
+\end{aligned}
+$$
+die Variablen °x_a°, °x_e° und °x_n°. Erzeugen sie damit einen Vektor °x° mit
+°x_n° äquidistanten Werten zwischen obigem Anfangs- und Endpunkt (linspace).
+
+Berechnen Sie nun mit Hilfe **Ihrer eigenen** Funktionen °sgauss° und °secansh° die Variablen
+°g° als Ergebnis von °sgauss° und °h° als Ergebnis von °secansh°.
+
+Plotten sie in einer figure die beiden Funktionen $g(x)$ (rot) 
+und $h(x)$ (blau). Versehen
+sie die Zeichnung mit einer Beschriftung der x-Achse (°x°) und der y-Achse (°f(x)°).
+Ausserdem soll es eine Legende geben, wobei die Bezeichnung der beiden Linien in der Legende
+°Gauss° und °Sech° sein soll.
+
