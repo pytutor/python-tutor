@@ -1,0 +1,65 @@
+Lineares Fitten, Bethe-Weizsäcker Formel für Kernbindungsenergien
+
+Die Bethe-Weizsäcker-Formel ist eine 1935 entstandene Formel zur semi-empirischen Beschreibung der Bindungsenergie von Atomkernen nach dem Tröpfchenmodell. Für einen Kern mit N Neutronen und Z Protonen und damit einer Nukleonenzahl M=N+Z ergibt sich die Bindungsenergie EB aus fünf Summanden.
+EB=EVolumen+EOberflache+ECoulomb+ESymmetrie+EPaarbildung
+Dies gilt nur für Kerne mit einer Nukleonenzahl größer 30. Kleinere Kerne weisen Unregelmäßigkeiten auf, die nicht in der Bethe-Weizsäcker-Formel berücksichtigt sind. Die einzelnen Anteile sind konkret
+
+Volumsanteil EVolumen
+Wegen der konstant angenommenen Dichte ist das Volumen proportional zur Massenzahl. Die Volumenenergie resultiert aus der gegenseitigen Anziehung der Nukleonen aufgrund der starken Kernkraft. Da diese aber äußerst kurzreichweitig ist, trägt immer nur die Wechselwirkung mit den nächsten Nachbarn eines Nukleons zur Bindung bei. Für ein von allen Seiten mit anderen Nukleonen umgebenes Nukleon, wie es in großen Kernen der Fall ist, ist somit die Bindungsenergie unabhängig von der Gesamtzahl der Nukleonen.
+EVolumen(M)=aV\u22c5M
+Oberflächenanteil EOberflache
+Die Nukleonen an der Oberfläche sind von weniger Nachbarn umgeben als die Nukleonen im Inneren des Kerns. Dadurch sind sie schwächer gebunden und reduzieren die Bindungsenergie.
+EOberflache(M)=\u2212aO\u22c5M23
+Coulombanteil ECoulomb
+Ein weiterer destabilisierender Einfluss ist die coulombsche Abstossung der gleichnamig positiv geladenen Protonen. Diese Energie ist nach dem Coulombschen Gesetz proportional zum Quadrat der elektrischen Ladung (Ladungszahl Z) und umgekehrt proportional zum Radius.
+ECoulomb(M,Z)=\u2212aC\u22c5Z(Z\u22121)\u22c5M\u221213
+Symmetrieanteil ESymmetrie
+Dieser Term ist quantenmechanischer Natur und sorgt für ein Gleichgewicht zwischen Neutronenzahl und Protonenzahl. Er verschwindet für N=Z und schwächt die Bindung mit zunehmender Differenz zwischen Neutronen- und Protonenzahl. Ein Ungleichgewicht zwischen der Protonenzahl Z und der Neutronenanzahl N=M\u2212Z wirkt also destabilisierend auf einen Kern.
+ESymmetrie(M,Z)=\u2212aS\u22c5(M\u22122Z)2M
+
+Paarbildungsanteil EPaarbildung
+Kerne mit gerader Protonenzahl Z und Neutronenzahl N (gg-Kerne) sind besonders fest gebunden, solche mit ungeradem Z und N (uu-Kerne) besonders schwach gebunden, die restlichen Kerne (ug-Kerne) liegen dazwischen.
+EPaarbildung(M,S)=aP\u22c5S\u22c5M\u221212
+wobei
+S=\u23a7\u23a9\u23a8+1,0,\u22121,für gg-Kernefür ug-Kerne und gu-Kernefür uu-Kerne
+
+Ihre Aufgabe ist es vorhandene Daten der Bindungsenergien von verschiedenen Kernen mit der Bethe-Weizsäcker-Formel linear zu fitten. Schreiben Sie dazu das matlab-Skript kern.m. Dazu gehen Sie bitte folgendermaßen vor:
+
+Laden der Daten
+Es steht eine Datei Kern.txt zur Verfügung die als Spalten die Massenzahl M, die Protonenzahl Z, die Neutronenzahl N und die Bindungsenergie pro Nukleon E enthält. Speichern Sie diese Daten in den Reihenvektoren M,Z,N und E. Da Bindungsenergien immer negativ sind, wir für das Fitten aber positive Werte verwenden wollen, multiplizieren Sie den Inhalt von E mit minus Eins. Alle Massen sind im File in Atomic Units und alle Energien in Mega Elektronvolt, zwei gängigen Einheiten in der Kernphysik angegeben.
+
+Schreiben einer Funktion zur Berechnung der Parität
+Es ist sinnvoll die Berechnung der Parität S (siehe Punkt 5: Paarbildungsanteil) in einer eigenen Funktion zu schreiben, da wir Sie mehrmals berechnen wollen. Dazu schreibne Sie die matlab-Funktion calculateParity.m: [S] = calculateParity (Z,N). Diese Funktion nimmt als Input-Argument die Protonenzahl Z und die Neutronenzahl N (beides Felder der gleichen Größe) und berechnet ein Feld S, der gleichen Größe, welches an den jeweiligen Stellen entweder +1, \u22121 oder 0 enthält. Eine einfache Möglichkeit dies zu realisieren ist mittels logischer indizierung. Benutzen Sie zum Beispiel vier logische Felder GG, UU, UG, GU an,die identifizieren welche Stelle im Feld Z und N zu welchem Typ Kern korrespondiert.
+
+Berechnen der Parität
+Kehren Sie nun wieder zu Ihrem Hauptprogramm kern.m zurück. Rufen Sie dort die von Ihnen neu geschriebene Funktion calculateParity mit den geladenen Daten als Argument auf. Speichern Sie die Parität unter S.
+
+Konsistenz der geladenen Daten
+Verlassen Sie sich nicht blind auf die in der Datei angegebenen Daten. Führen Sie folgende Konsistenzchecks durch.
+
+Die Massenzahl M muss immer die Anzahl der Neutronen N plus der Anzahl an Protonen Z sein. Berechnen Sie die Variable Masscheck welche den Wert eins bekommt, wenn dem so ist. Andernfalls soll sie Null sein all.
+Die Energie muss im File konsistent angegeben sein, also entweder sind alle Energien positiv oder alle negativ. In unserem Fall sind im File alle Energien negativ und in der geladenen Variable E alle Energien positiv. Überprüfen Sie ob die Variable E nur positive Werte enthält und speichern Sie das Ergebnis in der Variable Energycheck.
+Sie werden feststellen, dass die Daten alle Checks bestehen.
+
+Implementierung der Bethe-Weizsäcker-Formel Um komfortabel mit der Bethe-Weizsäcker-Formel arbeiten zu können, ist es sinnvoll diese als Funktion Handle umzusetzen. Da es sich hier um eine eher längliche Formel handelt ist es am besten fünf Funktionhandles zB f1 bis f5 für die Teilformeln aus Punkt 1 bis Punkt 5 anzulegen und diese dann in einem weiteren Funktionhandle bethe_weizsacker zusammenzusetzen. Achten Sie hier darauf, dass jedes Funktionhandle andere Eingaeparameter (also M, M und Z oder M und S) hat. Die Gesamtfunktion bethe_weizsacker benötigt dann natürlich alle Parameter M, Z ,S und den Vektor der Fitparameter a. Zur Orientierung könnte die Funktion so aussehen: bethe_weizsacker = @(a,A,Z,S) ( a(1)*f1(A) + a(2)*f2(A) + a(3)*f3(A,Z) + a(4)*f4(A,Z) + a(5)*f5(A,S) );
+
+Linearer Fit der Daten
+Führen Sie nun einen linearen Fit mittels Gleichungssystem
+X\u22c5a=b
+durch. (Benennen Sie die Koeffizientenmatrix X und die Inhomogenität b.) Die einzelnen Spalten der Matrix X bestehen wie gewohnt aus den Fitfunktionen f1 bis f5. Die Inhomogenität ist ein Spaltenvektor E.*M. (Weil die Bethe-Weizsäcker-Formel die Bindungsenergie beschreibt und die vorliegenden Daten die Bindungsenergiepro Nukleon muss hier E mit der jeweiligen Massenzahl multipliziert werden.) Achten Sie auf die richtigen Dimensionen! Speichern Sie das Ergebnis der Fitparameter in der Variable aFitLin und berechnen Sie die gefitteten Energien EFitLin.
+
+Darstellung der Ergebnisse
+
+Fertigen Sie einen Plot an in dem Sie zuerst die Energiedaten E als Funktion der Massenzahl M als rote x Plotten.
+Dazu plotten Sie die gefittete Energiekurve EFitLin dividiert durch die Massenzahl M als grüne durchgezogene Linie.
+Erstellen Sie Achsenbeschriftungen \u201cMassenzahl\u201d und \u201cEnergie pro Nukleon /MeV\u201d.
+Setzen Sie die x-Achsenlimits auf 0 bis 165 und die y-Achsenlimits auf 0 bis 10.
+Berechnung der Bindungsenergien aller Konfigurationen von N und Z Legen Sie zwei Vektoren N2D und Z2D an, welche alle ganzen Zahlen von 1 bis 200 enthalten sollen. Um eine zweidimensionale Darstellung der Bindungsenergien pro Nukleon zu erhalten berechnen Sie zuerst die Felder NN und ZZ (meshgrid). Berechnen Sie ebenfalls die benötigte Parität SS. Im Folgenden soll die Bethe-Weizsäcker-Formel mit den errechneten Fitparametern aFitLin und den Matrizen NN, ZZ und SS ausgewertet werden. Dividieren Sie die erhaltenen Energien durch die jeweilige Gesamtmasse um wieder auf Bindungsenergie pro Nukleon zu normieren und speichern Sie die Werte im Feld BE. Setzten Sie im Feld BE alle negativen Werte auf nan.
+
+Zweidimensionaler Plot der Bindungsenergien
+
+Fertigen Sie einen Plot an in dem Sie die Bindungsenergie pro Nukleon BE über den Neutronenzahlen N2D und den Protonenzahlen Z2D darstellen (surf).
+Zeichnen Sie die Position der stabilen Kerne (die Daten aus der geladenen Datei) ein. Dazu verwenden Sie plot3 und vergeben als Wert für z 100. Diese Linie soll schwarz sein.
+Verwenden Sie im suface Plot die Option \u201c'EdgeColor','none'\u201d um die störenden schwarzen Linien zu entfernen.
+Setzen Sie ausserdem \u201cview([0 90])\u201d um von oben auf den Plot zu sehen.
+Beschriften Sie die Achsen richtig mit \u201cN\u201d, \u201cZ\u201d und vergeben Sie einen Titel \u201cBindungsenergien (N,Z)\u201d.

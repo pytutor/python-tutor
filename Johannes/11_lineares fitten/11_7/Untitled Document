@@ -1,0 +1,47 @@
+Abgabebeispiel zum Thema lineares Fitten
+
+Das letzte Pflichbeispiel dieser Übung kann nicht alleine abgegeben werden. Sie brauchen dazu einen Lehrenden oder Studienassistenten, der mit Ihnen ein kurzes Gespräch führt. Ziel dieses Gespräches ist es einerseits sicherzustellen, dass Sie die Übungsbeispiele zu diesem Themenbereich selbstständig ausgearbeitet haben und andererseits Ihnen (noch einmal explizit) die (, selbstverständlich während der gesamten Übungszeit bestehende, ) Möglichkeit zu geben eventuelle Verständnisprobleme, Unklarheiten, zu klären.
+
+Bereiten Sie für die Abgabe ein Blatt Papier vor auf dem Sie in Stichworten eine kurze Zusammenfassung der gefragten Punkte schreiben. Sie können dieses Blatt für Ihre zukünftige Verwendung nach dem Gespräch behalten. Es soll nur sicherstellen, dass Sie diese grundlegenden Zusammenhänge vor den nächsten Übungen verstanden haben.
+
+Es ist für das persönliche Verständnis oft hilfreich sich die Probleme am Papier zu überlegen. Hier ist es jedoch nicht unbedingt nötig sauberen matlab Source-Code zu Papier zu bringen. Eine qualitative Skizze reicht vollkommen. Bei manchen Aufgaben ist es jedoch auch sinnvoll, parallel dazu die Probleme direkt in matlab zu implementieren und verschiedene Dinge auszuprobieren. Dazu können Sie zum Beispiel das ansonsten nicht benötigte .m File dieser Übung, die matlab Workbench oder die matlab Konsole verwenden.
+
+Abgabe:
+Das letzte Pflichbeispiel dieser Übung kann nicht alleine abgegeben werden. Sie brauchen dazu einen Lehrenden oder Studienassistenten, der mit Ihnen ein kurzes Gespräch führt.
+
+Am Ende dieser Übung sollten Sie nun folgende Dinge in Bezug auf matlab und lineares Fitten verstanden haben:
+
+Verwendung des matlab Befehls polyfit
+
+Lineares Fitten mit Hilfe von linearen Gleichungssytemen
+
+Bereiten Sie für die Abgabe ein Blatt Papier vor, auf dem Sie in Stichworten eine kurze Zusammenfassung dieser Punkte darlegen. Sie können dieses Blatt für Ihre zukünftige Verwendung nach dem Gespräch behalten. Es soll nur sicherstellen, dass Sie diese simplen Zusammenhänge vor den nächsten Übungen verstanden haben.
+
+Bitte zeigen Sie uns beim Gespräch auch, dass Sie das Fitverfahren im Allgemeinen verstanden haben. Betrachten Sie dazu folgendes einfaches Beispiel:
+
+    x  = [1:10];
+    p  = [3,2,1];
+    y  = polyval(p,x);
+    yd = y + 0.2*randn(size(x));
+Es sind also 10 Datenpunkte (yd) in Abhängigkeit von x gegeben. Diese Daten korrespondieren mit einem Polynom 2-ten Grades (p). Was ist der Faktor 0.2 vor randn?
+
+Legen Sie nun einen linearen Fit auf drei verschiedene Arten durch diese Daten:
+
+per matlab Befehl polyfit
+per linearem Gleichungssytem
+per linearem Gleichungssytem wobei der Koeffizient von x2 als bekannt (a2=3) angenommen werden soll
+Vergleichen Sie die Ergebnisse dieser drei Varianten (jeweils den Koeffizientenvektor) oder fertigen Sie einen Plot an.
+
+Skizzieren Sie die algebraischen Umformungen der dritten Variante auf Papier.
+
+Was passiert in matlab bei der Lösung des Gleichungssystems Ax=b, wenn das Gleichungssytem überbestimmt ist?
+
+Welche Aussage kann man in so einem Fall über A machen?
+
+Wann tritt das beim Fitten auf?
+
+Zur Bewältigung dieser Aufgaben empfiehlt sich die Verwendung der matlab Workbench, wo Sie ganz leicht ein eigenes Beispiel erstellen können. Sollten Sie sich sicher fühlen, können Sie natürlich die Lösung auch einfach auf Papier skizzieren. Wenn Sie beim Fitten Hilfe benötigen, sehen Sie sich Ihr Beispiel Polynomfit 2 nochmals an oder lesen Sie Kapitel 14. Überlegen Sie sich weiters:
+
+Kann man die eben benutzte Matrix-Methode zum linearen Fitten auch zum Fitten einer Funktion asin(x)\u22c5x2+b\u22c5x verwenden? Warum? / Warum nicht?
+
+Kann man sie zum Fitten der Funktion asin(bx)\u22c5x2+c\u22c5xd verwenden? Warum? / Warum nicht?
