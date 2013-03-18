@@ -1,0 +1,25 @@
+# Newtonsche Mechanik mit Reibung
+In dieser Aufgabe geht es darum für eine vorgegebene Geschwindigkeit $v(t)$ entsprechend den Regeln der analytischen Mechanik den Weg $s(t)$, die Beschleunigung $a(t)$, die Arbeit $W(t)$ und die Leistung $P(t)$ zu berechnen. Da in dieser Übung die Verwendung von Polynomen geübt wird, ist $v(t)$ als Polynom °v_p° vorgegeben. Diese Variable wird vom Test zusammen mit der Masse $m$ (°m°) und dem Reibungskoeffizienten $\kappa$ (°kappa°) vorgegeben.
+
+Die Formeln für die Berechnung folgen aus den Regeln der Mechanik:
+$$
+\begin{aligned}
+s(t) & = \int_0^t v(t')dt' \\
+a(t) & = \frac{d}{dt}v(t) \\
+W_a(t) & = \int_0^t m \; a(t') v(t') dt' \\
+W_r(t) & = \int_0^t \kappa \; v(t')^2 v(t') dt' \\
+W(t) & = W_a(t) + W_r(t) \\
+P(t) & = \frac{d}{dt}W(t)
+\end{aligned}
+$$
+Die Arbeit setzt sich hier aus zwei Komponenten zusammen, einerseits die Arbeit $W_a(t)$, die sich aus der Beschleunigung der Masse $m$ ergibt, und andererseits die Arbeit $W_r(t)$, die wegen der Reibung verrichtet werden muss. Als Reibungskraft wurde hier der Einfachheit halber $\kappa v(t)^2$ verwendet.
+
+Lösen Sie die Aufgabe im \matlab-Skript °newtonpr°.  Berechnen Sie entsprechend den obigen Formeln die Polynome
+°s_p°, °a_p°, °W_a_p°,  °W_r_p°,  °W_p° und  °P_p°.
+
+Definieren Sie nun einen Zeitvektor $t$ mit $100$ Stützstellen zwischen $0$ und $10$ und werten Sie dann obige Polynome damit aus. Die Variablen sind °t°, °s°, °v°, °a°, °W° (gesamte Arbeit) und °P°.
+
+Überlegen Sie nun, wie man aus $W$ und $t$ die mittlere Leistung berechnet und führen Sie diese Rechnung durch (°P_mean°).
+
+Die graphische Ausgabe erfolgt nun in zwei \matref{Fenstern}{figure}. Im ersten gibt es drei \matref{Subplots}{subplot} übereinander mit $s(t)$, $v(t)$ und $a(t)$ und im zweiten zwei \matref{Subplots}{subplot} übereinander mit $W(t)$ und $P(t)$. Beschriften Sie die Achsen entsprechend den hier verwendeten Bezeichnungen.
+

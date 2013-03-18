@@ -1,0 +1,115 @@
+
+
+# Erstellen und Plotten eigener Funktionen
+Die Übung beschäftigt sich mit dem Erstellen und Plotten eigener Funktionen.
+Hierfür sind zwei \matlab-Funktionen °sgauss° und
+°secansh°, sowie ein \matlab-Skript °pskript° zu erzeugen.
+Beachten Sie, dass \red{3 verschiedene m-Files} (3 Tabs) von Ihnen zu erstellen
+sind!
+
+## Berechnung der Gaussschen Glockenkurve 
+Erzeugen sie eine \matlab-Function °sgauss°, 
+die mit folgendem Aufruf
+ 
+	g = sgauss(x,x_0,s)  
+	x   : Vektor von x-Werten  
+	x_0 : Skalar, Lage des Maximums  
+	s   : Skalar, Halbwertsbreite  
+die Funktion
+$$
+\begin{aligned}
+  g  &= \frac{1}{s\sqrt{2\pi}} \exp \left( -\frac{(x-x_0)^2}{2s^2} \right) 
+\end{aligned}
+$$
+berechnet.
+
+Die Gaussfunktion entspricht der
+Wahrscheinlichkeitsdichte einer Wahrscheinlichkeitsverteilung, nämlich der Normalverteilung.
+Eine Wahrscheinlichkeitsdichte genügt der Bedingung, dass die Fläche unter der gesamten Funktion
+den Wert 1 annimmt. Diese sogenannte **Normierung** wird durch den Normierungsfaktor sichergestellt.
+Der Normierungsfaktor der Funktionen °g° ist der
+Term $1/(s\sqrt{2\pi})$.
+
+\hw 
+
+Im Unterschied zu Skripts benötigen Funktionen eine Deklarationszeile, die das Keyword
+\matrefe{function}, den Namen der Funktion und die Namen der In- und Outputvariablen enthält:
+ 
+	function out = name_func(in1,in2,in3,...)
+
+bzw. bei mehreren Outputvariablen
+
+	function [out1,out2,out3,...] = name_func(in1,in2,in3,...)
+
+Funktionen erhalten die Werte für die Inputvariablen beim Aufruf und müssen die benötigten
+Outputvariablen berechnen. Das \appsoftkapitel{9} im Skriptum erklärt den Unterschied zwischen
+Skripts und Funktionen. Eine einfache Erläuterung ist auch in diesem \mltutorhint{Funktion}{MLTutor
+Hinweis} aufbereitet.
+
+\hw 
+
+Die Zeichnungen werden automatisch vom Test erzeugt und sollen die Ergebnisse anschaulich machen.
+
+
+## Berechnung der Funktion Secans Hyperbolicus 
+Erzeugen sie eine \matlab-Funktion °secansh°, 
+die mit folgendem Aufruf
+ 
+	h = secansh(x,x_0,s)  
+	x   : Vektor von x-Werten  
+	x_0 : Skalar, Lage des Maximums  
+	s   : Skalar, Halbwertsbreite  
+
+die Funktion
+$$
+\begin{aligned}
+  h  &= \frac{1}{\pi s} {\rm sech} \left( -\frac{x-x_0}{s} \right)
+\end{aligned}
+$$
+berechnet.
+
+Die Funktion Secans Hyperbolicus stellt wie die Gaussfunktion eine 
+Wahrscheinlichkeitsdichte dar und genügt daher ebenfalls der Bedingung, dass die
+Fläche unter der gesamten Funktion den Wert 1 annimmt. 
+Der Normierungsfaktor der Funktionen °h° ist der
+Term $1/(\pi s)$.
+
+## Berechnung und einfaches Plotten der Gaussschen Glockenkurve und des Secans Hyperbolicus
+Erzeugen sie im \matlab-Skript °pskript° ein Programm, das die beiden
+Funktionen berechnet und graphisch darstellt.
+
+Gegeben sind die Variablen °x_0° und °s°, wobei $x_0$ die Lage des Maximums und $s$ die
+Halbwertsbreite sind.
+
+Erzeugen sie mit den Formeln
+$$
+\begin{aligned}
+  x_a  &= x_0 - 5s \\
+  x_e  &= x_0 + 5s \\
+  x_n  &= 300
+\end{aligned}
+$$
+die Variablen °x_a°, °x_e° und °x_n°. Erzeugen sie damit einen Vektor °x° mit
+°x_n° äquidistanten Werten zwischen obigem Anfangs- und Endpunkt (\matrefe{linspace}).
+
+Berechnen Sie nun mit Hilfe **Ihrer eigenen** Funktionen °sgauss° und °secansh° die Variablen
+°g° als Ergebnis von °sgauss° und °h° als Ergebnis von °secansh°.
+
+\matref{Plotten}{plot} sie in einer \matrefe{figure} die beiden Funktionen $g(x)$ (rot) 
+und $h(x)$ (blau). Versehen
+sie die Zeichnung mit einer Beschriftung der x-Achse (°x°) und der y-Achse (°f(x)°).
+Ausserdem soll es eine \matref{Legende}{legend} geben, wobei die Bezeichnung der beiden Linien in der Legende
+°Gauss° und °Sech° sein soll.
+
+\hw 
+
+Wenn die Grafik stimmt, aber die Variablen °count° und
+°count_test° falsch sind, sollten sie Testvariable
+°MLTutor_TEST_MESSAGE° anschauen. Sie verwenden dann nicht die richtigen
+Funktionsaufrufe.
+
+\hw 
+
+Infos zum Plotten findet man auch in diesem \matlabpublish{simplestart2}{Skript},
+Spezifikationen über Linienarten findet man unter dem Link \matrefe{linespec}.
+

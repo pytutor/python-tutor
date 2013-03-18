@@ -6,6 +6,7 @@ Created on Mon Dec  3 16:49:31 2012
 """
 
 from ex_8_3 import polytang
+import numpy as np
 
 p    = np.array([0.5,0.9,3,1])
 x0   = 2

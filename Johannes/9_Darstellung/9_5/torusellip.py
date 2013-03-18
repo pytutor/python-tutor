@@ -28,4 +28,5 @@ ax = fig.gca(projection='3d')
 col = (R+np.sqrt(a**2+b**2)*np.cos(2*theta) * np.cos(2*phi))
 col = col/col.max()
 surf = ax.plot_surface(x, y, z,facecolors=cm.jet(col),rstride=1, cstride=1)
+
 plt.show()

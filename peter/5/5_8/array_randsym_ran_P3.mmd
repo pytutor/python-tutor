@@ -1,0 +1,73 @@
+
+# Symmetrische Zufallsmatrix - P3
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °array_randsym°, 
+die folgende Aufgaben erfüllt:
+
+
+*  Übergabeparameter ist °m°.
+
+*   
+  Erstellen Sie eine symmetrische $m 
+  \times m$-Matrix (Default $m=9$) mit Zufallszahlen aus dem offenen Intervall 
+  $\left(0, 1\right)$. Für die Elemente einer symmetrischen Matrix gilt $a_{ij} = a_{ji}$.
+  Verwenden Sie dazu die Befehle \matrefe{rand}, 
+  \matrefe{triu} und \matref{transpose}{arithmeticoperators}.
+
+* 	
+  Setzen Sie den Defaultwert, wenn °m° gar nicht oder als leeres
+  Feld übergeben wird. 
+
+
+Die Lösung dieses Problems ist etwas schwieriger und erfolgt in zwei
+Schritten: Im ersten Schritt wird mit \matrefe{rand} und
+\matrefe{triu} eine Matrix erzeugt, bei der nur die Hauptdiagonale und
+die darüberliegenden Diagonalen besetzt sind. Im zweiten Schritt wird
+dann die zweite Form des Befehls \matref{triu(A,k)}{triu} verwendet,
+das Ergebnis transponiert und zum ersten Teil addiert.
+
+Wie immer gibt es natürlich auch hier andere Lösungen. Hier gibt es eine ganz
+simple Lösung mit Hilfe der transponierten Matrix
+(\matref{transpose}{arithmeticoperators}). 
+
+\hw
+In den automatischen Tests wird überprüft:
+
+   °sym°: ob A symmetrisch ist.    
+   °siz°: ob die Dimension von A richtig ist.     
+   °ran°: ob die Inhalte von A im Intervall $\left(0,1\right)$ liegen.      
+   °uni°: ob A aus Zufallszahlen besteht.     
+
+
+\hw
+ Die Verwendung von \matrefe{for}- und \matrefe{while}-Schleifen ist nicht
+ erlaubt. Beachten Sie dazu die Variable °count_test°, bzw., Hinweise
+ unter °MLTutor_TEST_MESSAGE°.
+ 
+\hw
+Die Befehle \matrefe{if}, \matrefe{nargin} und \matrefe{isempty} müssen am
+Anfang beim Setzen der Defaultwerte jeweils genau einmal vorkommen. Die
+Befehle \matrefe{else}, \matrefe{elseif}, \matrefe{switch} sind nicht erlaubt. Die
+Defaultwerte sollen in der kompaktesten Form, wie am Ende dieses
+\mltutorhint{Setzen_von_Defaultwerten}{Links} erläutert, gesetzt werden.
+
+
+
+\ges 
+Funktion °array_randsym.m°
+
+	[A] = array_randsym(m)
+		m        : Zeilenanzahl und Spaltenanzahl
+		A        : Rückgabematrix
+
+ 
+\bsp
+
+	array_randsym(3)
+
+	ans =
+		0.4983    0.3200    0.4120
+		0.3200    0.9601    0.7446
+		0.4120    0.7446    0.2679
+
+
+

@@ -1,0 +1,84 @@
+# Erstellung von Standardmatrizen
+
+Schreiben Sie ein \matlab-Skript
+
+    arr_create,
+ 
+das die in \matlab vorhandenen Standardmatrizen erzeugt und mit diesen
+elementare Umformungen vornimmt. Eine Angabe der Form $m \times n$
+bedeutet, dass die Matrix °m°-Zeilen und °n°-Spalten haben soll. 
+
+Erzeugen Sie folgende Matrizen:
+
+  
+*  Eine $3\times5$ Matrix °ze°, die nur Nullen enthält (\matrefe{zeros}).
+  
+*  Eine $3\times3$ Matrix °on°, die nur Einsen enthält (\matrefe{ones}). 
+  
+*  Eine $7\times7$ Einheitsmatrix °ey° (\matrefe{eye}).
+  
+*  Eine Diagonalmatrix °di°, die auf der Hauptdiagonale Werte von $1$
+  bis $5$ enthält (\matrefe{diag}).
+  
+*  Eine $5\times3$-Matrix °ra° mit Zufallszahlen (\matrefe{rand}).
+
+
+Nun sollen einige elementare Umformungen durchgeführt werden. Das Ziel ist
+vor allem, dass Sie die Grundfunktionalität der vorgestellten Befehle
+kennenlernen. Wollen Sie die graphische Ausgabe der Matrizen unterdrücken, müssen Sie im
+Skript eine Variable °hide=1° definieren (Diese Variable wird vom
+Testprogramm abgefragt, für die Funktion Ihres Programms spielt sie also keine
+Rolle!).
+
+Führen Sie folgende Umformungen durch:
+ 
+  
+*  Wenden Sie \matrefe{fliplr} auf die Matrix °ey° an und 
+  speichern Sie das Ergebnis in der Variablen °ye°.
+  
+*  Wenden Sie \matrefe{flipud} auf die Matrix °di° an und 
+  speichern Sie das Ergebnis in der Variablen °id°.
+  
+*  Mit \matrefe{reshape} ist es möglich, die Gestalt einer Matrix zu 
+  ändern. \matrefe{reshape} benötigt als erstes Inputargument die zu 
+  verändernde Matrix, als zweites die Anzahl der Zeilen und als drittes die 
+  Anzahl der Spalten der Zielmatrix. Dabei ist wichtig, dass die Anzahl der 
+  Elemente (also das Produkt $m \cdot n$ vorher und nachher) gleich sein muss.
+      
+	*  Wenden Sie \matrefe{reshape} so auf die Matrix °ra° an, dass ein 
+    Spaltenvektor ensteht und speichern Sie ihn in der Variablen °col°.
+    
+	*  Wenden Sie \matrefe{reshape} so auf die Matrix °ra° an, dass ein 
+    Zeilenvektor ensteht und speichern Sie ihn in der Variablen °row°.    
+    **Hinweis:** Es ist empfehlenswert, die Funktion \matrefe{numel} zu 
+    verwenden.
+    
+
+
+    
+    
+*  Mit \matrefe{repmat} ist es möglich, eine Matrix zu replizieren. Dabei 
+    ist das erste Inputargument wieder die Eingabematrix. Das zweite Argument 
+    gibt an, wie oft die Matrix "nach unten repliziert" wird.
+    Das dritte gibt an, wie oft sie "nach rechts repliziert" wird.
+    Beachten Sie die Besonderheiten beim Aufruf von \matrefe{repmat}. 
+    Replizieren Sie nun die Matrix °di° folgendermaßen:
+       
+	*  °rep1° einmal nach rechts.
+    
+	*  °rep2° einmal nach unten.
+    
+	*  °rep3° einmal nach unten und einmal nach rechts (die gesamte
+    Matrix besteht dann aus 4 °di°-Matrizen).
+    
+
+
+    
+*  Mit \matrefe{sum} ist es möglich, die Summe über Matrix- und 
+    Vektorelementen zu berechnen. Dabei wird als erstes wieder die Matrix angegeben 
+    und als zweites, entlang welcher Dimension die Summe berechnet werden 
+    soll. $1$ bedeutet dann, dass alle Werte einer Spalte summiert 
+    werden sollen. Der Ergebnisvektor ist in diesem Fall ein Zeilenvektor. 
+    Berechnen Sie damit die Spalten- und Zeilensumme der Matrix
+     °ra°, und speichern Sie diese in °col_sum° und °row_sum°.
+

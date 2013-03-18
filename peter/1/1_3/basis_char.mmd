@@ -1,0 +1,70 @@
+
+ 
+# Zeichen und Zeichenketten
+Neben Zahlen gibt es in jeder Programmiersprache natürlich auch einen Datentyp für 
+Zeichen (Characters). In \matlab ist das der Datentyp \matrefe{char}. 
+Definiert werden Zeichen mit Hilfe des einfachen Hochkommas (°'°) am Anfang und am Ende. 
+Soll also die Variable °s° den Inhalt °a° haben, dann muss man °s = 'a'° schreiben. 
+Würde man hingegen °s=a° schreiben, dann würde die Variable °s° den Wert der Variablen °a° 
+haben, also resultiert z.B.
+
+		a = 7;  
+		s = a;
+
+im Wert °7° sowohl für °a° als auch für °s°.
+
+Zeichenketten kann man als Matrizen (Vektoren) von Zeichen auffassen. Eine solche ist z.B. 
+°s = 'abc'° oder °s = '123'°. Im zweiten Fall sind es die Zeichen °123° und nicht die 
+Zahl $123$. Es ergibt also einen wichtigen Unterschied, ob man °s='123'° oder °s=123° 
+schreibt. Einzelne Zeichen oder Zeichenketten kann man mit Hilfe der eckigen Klammern °[]° 
+zu längeren Zeichenketten verbinden 
+
+|Code|Resultat|
+|-|-|
+|°s = ['a','b','c'];°|$\verb&'abc'&$|  
+|°s = [s,s];°|$\verb&'abcabc'&$|
+|°s = [s;s];°|$\begin{bmatrix}\verb&'abc'& \\ \verb&'abc'&\end{bmatrix}$|
+
+Auf einzelne Zeichen in einer Kette kann man mit Hilfe eines Index zugreifen, °s(5)° 
+liefert das Zeichen °b°, also den fünften Buchstaben obiger Zeichenkette.
+
+Führen Sie im \matlab-Skript °basis_char° einige einfache Definitionen von Variablen durch. 
+Dabei sollen den Variablen
+folgende Werte zugewiesen werden:
+
+
+|Variable|Wert|
+|-|:-:|
+|°s1°|°a° 
+|°s2°|°b° 
+|°c1°|°das° 
+|°c2°|°ist° 
+|°c3°|°eine°  
+|°c4°|°wunderbare° 
+|°c5°|°uebung° 
+|°leer°|°"ein Leerzeichen"° 
+|°ruf°|°"ein Rufzeichen"° 
+
+
+
+
+Erzeugen sie nun die Variable °s3° durch Verbinden der Variablen °s1° und °s2°.
+
+Erzeugen sie aus den Variablen °c1° und °c5° die Variablen °C1° und °C5°, wobei jetzt der 
+erste Buchstabe eine Großbuchstabe sein soll (\matrefe{upper}). Verwenden sie dabei 
+wirklich die Variablen °c1° oder °c5° und schreiben sie nicht °C1='Dies'°. Die 
+Verwendung von \matrefe{upper} wird gezählt (Variablen °count° und °count_test° bei 
+den Testvariablen). Hier macht man zuerst eine Kopie von °c1° auf °C1° und ändert dann den 
+ersten Buchstaben von °C1°. Auf einzelne Zeichen in einer Zeichenkette kann man mit einem 
+Index zugreifen (z.B.: C1(1) ist das erste Zeichen in C1).
+
+Setzen sie nun die Variable °satz° aus °C1°, °c2°, °c3°, °c4° und °C5° zusammen, wobei 
+zwischen den Worten ein Leerzeichen und am Ende des Satzes ein Rufzeichen stehen soll. 
+
+Ermitteln sie mit Hilfe des Befehls \matrefe{class} den Datentyp von °satz° und von der 
+Zahl $12$ in den Variablen 
+°class_satz° und °class_zahl°.
+
+Ermitteln sie mit \matrefe{numel} die Anzahl der Zeichen in °satz° und speichern sie 
+diese Information in der Variablen °laenge_satz°.
+

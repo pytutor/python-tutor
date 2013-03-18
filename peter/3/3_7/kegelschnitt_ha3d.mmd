@@ -1,0 +1,84 @@
+
+# Kegelschnitt in Hauptachsenlage - 3D
+Man kann sich Kegelschnitte als Schnittlinien einer quadratischen Form $z(x,y)$,
+$$
+  	z(x,y) = s_1 x^2 + 2 s_2 x y + s_3 y^2 + s_4 x + s_5 y + s_6 = 0 \; ,
+$$
+mit der Ebene $z(x,y)=0$ vorstellen. Dies ist die allgemeine Form. In
+Haupachsenlage reduziert sich die quadratische Form für Ellipse $z_e$, Hyperbel
+$z_h$ und Parabel $z_p$ auf
+
+$$
+\begin{aligned}
+  	z_e(x,y) & =
+    \left( \frac{x}{a} \right)^2 + \left( \frac{y}{b} \right)^2 - 1 \; \\
+ 
+    z_h(x,y) & =
+  	\left( \frac{x}{a} \right)^2 - \left( \frac{y}{b} \right)^2 - 1 \; \\
+  
+    z_p(x,y) & = y - p x^2 \; .
+
+\end{aligned}
+$$
+
+Schreiben Sie das \matlab-\matref{Skript}{script} °kegelschnitt_ha_3d.m°,
+das folgende Aufgaben erfüllt:
+
+  
+1. Definieren Sie die Variablen °a° (Wert: °3°), °b° (Wert:
+  °2°), °p° (Wert: °0.2°), °delta° (Wert: °2°) und
+  °n_points° (Wert: °51°).
+  
+1. Erzeugen Sie damit den Vektor °x° von °-a-delta° bis
+  °a+delta° mit °n_points° Punkten und analog dazu den Vektor
+  °y° (mit °b° statt °a°). Verwenden Sie dazu \matrefe{linspace}.
+  
+1. Erzeugen Sie damit und mit dem Befehl \matrefe{meshgrid} die beiden
+  gleich großen Matrizen °xx° und °yy°. Damit haben Sie nun alle
+  Kombinationen von °x°-Werten und °y°-Werten um eine
+  3-dimensionale Darstellung von $z(x,y)$ zu machen.
+  
+1. Berechnen Sie mit diesen Matrizen die Variablen °zz_e° (Ellipse),
+  °zz_h° (Hyperbel), °zz_p° (Parabel) und zusätzlich eine gleich
+  große Matrix °zz_zero° mit lauter Nullen (\matrefe{zeros},
+  \matrefe{size}).
+  
+1. Nun haben Sie alle Bestandteile um die Flächen $z(x,y)$ zu zeichnen.
+  Machen Sie dafür für jeden der drei Kegelschnitte eine \matrefe{figure} und
+  plotten Sie mit den Befehlen 
+  
+			surf(xx,yy,zz_k,zz_k,'Edgecolor','none');
+			k = e, h, oder p 
+			shading interp 
+	diese Flächen. Der Befehl \matrefe{shading} sorgt in dieser Form für eine
+	schönere Interpolation der Farben.
+  
+1. Beschriften Sie die Achsen mit °x°, °y° und °z°
+  (\matrefe{xlabel}, \matrefe{ylabel}, \matrefe{zlabel}).
+  
+1. Zeichen Sie nun mit den Befehlen 
+
+			hold on 
+			mesh(xx,yy,zz_zero,'FaceColor','none','EdgeColor',[0.2,0.2,0.2]) 
+			hold off
+			
+	die Fläche $z(x,y) = 0$ (Array: °zz_zero°) ein.
+  
+1. Man kann noch die Eigenschaften °FaceAlpha° (\matrefe{surf}), bzw.
+  °EdgeAlpha° (\matrefe{mesh}) verändern.
+  
+1. Wenn Sie Ihr Skript nun in der \matlab-Konsole laufen lassen, sollten
+  Sie sehen wie Ellipsen aus einer Art Talkessel, Hyperbeln aus Sattelflächen
+  und Parabeln aus entsprechend gebogenen aber in eine Richtung geraden Flächen
+  entstehen.
+  
+1. In späterer Folge werden Sie bei einer Übung noch Kegelschnitte in der
+  allgemeinen Form sehen.
+  
+ 
+\hw 
+
+Der Befehl \matrefe{hold} ermöglicht, dass
+man zu einer bereits bestehenden Graphik weitere hinzufügt. Man schaltet diesen
+Modus mit \matref{hold on}{hold} ein und mit \matref{hold off}{hold} aus. Zu beachten ist, dass \matrefe{hold} 
+immer nach dem ersten Plotbefehl kommen muss und nicht davor.

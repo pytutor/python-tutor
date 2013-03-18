@@ -1,0 +1,68 @@
+
+
+# Vergleich logische Indizierung mit Schleife bzw. Mathematik
+
+Die Aufgabe hier ist dreigeteilt und soll einen Vergleich von Algorithmen
+ermöglichen, die mit Hilfe der logischen Indizierung, mit Hilfe von
+\matrefe{for}- und \matrefe{if}-Strukturen, bzw. mit Hilfe von mathematischen
+Formeln erstellt werden.
+
+1. Im ersten Teil erstellen Sie eine \matlab-Funktion
+
+			R = randmeanlog(R)
+
+	die mit Hilfe logischer Indizierung und des Befehls \matrefe{mean} 
+
+	*  alle Werte im Feld $R$, die kleiner als Null sind, durch deren Mittelwert ersetzt;
+
+	*  alle Werte im Feld $R$, die größer als Null sind, durch deren Mittelwert ersetzt.
+
+	Dieses Programm darf neben der Deklarationszeile und eventuellen Kommentaren
+	genau vier Zeilen enthalten, wobei der Befehl \matrefe{mean} genau zweimal
+	vorkommen muss. Andere Befehle wie \matrefe{for}, \matrefe{while},
+	\matrefe{if}, \matrefe{switch}, usw., dürfen nicht verwendet werden. Die
+	Variablen °L_p° und °L_m° (logische Indices für $R>0$ bzw. $R<0$)
+	müssen jeweils genau dreimal vorkommen.
+
+1. Im zweiten Teil erledigen Sie die gleiche Aufgabe in der \matlab-Funktion
+
+			R = randmeanfor(R)
+
+	unter Verwendung von Schleifen. Nun müssen die Befehle \matrefe{for},
+	\matrefe{if} und \matrefe{elseif} jeweils genau zweimal vorkommen, die Befehle
+	\matrefe{sum}, \matrefe{cumsum} oder \matrefe{mean} dürfen jedoch nicht
+	verwendet werden.
+
+	Man braucht dafür zwei Schfeifen, weil man in der ersten Schleife nur die Summe
+	und die Anzahl aller positiven (negativen) Werte berechnen kann. Damit kann man
+	dann die beiden Mittelwerte bestimmen und in der zweiten Schleife an den
+	ensprechenden Positionen zuweisen. Vergessen Sie vor der ersten Schleife nicht
+	die Summen- und Zählervariablen zu initialisieren.
+
+1. Im dritten Teil erledigen Sie eine etwas andere Aufgabe in der
+\matlab-Funktion
+
+			R = randsignum(R)
+
+	unter Verwendung einer mathematischen Funktion in einer einzigen Zeile
+	sollen jetzt alle Werte $R < 0$ durch $-1$ und
+	alle Werte $R > 0$ durch $1$. Überlegen Sie, warum ein solcher Weg für die ersten beiden Aufgaben nicht
+	möglich ist.
+
+
+
+Nach Erledigung dieser Aufgabe sollten Sie verstanden haben, welchen Vorteil
+die logische Indizierung gegenüber Lösungen mit Schleifen hat, und wann man
+einfach mathematische Funktionen verwenden kann.
+
+\hw
+Variablen im Test mit dem Namen °count_testvar_*° reagieren auf die
+falsche Verwendung von Befehlen und Variablen (siehe dazu auch
+°MLTutor_TEST_MESSAGE°). Variablen mit dem Namen °count_lines_*° liefern die Anzahl der
+Programmzeilen (ohne Deklaration oder Kommentare).
+
+\hw
+Die Funktion \matrefe{sign} ist im dritten Teil recht praktisch.
+
+
+

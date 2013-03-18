@@ -1,0 +1,36 @@
+
+# Addieren von Polynomen
+
+Schreiben Sie eine \python-\pyref{Funktion}{def}
+
+		[pout] = polyadd(p1,p2),
+
+welche die Koeffizientenvektoren °p1° und °p2° zweier Polynome
+miteinander addiert, und den resultierenden Koeffizientenvektor
+°pout° zurückgibt. 
+
+\hw
+Koeffizientenvektoren sind in \numpy Zeilenvektoren, die den Koeffizienten zur höchsten 
+Potenz von $x$ an Position 1 enthalten.
+Liegt also ein Polynom
+$$
+  P = c_n x^n + c_{n-1} x^{n-1} + \ldots + c_1 x + c_0
+$$
+vor, dann ist $p$ ein Vektor mit $n+1$ Elementen und der Gestalt
+$$
+  p = 
+  \begin{bmatrix}
+   c_n & c_{n-1} & \ldots & c_1 & c_0
+ \end{bmatrix}
+$$
+
+\hw
+Das Problem beim Addieren von Polynomen ist, dass sie im allgemeinen Fall 
+durch Vektoren unterschiedlicher Länge dargestellt werden. Sie müssen nun einen 
+Weg finden, den kürzeren Vektor auf geeignete Art und Weise mit Nullen zu 
+erweitertn. (Verwenden Sie keine Schleife).
+
+\hw
+Im Test werden zwei Variablen °pout_1° und °pout_2° erzeugt. Bei der 
+Berechnung von °pout_1° ist °p1° das "kuerzere" Polynom, bei °pout_2° ist es umgekehrt.
+

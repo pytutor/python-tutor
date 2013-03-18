@@ -1,0 +1,58 @@
+
+
+# Summen und Schleifen
+
+Gegeben ist eine Matrix °M°. Falls Sie zu Testzwecken eine erzeugen wollen, bietet sich
+der \matlab-Befehl °M=reshape(1:24,4,6)° an. Bei den automatischen Tests ist °M° aber
+vorgegeben.
+
+Erzeugen Sie ein \matlab-Skript °forsum°, das folgende Aufgaben erfüllt:
+
+
+  
+1. Berechnen Sie mit Hilfe des Befehls \matrefe{sum} die Summe über alle Zeilen (°sum_s1°),
+  über alle Spalten (°sum_s2°) und über alle Werte (°sum_st°) und speichern Sie die
+  Ergebnisse in den angegebenen Variablen.
+  
+1. Bestimmen Sie die Anzahl der Zeilen (°nz°), der Spalten (°ns°) und der Elemente
+  (°nn°) von °M° (\matrefe{numel}, \matrefe{size}).
+  
+1. Führen Sie die Summationen über alle Zeilen (°sum_f1°), alle Spalten (°sum_f2°)
+  und alle Elemente (°sum_ft°) nun in drei unterschiedlichen \matrefe{for}-Schleifen durch. Als
+  Schleifenindex müssen Sie die Variablen °kz°, °ks° bzw. °kn° verwenden.
+
+
+Die Befehle \matrefe{sum} und \matrefe{for} müssen im Programm jeweils genau
+dreimal vorkommen, sonst liefert der Test ein falsches Ergebnis. Beachten Sie
+dazu die Varaiablen °count_test_sum° und °count_test_for° und die
+eventuellen Hinweise in °MLTutor_MESSAGE°.
+
+\hw 
+
+Will man mit einem \matrefe{sum}-Befehl über alle Werte summieren, bietet sich an, dass man die
+Summation über einen Spaltenvektor durchführt, welchen man mit Hilfe der
+\matref{Doppelpunkt-Notation}{colon} erzeugt und gleich als Argument für \matrefe{sum} verwendet.
+
+\hw 
+
+Bei der Summation mit \matrefe{for} belegt man die entsprechende Summenvariable vorher mit
+\matref{Nullen}{zeros} in der entsprechenden Größe und beginnt in der Schleife dann hinzuzufügen.
+Die Schleife selbst läuft dann über alle Zeilen oder Spalten oder Elemente. Bei
+Zeilen und Spalten verwendet man die Eigenschaft, dass die arithmetischen
+Operatoren auf ganze Vekoren (Matrizen) wirken.
+
+\hw 
+
+Braucht man eine bestimmte Zeile °z° oder Spalte °s° einer Matrix
+°M°, so erreicht man das mit °M(z,:)° bzw. °M(:,s)°.
+
+\hw 
+
+Für die Summation über alle Werte mit Hilfe von \matrefe{for} braucht man
+auch nur eine einzelne Schleife, da man bei Feldern auch einen einzelnen Index
+verwenden kann. Mit diesem Index zählt man vom ersten Element zuerst entlang
+der Spalten und dann der Zeilen bis zum Ende. In einer $2\times 3$-Matrix $M$
+ist also $M(1)$ gleich $M(1,1)$, $M(2)$ gleich $M(2,1)$, $M(3)$ gleich $M(1,2)$
+und $M(6)$ gleich $M(2,3)$
+
+

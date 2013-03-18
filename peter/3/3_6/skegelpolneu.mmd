@@ -1,0 +1,127 @@
+
+# Kegelschnitte (Skript)
+Schreiben Sie das \matlab-\matref{Skript}{script} °skegelpol.m°, das folgende Aufgaben
+erfüllt:
+
+
+1. Es sollen die \matlab-\matref{Funktionen}{function} °ellipse.m° und °hyperbel.m° aus dem
+vorigen Projekt verwendet werden, um die beiden Kegelschnitte zu berechnen und zu plotten.
+
+1. Die Variablen für die Kegelschnitte: °a°, °b°, °n_points° und 
+°r_0° werden von der automatischen Beispielüberprüfung angelegt.
+Sie dürfen nicht überschrieben werden. Wenn sie das Skript selbst
+ausprobieren wollen, müssen Sie die Variablen im Workspace natürlich selbst
+erzeugen.
+
+1. Die Grundstruktur von °skegelpol.m° soll so gestaltet sein, dass zuerst die Ellipse 
+und dann  die Hyperbel, in jeweils einer eigenen \matrefe{figure}
+gezeichnet werden. Da es sich um eine Polardarstellung handelt, kann nicht \matrefe{plot}, 
+sondern es muss \matrefe{polar} benutzt werden:  
+> °figure  Plotfenster für Ellipse°  
+  °[phi,r] = ...°  
+  °polar(phi,r);  Polarplot der Ellipse°  
+>
+> °figure  Hyperbel°  
+  °[phi,r] = ...°  
+  °polar(phi,r);  Polarplot des rechten Astes der Hyperbel°  
+  °...  Polarplot des linken Astes der Hyperbel°
+>
+Beachten Sie, dass hier die Aufrufe der \matlab-\matref{Funktionen}{function} noch fehlen. 
+Ergänzen Sie das Programm selbstständig.
+
+1. Die Reihenfolge der Plots muss gleich wie in dieser Grundstruktur sein.
+
+1. Überlegen Sie, warum man in einem Fall zwei Plotbefehle braucht, um den
+gesamten Kegelschnitt zu zeichnen. Den linken Ast der Hyperbel kann man dadurch erhalten, dass man
+im Plot statt $\phi$ die Größe $\pi-\phi$ verwendet.
+
+1. Verwenden Sie den \matlab-Befehl \matrefe{title} um die Plots zu 
+beschriften. Mit \matrefe{num2str} können Sie Zahlen in 
+\matrefe{strings} umwandeln und dann mit
+> °ueberschrift = ['Text ',num2str(variable)];°  
+>
+>zu einer \matref{Stringvariable}{strings} zusammenfügen. Die Beschriftung sollte
+dann so aussehen:  
+>  
+°Ellipse: a="Wert von a" b="Wert von b"°   
+°Hyperbel: a="Wert von a" b="Wert von b"° 
+>
+Siehe dazu auch die Beispielplots weiter unten.
+
+Wenn diese Aufgabe erledigt ist, funktionieren die automatischen Tests der Figure noch nicht, da
+noch folgende Aufgaben zu erledigen sind:
+
+  
+1. Zeichnen Sie bei beiden Kegelschnitten **als erste Linie** ein
+  rotes Achsenkreuz mit den Polarkoordinaten
+> °(-pi,0,NaN,-pi/2,pi/2) (r_0,r_0,NaN,r_0,r_0)°
+>
+	Damit bekommt man eine Linie von links nach rechts und eine Linie von unten
+	nach oben. Mit der Zahl \matrefe{nan} als Trennung werden diese beiden Linien nicht verbunden. Beide Linien zusammen sind
+	aber ein Graphikobjekt, das gemeinsam gezeichnet wird. Vergessen Sie nicht auf die Verwendung von
+	\matrefe{hold}! 
+  
+1. Zeichen Sie bei Ellipse und Hyperbel **als zweite Linie** einen roten
+  zentrierten Kasten mit der Ausdehnung $2a\times 2b$. Die Eckpunkte haben die kartesischen Koordinaten
+> °x = (a,-a,-a,a,a) und y = (b,b,-b,-b,b)°
+>
+	Der erste Punkt wiederholt sich dabei am Ende, damit der Linienzug geschlossen ist. Vergessen Sie
+	nicht die kartesischen Koordinaten in Polarkoordinaten umzurechen, $r=\sqrt{x^2+y^2}$ und
+	$\phi=\arctan\frac{y}{x}$ (\matrefe{sqrt}, \matrefe{atan2}).
+
+1. Zeichnen Sie bei der Hyperbel **als dritte Linie** die Asymptoten grün
+ein. Die Polarkoordinaten sind nun  $\phi=(\arctan(b/a),\arctan(-b/{-a}),NaN,\arctan(-b/a),\arctan(b/{-a}))$ und
+$r=(r_0,r_0,NaN,r_0,r_0)$.  
+Verwenden Sie wieder \matrefe{atan2} um die Zugehörigkeit zum richtigen
+Quadranten sicherzustellen.
+
+
+\hw 
+
+Alle diese Linien müssen, in der obigen Reihenfolge, vor den
+Kegelschnitten gezeichnet werden, um einen korrekten Test der Linien/Plots zu
+ermöglichen.
+
+
+\hw 
+
+Bei \matrefe{polar} ist es nicht möglich wie bei \matrefe{plot} gleich
+mehrere Kurven mit einem Aufruf zu zeichen. Man muss daher \matrefe{hold}
+verwenden.
+
+\hw 
+
+Der Befehl \matrefe{hold} ermöglicht, dass
+man zu einer bereits bestehenden Kurve weitere hinzufügt. Man schaltet diesen
+Modus mit \matref{hold on}{hold} ein und mit \matref{hold off}{hold} aus. Zu beachten ist, dass \matrefe{hold} 
+immer **nach** dem ersten Plotbefehl kommen muss und nicht davor:
+ 
+		figure
+		polar ...  %1. Plot
+		hold on
+		polar ...  %2. Plot  
+		...
+  
+		hold off
+
+Es wird damit ein Hinzufügemodus eingeschaltet und es sollte eben schon etwas vorhanden sein.
+Hält man sich nicht an diese Regel, so ergeben sich oft sonderbare Resultate.
+
+
+\bsp
+
+Beispiele für die Graphen der Kegelschnitte:
+  
+
+<div align="center">
+  <table border="0" cellpadding="4" width="800">
+    <tr>
+      <th valign="middle">Ellipse</th>
+      <th valign="middle">Hyperbel</th>
+    </tr>
+    <tr>
+      <td align="center"><img src="files/k_ellipse_ori.png" width="600" alt="test1"></td>
+      <td align="center"><img src="files/k_hyperbel_ori.png" width="600" alt="test1"></td>
+    </tr>
+   </table>
+</div>

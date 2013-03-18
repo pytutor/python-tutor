@@ -1,0 +1,74 @@
+
+
+# Setzen von Default-Werten - Logarithmische Spirale
+Die Übung beschäftigt sich mit dem Setzen von Default-Werten in Funktionen.
+Hierfür ist eine \matlab-\matref{Funktion}{function} °logspirale° und
+ein \matlab-Skript °plotspirale°, das die Ergebnisse der Funktion
+°logspirale° visualisert, zu erzeugen.
+Beachten Sie, dass \red{2 verschiedene m-Files} (2 Tabs) von Ihnen zu erstellen
+sind!
+
+
+ 
+1. Schreiben Sie eine \matlab-\matref{Funktion}{function} °logspirale°, die mit dem Aufruf
+
+			[x,y] = logspirale(t,nu,A,gam)
+
+	folgende Funktionen berechnet:
+	$$
+	\begin{aligned}
+ 	 x(t) &= A \log(1 + \gamma t) \cos(2 \pi \nu t) \\
+	  y(t) &= A \log(1 + \gamma t) \sin(2 \pi \nu t) 
+	\end{aligned}
+	$$
+
+	Wobei °t° ein Zeit-Vektor ist.
+
+	\default
+
+	$$
+	\begin{aligned}
+	    nu  & =  & 3.3  \\
+	    A   & =  & 1.1  \\
+	    gam & =  & 0.9  \\
+	\end{aligned}
+	$$
+
+	Zum Setzen der Defaultwerte sind die Funktionen \matrefe{nargin} und
+	\matref{isempty}{is} zu verwenden. Weitere Informationen finden Sie im Tab
+	"Hints und Links", oder \mltutorhint{Setzen_von_Defaultwerten}{hier}.
+
+	\err 
+
+	Für den Zeitvektor wird kein Defaultwert gesetzt. Wird kein
+	°t°-Vektor oder ein leeres Array (d.h. °t=[]°) als Inputparameter übergeben, dann
+	soll eine Fehlermitteilung ausgegeben werden. Diese Fehlermitteilung
+	muss die Zeichenfolge *time vector* enthalten und kann mit der
+	\matlab-Funktion \matrefe{error} erzeugt werden.
+
+ 2. Schreiben Sie ein \matlab-Script
+
+		plotspirale
+
+	das die Ergebnisse der Funktion °logspirale° visualisiert.
+
+	Erzeugen Sie mit der Funktion \matrefe{linspace} einen Vektor °t° der 400 
+	Stützstellen im Bereich von 0 bis 1.7 enthält. Rufen Sie die Funktion
+	so auf, dass abgesehen von °t° die Default-Werte verwendet werden.
+
+	\graph 
+	
+	Erzeugen Sie einen Plot, der $y(x)$ darstellt und folgende Eigenschaften hat:
+
+	|Element|Wert|Hinweis| 
+	|-|-|-|
+	|Titel|Logarithmische Spirale|\matrefe{title}, siehe auch Hinweis unten!|
+	|Beschriftung x,y-Achse|x,y|\matrefe{xlabel}, \matrefe{ylabel}|
+
+	\hw
+
+	Um eine schönere Darstellung zu bekommen können Sie \matref{axis equal}{axis} 
+	verwenden (Es wird nicht überprüft).
+
+	![Test Bild](data/spirale_log.jpg "Matlab Plot") 
+

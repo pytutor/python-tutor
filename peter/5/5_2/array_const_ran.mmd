@@ -1,0 +1,60 @@
+
+# Matrix mit identischen Inhalten - P2
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °array_const°, 
+die folgende Aufgaben erfüllt:
+
+  
+*  Erzeugen Sie mit den Übergabeparametern °m° und °n° ein Array 
+  °A° mit der Größe  $m \times n$.
+  
+*  Jedes Element von °A° soll dabei den Wert des Übergabeparameters 
+  °v° haben.
+  
+*  Nicht übergebene oder leere Parameter sollen durch folgende 
+  Defaultwerte ersetzt werden: $m=10, n=13, v=15$.
+
+
+\hw
+ Die Verwendung von \matrefe{for}- und \matrefe{while}-Schleifen ist nicht
+ erlaubt. Beachten Sie dazu die Variable °count_test°, bzw. die Hinweise
+ unter °MLTutor_TEST_MESSAGE°.
+ 
+\hw
+Die Befehle \matrefe{if}, \matrefe{nargin} und \matref{isempty}{is} müssen am
+Anfang beim Setzen der Defaultwerte jeweils genau dreimal vorkommen. Die Befehle
+\matrefe{else}, \matrefe{elseif}, \matrefe{switch} sind nicht erlaubt. Die
+Defaultwerte sollen in der kompaktesten Form, wie am Ende dieses
+\mltutorhint{Setzen_von_Defaultwerten}{Links} erläutert, gesetzt werden.
+
+
+\ges 
+Funktion °array_const.m°
+
+	[A] = array_const(m,n,v)
+		m        : Zeilenanzahl    
+		n        : Spaltenanzahl    
+		v        : Wert der Matrix-Elemente    
+		A        : Rückgabematrix
+
+
+\bsp
+
+	A = array_const(2,3,8) 
+
+	A =
+
+     	8     8     8
+     	8     8     8
+
+
+
+\bsp
+
+	A = array_const([],3,6)  
+	  
+	A =
+
+     	6     6     6
+     	6     6     6
+     	6     6     6
+

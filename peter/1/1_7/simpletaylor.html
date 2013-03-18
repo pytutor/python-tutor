@@ -1,0 +1,22 @@
+<html><head><script type="text/x-mathjax-config">  MathJax.Hub.Config({    extensions: ["tex2jax.js"],    jax: ["input/TeX", "output/HTML-CSS"],    tex2jax: {      inlineMath: [ ['$','$'], ["\\(","\\)"] ],      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],      processEscapes: true    },    "HTML-CSS": { availableFonts: ["TeX"] }  });</script> <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script><script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script><link href="http://itptutor.tugraz.at:8080/mltutor/example/css/common.css" media="screen" rel="stylesheet" type="text/css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><h1>Taylorreihe des Sinus</h1><p>Die Taylorreihe für den Sinus bis zum vierten Glied lautet: $$
+  \sin(x) = x - \frac{x^3}{6} + \frac{x^5}{120} -
+  \frac{x^7}{5040} +  \ldots
+$$</p><p>Ziel dieser Übung ist, zu visualisieren, wie sich die Taylorreihe mit jedem berechneten Glied dem exakten Ergebnis annähert (<a href="http://de.wikipedia.org/wiki/Taylorreihe">Artikel der Wikipedia</a>).</p><p>Definieren Sie im skript <code>simple_taylor</code> folgende Variablen:</p><p><code>x_max = 2*pi</code><br/><code>x   = Vektor mit 200 Stützstellen auf [-x_max,x_max]</code> (<matrefe>linspace</matrefe>)<br/><code>lim  = 1.5</code> </p><p>Berechnen Sie damit die Variable <code>y</code>, welche als Werte den Sinus von <code>x</code> enthalten soll. Berechnen sie weiters <code>y1</code>, <code>y2</code>, <code>y3</code> und <code>y4</code>, welche die Werte für die (oben ersichtlichen) ersten vier Terme der Taylorreihe enthalten sollen (z.B. $y4=-\frac{x^7}{5040}$).</p><p>Verwenden Sie den Befehl <matrefe>subplot</matrefe>, um eine <matrefe>figure</matrefe> mit mehrere Achsensystemen zu erzeugen.</p><p><hw></hw> </p><p><subplot></subplot> erwartet 3 Inputargumente. Dabei gibt das erste die Anzahl der &ldquo;Zeilen&rdquo; und das zweite die Anzahl der &ldquo;Spalten&rdquo; im Graphikfenster an. Das dritte Argument gibt als fortlaufende Zahl das aktive Achsensystem an. Diese Zahl kann alle Werte von $1$ bis $(Zeilen
+\times Spalten)$ annehmen. Dabei wird folgendermaßen durchnummeriert:</p><p><img src="figure_aufteilung.png"  alt="Figure Aufteilung"/></p><p><strong>Code-Beispiel</strong></p>
+<pre><code>    subplot(2,3,1) 
+    % plotbefehle für den ersten Plot
+    ...
+    subplot(2,3,2)
+    % Plotbefehle für den zweiten Plot
+    ...
+    subplot(2,3,3)
+    % Plotbefehle für den dritten Plot
+    ...
+    % usw. 
+</code></pre><p><graph></graph></p><p>Stellen Sie $2 \times 2$ Achsensysteme in einer <matrefe>figure</matrefe> dar. Jedes dieser Achsensysteme soll den Graphen der Funktion $\sin(x)$ mit einer blauen, durchgezogenen Linie darstellen. Zusätzlich dazu plotten Sie (jeweils mit einer roten strichlierten Linie) im Achsensystem:</p>
+<ul>
+  <li><p>die lineare Näherung</p></li>
+  <li><p>die kubische Näherung</p></li>
+  <li><p>die Taylorreihe bis zum dritten Glied</p></li>
+  <li><p>die Taylorreihe bis zum vierten Glied</p></li>
+</ul><p>Dabei soll in jedem Subplot zuerst die blaue Linie und dann die rote gezeichnet werden. Beschriften Sie jeweils die Achsen, und erzeugen Sie auch eine Überschrift. Für eine schönere Darstellung empfiehlt es sich, die Grenzen der x-Achse auf <code>[-x_max,x_max]</code> und die der y-Achse auf <code>[-lim,lim]</code> zu setzen (<matrefe>xlim</matrefe>).</p><p>Ihre Graphik sollte in etwa so aussehen:</p><p><img src="anschau_ori.png"  alt="Taylor Entwicklung"/></p><p><hw></hw> </p><p>Da die Variablen <code>y1</code> bis <code>y4</code> nur die einzelnen Terme der Reihe enthalten, genügt es nicht, nur z.B. <code>y4</code> über <code>x</code> zu plotten. Stattdessen müssen beim Plotten natürlich alle Terme niedriger Ordnung dazuaddiert werden.</p><p><hw></hw> </p><p>Streng genommen ist die Bezeichnung der Terme mit den Indizes 1 bis 4 ungenau. Mathematisch gesehen ist bei einer Taylorreihe nämlich der erste Term jener, in dem $x^0$ vorkommt, der zweite jener mit $x^1$, der dritte (quadratische) mit $x^2$ usw.</p></body><script type="text/javascript" src="http://itptutor.tugraz.at:8080/mltutor/example/js/footer.js"></script></html>

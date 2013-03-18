@@ -1,0 +1,73 @@
+# Kombination von Funktionen - V1
+Die Übung beschäftigt sich mit der Berechnung und dem Plotten 
+von einfachen Funktionen.
+Erzeugen Sie dafür im \matlab-Skript °basis4a° (File: °basis4a.m°)
+ein Programm, das die Funktionen berechnet und graphisch darstellt.
+
+Erzeugen sie mit den Formeln
+$$
+\begin{aligned}
+  x_a  &= -2 \pi \\
+  x_e  &= +2 \pi \\
+  x_n  &= 180
+\end{aligned}
+$$
+die Variablen °x_a°, °x_e° und °x_n°. Erzeugen Sie einen Vektor
+°x° mit °x_n° äquidistanten Werten zwischen obigem Anfangs- und Endpunkt (\matrefe{linspace}).
+
+Berechnen Sie damit die Funktionen (Namen: °f1°, °f2° und °f3°)
+$$
+\begin{aligned}
+  f_1  &= \frac{x}{2\pi} \; \sin(x) \\
+  f_2  &= \frac{x^2}{(2\pi)^2} \; \sin^2(x) \\
+  f_3  &= \frac{x^3}{(2\pi)^3} \; \sin^3(x)  ,
+\end{aligned}
+$$
+wobei folgende Links hilfreich sein können: \matrefe{sqrt}, \matrefe{sin},
+\matrefe{cos}, \matrefe{pi}. 
+
+\matref{Plotten}{plot} sie in einer \matrefe{figure} die Funktionen $f_1(x)$
+(rot), $f_2(x)$ (blau) und $f_3(x)$ (grün). Versehen
+Sie die Zeichnung mit einer Beschriftung (\matrefe{xlabel}, \matrefe{ylabel})
+der x-Achse (°x°) und der y-Achse (°f(x)°).
+Stellen Sie die Limits der x-Achse auf die Werte von $x_a$ und $x_e$ ein
+(\matrefe{xlim}). 
+Außerdem soll es eine \matref{Legende}{legend} geben, wobei
+die Bezeichnungen der Linien in der Legende °f1(x)°, °f2(x)° und
+°f3(x)° sein sollen. Hinweise zur Positionierung der Legende finden Sie
+unter dem entsprechenden \matrefe{helpbrowser}-Stichwort.
+
+Schreiben Sie am Anfang des Skripts einige Hilfezeilen. Diese sollen dann in
+der Konsole mit dem Befehl \matref{help basis4a}{help} aufgerufen werden
+können. Hinweise zu diesen Hilfetexten finden Sie unter folgender \mltutorhint{Hilfe}{Hinweissammlung}. 
+Zur automatischen Überprüfung soll der Hilfetext zumindest folgendes enthalten:
+
+	Matlab Skript: "Name des Skripts"  
+	Plotten von Funktionen  
+	Name: "Vorname" "Nachname"  
+	Datum: "Datum im Format TT.MM.JJJJ"  
+
+Geben Sie diesen Text und diese Daten ohne das Zeichen °"° ein. Bitte
+verwenden Sie keine Umlaute und kein ß, der Test kommt derzeit damit nicht zu
+Rande.
+
+\hw 
+
+Vergessen Sie nicht den Strichpunkt am Ende einer Anweisungszeile. 
+Kein abgegebenes Beispiel soll eine Ausgabe erzeugen, die nur durch das Weglassen des Strichpunktes 
+am Ende einer Zeile entsteht (Infos dazu auch im 
+\wikilink unter:
+\mltutorhint{Strichpunkt}{MLTutor Hints}).
+
+\hw 
+
+In keiner Testaufgabe soll der \matlab-Befehl \matrefe{clear} verwendet werden. 
+Infos dazu auch im \wikilink
+unter: \mltutorhint{clear}{MLTutor Hints}.
+
+\hw 
+
+Infos zum Plotten findet man auch in diesem \matlabpublish{simplestart2}{Skript},
+Spezifikationen über Linienarten findet man unter dem Link \matrefe{linespec}.
+
+

@@ -1,0 +1,53 @@
+# Hyperbolische Funktionen - P1
+Erzeugen Sie ein \matlab-Skript °basis3a°, welches
+eine einfache Darstellung der hyperbolischen Funktionen macht. 
+
+Definieren Sie die Variablen (Namen: °x_a°, °x_e° und °n°) mit
+den Werten
+$$
+x_\mathrm{a} = -3.0 \;\; , \;\; x_\mathrm{e} = 3.0 \;\; , \;\; n = 250 \; .
+$$
+
+Erzeugen Sie mit dem \matlab-Befehl \matrefe{linspace} einen Vektor $x$ von
+$x_\mathrm{a}$ bis $x_\mathrm{e}$ mit $n$ Werten. 
+
+Berechnen Sie damit die vier hyperbolischen Funktionen ${\mathrm \sinh}$,
+${\mathrm \cosh}$, ${\mathrm \tanh}$ und ${\mathrm \coth}$ und speichern Sie die
+Werte in den Variablen °y_sinh°, °y_cosh°, °y_tanh° und °y_coth°.
+
+Damit sollten Sie nun insgesamt fünf Zeilenvektoren der Länge °n° haben, die man zeichnen
+kann. \matref{Plotten}{plot} Sie jetzt in einer \matrefe{figure} den Sinus Hyperbolicus 
+mit einer schwarzen Linie,
+den Cosinus Hyperbolicus (rot), den Tangens Hyperbolicus (grün) und
+den Cotangens Hyperbolicus (blau). Alle Linien sollten
+durchgehend sein. Spezifikationen über Linienarten finden Sie unter
+dem Link \matrefe{linespec}. 
+
+Setzen Sie danach die y-Limits mit dem Befehl \matrefe{ylim} auf $\mp$ des
+\matref{Maximalwertes}{max} des Sinus Hyperbolicus. Der Befehl \matrefe{ylim} benötigt als 
+Input einen Vektor von zwei Werten.
+Einen solchen kann man z.B. mit
+°["Wert 1","Wert 2"]° erzeugen. (Dabei
+müssen die °"° nicht eingegeben werden). 
+
+Setzen Sie die x-Limits mit dem Befehl \matrefe{xlim} auf $x_\mathrm{a}$ bzw.
+$x_\mathrm{e}$
+
+Mit den Befehlen \matrefe{xlabel}, \matrefe{ylabel} und \matrefe{title} kann man Achsenbezeichnungen
+und einen Achsentitel erzeugen. Diese sollen in diesem Beispiel *x*, *y(x)* und *Hyperbolische Funktionen* sein.  
+
+\hw 
+
+Infos zum Plotten findet man auch in diesem \matlabpublish{simplestart2}{Skript}.
+
+\hw 
+
+Im Testbetrieb ist es unbedingt notwendig, dass die Kurven in der angegebenen Reihenfolge
+gezeichnet werden. Hier also unbedingt in der Reihenfolge Sinus Hyperbolicus, Cosinus Hyperbolicus,
+Tangens Hyperbolicus und Cotangens Hyperbolicus.
+
+
+
+
+
+

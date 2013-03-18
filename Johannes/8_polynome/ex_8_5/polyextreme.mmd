@@ -1,0 +1,28 @@
+
+
+# Extremstellen und Wendepunkte eines Polynoms
+
+Schreiben Sie eine \pyref{Funktion}{def}
+
+		polyextreme(p),
+
+welche die Maxima, Minima und Wendepunkte (xmax,ymax,xmin,ymin,xinfl,yinfl) (engl.:
+[inflection points](http://en.wikipedia.org/wiki/Inflexion_point)) eines Polynoms berechnet.
+
+\hw 
+  
+*  Nullstellen findet man bei Polynomen mit \numpyref{roots}.
+  
+*  Die Maxima und Minima liegen an den Nullstellen der ersten Ableitung (\numpyref{polyder}).
+  
+*  Es handelt sich um ein Maximum, wenn $y"(x) < 0$ ist. Ein Minimum
+  liegt vor, wenn $y"(x) > 0$ ist. Verwenden Sie für diese Unterscheidung die logische Indizierung.
+  
+*   Die Wendepunkte findet man schließlich an den Nullstellen von $y"(x)$.
+
+\hw
+
+Zur Illustration wird von der Testroutine ein Plot erzeugt.
+
+
+

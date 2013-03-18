@@ -1,0 +1,116 @@
+
+
+# Index und Doppelpunkt - P2
+Schreiben Sie ein \matlab-Skript °sindex°, das für eine vorgegebene Matrix °M° folgende
+Aufgaben erledigt (siehe auch Skriptum \appsoftkapitel{3}), lesen Sie zuerst
+die Hinweise (siehe unten) durch:
+
+
+  
+1. Speichern Sie folgende Information in den angegebenen Variablen:
+
+	[°ndim °:] Dimension von °M°
+  
+	[°len °:] Länge von °M°
+  
+	[°siz °:] Größe von °M°
+  
+	[°num °:] Anzahl der Elemente in °M°
+
+1. Speichern Sie folgende Skalare aus °M°:
+
+	[°n1 °:] fünfte Zeile, vierte Spalte
+  
+	[°n2 °:] elfte Position
+  
+	[°n3 °:] letzte Position (\matrefe{end})
+  
+	[°n4 °:] vorletzte Position 
+
+1. Speichern Sie folgende Zeilenvektoren aus °M°:
+  
+	[°z1 °:] dritte bis achte Position
+  
+	[°z2 °:] erste bis letzte Position mit Schrittweite fünf
+  
+	[°z3 °:] erste, achte und sechste Position
+  
+	[°z4 °:] zweite und vorletzte Position
+  
+	[°z5 °:] dritte bis vorvorletzte Position
+  
+	[°z6 °:] vierte Zeile, alle Spalten
+  
+	[°z7 °:] alle Werte
+  
+	[°z8 °:] letzte bis erste Position, denken sie an die Verwendung 
+ von °-1° als Schrittweite. Verwenden Sie auf keinen Fall \matrefe{flipud}
+ oder \matrefe{fliplr}
+  
+	[°z9 °:] erste, zweimal zweite, dreimal dritte Position
+
+1. Speichern Sie folgende Spaltenvektoren aus °M°:
+  
+	[°s1 °:] alle Werte
+  
+	[°s2 °:] alle Zeilen, fünfte Spalte
+  
+	[°s3 °:] alle Zeilen, vorletzte Spalte);
+  
+	[°s4 °:] erste bis vorletzte Zeile, vorletzte Spalte
+  
+	[°s5 °:] letzte bis erste Zeile, zweite Spalte
+  
+	[°s6 °:] letzte bis erste Position
+  
+	[°s7 °:] alle Zeilen, mittlere Spalte
+  
+	Bei einer geraden Anzahl von Spalten gibt es keine mittlere Spalte. Gemeint ist dann die
+	vorherige Spalte, z.B. $6/2=3$ bzw. $5/2=2.5\rightarrow 3$. D.h. die mittlere Spalte von sechs
+	Spalten soll die dritte sein und die mittlere von fünf Spalten soll auch die dritte sein. Der Befehl
+	\matrefe{ceil} erzeugt aus einer reellen Zahl, die nächsthöhere ganze Zahl. Ganze Zahlen werden
+	durch \matrefe{ceil} nicht beeinflusst.
+ 
+1. Speichern Sie folgende Matrizen aus °M°:
+  
+	[°m1 °:] dritte bis fünfte Zeile, alle Spalten
+  
+	[°m2 °:] erste bis letzte Zeile mit Schrittweite 2, alle Spalten
+  
+	[°m3 °:] alle Zeilen, zweite bis vorletzte Spalte
+  
+	[°m4 °:] erste bis letzte Zeile mit Schrittweite 3, erste bis letzte Spalte mit Schrittweite 2;
+  
+	[°m5 °:] zweite und vorletzte Zeile, zweite und vorletzte Spalte
+  
+	[°m6 °:] dreimal die vierte Zeile, alle Spalten
+  
+	[°m7 °:] letzte bis erste Zeile, dritte bis zweite Spalte
+  
+	[°m8 °:] die drei mittleren Zeilen, die drei mittleren Spalten (siehe Erläuterung zu °s7°)
+
+1. Erzeugen Sie drei Matrizen °M1°, °M2°, °M3° mit dem gleichen Inhalt wie °M° und 
+ ersetzen Sie Teile ihres Inhalts: 
+  
+	[°M1 °:] erste bis letzte Position mit der Schrittweite 2, durch Wert \matrefe{nan}
+  
+	[°M2 °:] erste bis letzte Zeile mit der Schrittweite 2, alle Spalten, durch Wert \matrefe{nan}
+  
+	[°M3 °:] zweite bis vorletzten Zeile, vorletzte Spalte, durch Wert Null
+ 
+
+
+
+\hw Wichtige Befehle: \matrefe{ndims}, \matrefe{length}, \matrefe{size}, \matrefe{numel}, \matrefe{colon}
+
+\hw Verwendet man in einer zweidimensionalen Matrix zwei Indices, dann steht der erste für die Zeile und der zweite 
+für die Spalte.
+
+\hw Verwendet man nur einen Index in einer $(m\times n)$-Matrix, 
+dann läuft dieser von der Position $(1,1)$ entlang der ersten Spalte bis $(m,1)$, 
+dann von $(1,2)$ bis $(m,2)$, usw., und schließlich von $(1,n)$ bis $(m,n)$.
+
+\hw Für den letzten Wert kann man das \matlab-Keyword \matrefe{end} verwenden. Dies gilt für Zeile, Spalte oder die Position. 
+Damit kann man auch rechnen (z.B.: vorvorletzte Spalte \matref{end-2}{end}, die mittlere \matref{ceil(end/2)}{end}).
+
+

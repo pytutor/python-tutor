@@ -1,0 +1,86 @@
+
+
+# Einfacher Plot von Vektoren - P1
+Erzeugen Sie im \matlab-Skript °basis2° (File: °basis2.m°)
+die Variablen °x_start°, °x_end° und °x_delta° und geben ihnen die Werte
+°-4°, °4° und °0.1°. 
+
+Erzeugen Sie den Zeilenvektor °x_1° mit Werten zwischen °x_start° und °x_end°
+und einer Schrittweite von °Eins°. Dazu eignet sich die \matref{Doppelpunkt-Notation}{colon}.
+
+Rechnen Sie damit folgende Formel aus
+$$
+y_1 = x_1 \left|x_1\right| \; .
+$$
+An diesem einfachen Beispiel sieht man nun den Unterschied zwischen mathematischer Schreibweise und
+der Schreibweise in Programmen. 
+
+
+
+  
+*  Indizes von Variablen, wie z.B. $y_\mathrm{1}$ oder $x_{\mathrm{end}}$
+  schreibt man häufig °y_1° oder
+  °x_end°. Der Unterstrich °_° ist übrigens das einzige Sonderzeichen, das in Variablen-
+  und Programmnamen vorkommen darf.
+  
+*  Der Absolutbetrag $\left|x_\mathrm{1}\right|$ muss natürlich mit einem
+  (vorgegebenen) Programm berechnet werden, und zwar mit \matrefe{abs}.
+  
+*  In mathematischer Schreibweise muss der
+  Multiplikationsoperator nicht unbedingt geschrieben werden. Man kann also
+  statt $x_\mathrm{1} \cdot \left|x_\mathrm{1}\right|$ auch einfach
+  $x_\mathrm{1} \left|x_\mathrm{1}\right|$ schreiben. In einer
+  Programmiersprache wie \matlab muss man natürlich zwischen Teilen von Formeln unbedingt Operatoren verwenden, und zwar in diesem Fall einen \matref{arithmetischen Operator}{arithmeticoperators},
+  nämlich °.*°.
+
+
+Erzeugen Sie den Zeilenvektor °x_2° mit Werten zwischen °x_start° und °x_end°
+und einer Schrittweite von °x_delta°. 
+
+Berechnen Sie damit
+$$ 
+y_\mathrm{2} = x_2^2+\frac{1}{x_2^2+75} \; .
+$$
+In der Mathematik wird Potenzieren durch hochgestellte Zeichen, wie z.B. $x^2$, symbolisiert.
+In \matlab verwendet man zum Potenzieren von Skalaren und Matrizen den Operator
+°^° und °.^° für das elementweise Potenzieren von ganzen Zahlenfeldern
+bzw. Arrays (siehe dazu auch \matref{arithmetische
+Operatoren}{arithmeticoperators}).
+ 
+Plotten Sie in einer gemeinsamen \matrefe{figure} die beiden Kurven
+$y_\mathrm{1}(x_\mathrm{1})$ (rote durchgezogene Linie mit Marker °o°) und
+$y_\mathrm{2}(x_\mathrm{2})$ (blaue durchgezogene Linie mit Marker °o°).
+Dazu eignet sich der \matlab-Befehl \matrefe{plot} (siehe dazu auch die
+Hinweise in dieser \matlabpublish{simplestart2}{Zusammenfassung}). Spezifikationen über Linienarten
+findet man unter dem Link \matrefe{linespec}.
+
+\hw 
+
+Beim Betrachten der Kurven sollte Ihnen klar sein, warum die rote Kurve
+viel eckiger aussieht als die blaue Kurve. 
+
+
+
+Schreiben Sie am Anfang des Skripts einige Hilfezeilen. Diese sollen dann in der Konsole mit dem Befehl \matref{help basis2}{help} aufgerufen werden können. Hinweise zu diesen Hilfetexten finden Sie unter folgender \mltutorhint{Hilfe}{Hinweissammlung}. Zur
+automatischen Überprüfung soll der Hilfetext zumindest Folgendes enthalten:
+
+	Matlab Skript: "Name des Skripts"  
+	Einfaches Plotprogramm  
+	Name: "Vorname" "Nachname"  
+	Datum: "Datum im Format TT.MM.JJJJ"
+
+Geben sie diesen Text und diese Daten ohne das Zeichen °"° ein. Bitte
+verwenden Sie auch keine Umlaute und kein ß, der Test kommt derzeit damit nicht
+zu Rande.
+
+\hw 
+
+Im Testbetrieb ist es unbedingt notwendig, dass die Kurven in der angegebenen Reihenfolge
+gezeichnet werden. Hier also unbedingt $y_\mathrm{1}(x_\mathrm{1})$ vor
+$y_\mathrm{2}(x_\mathrm{2})$.
+
+\hw 
+
+Vergessen Sie nicht den Strichpunkt am Ende einer Anweisungszeile. Kein abgegebenes Beispiel soll eine Ausgabe erzeugen, die nur durch das Weglassen des Strichpunktes am Ende einer Zeile entsteht 
+(Infos dazu auch im \wikilink unter:
+\mltutorhint{Strichpunkt}{MLTutor Hints}).

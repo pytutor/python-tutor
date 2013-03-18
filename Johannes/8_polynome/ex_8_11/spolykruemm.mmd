@@ -1,0 +1,40 @@
+
+
+# Darstellung eines Polynoms und eines Krümmungskreises
+
+Schreiben Sie ein \python-Skript °spolykruemm°,
+welches die Krümmung und den Schmiegekreis im Maximum (Variable: °xmax°) des Polynoms
+$$ 
+  p = -0.25x^2+1.2x-1.4
+$$
+berechnet und darstellt.
+Verwenden Sie die eigenen Funktionen °polyextreme° und °polykruemm° 
+und die Variablen °kappa°, °mx°, °my°.
+
+\graph
+ 
+  
+*  Zeichnen Sie das Polynom als blaue Linie über dem Vektor °w°,
+  der im Intervall $[-2,7]$ 200 Stützstellen enthalten soll.
+  
+*  Zeichnen Sie den Schmiegekreis mit einer roten Linie ein. Verwenden Sie 
+  die Funktion °kreis° um die $x$- und $y$-Koordinaten 
+  (Variablen: °x_circ,y_circ°) für einen Vektor °phi° zu berechnen, 
+  der im Intervall $[0,2\pi]$ ebenfalls 200 Stützstellen enthält. Der
+  Radius (Variable: °r°) des Schmiegekreises ist gegeben durch $\frac{1}{\kappa}$.
+  
+*  Zeichnen Sie den Mittelpunkt des Kreises mit einem roten x ein.
+  
+*  Zeichnen Sie den Radius bei $\varphi=\frac{5}{4}\pi$ mit einer schwarzen 
+  Linie ein. Der Radius ist nichts anderes als die Linie vom Mittelpunkt zum 
+  Punkt der bei $\frac{5}{4}$ auf der Kreislinie liegt. Verwenden Sie für 
+  diesen Punkt die Variablen °x_rad,y_rad°.
+  
+*  Erzeugen Sie eine beliebige Achsenbeschriftung und Überschrift.
+  
+*  Damit der Kreis tasächlich als Kreis dargestellt wird, müssen Sie \mplotref{axis('equal')}{axis} verwenden.
+
+
+\hw
+
+Wie man die Farbe und den Marker einer Linie beeinflussen kann finden Sie unter \mplotref{plot}.

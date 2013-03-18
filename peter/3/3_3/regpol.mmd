@@ -1,0 +1,124 @@
+# Reguläre Polyeder
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °regpol.m°, die folgende Aufgaben
+erfüllt:
+
+
+1. Für eine vorgegebene Kantenlänge °a° soll das Volumen °V°, die Oberfläche °F°, der Radius der umschreibenden Kugel °R° und der Radius der einbeschriebenen Kugel °r° wahlweise für einen der 5 regulären konvexen Polyeder (Tetraeder, Würfel, Oktaeder, Dodekaeder, Ikosaeder) berechnet werden.
+
+1. Mit der String-Variable °typ° soll der Typ des regulären Polyeders übergeben werden. Verwenden sie die Buchstaben °'t', 'w', 'o', 'd'° bzw. °'i'° um einen der Polyeder auszuwählen.
+
+1. Die Funktion soll für einen Vektor von °a°-Werten funktionieren und gleich lange Vektoren mit den Resultaten für °V°, °F°, °R° und °r° zurückgeben. 
+
+1. In der Funktion soll zur Unterscheidung der Fälle die \matref{switch}{switch}-Konstruktion verwendet werden:  
+		
+		switch lower(typ(1))
+			case 't'
+				...
+	
+			case 'w'  
+				...
+			... 
+		end 
+	
+	Überlegen Sie, welche Zeichenkette man als °typ° übergeben kann, was °typ(1)°
+	bedeutet, und was
+	der Befehl \matrefe{lower} dabei bewirkt. Sie können die Befehle wie immer in
+	der Matlab-Konsole ausprobieren.
+	
+	Im Einführungsbeispiel zu dieser Übung *''Steuerstrukturen: switch-Entscheidung''* können
+	Sie im Tab *Extra Files* mehrere Beispiele für \matref{switch} ausprobieren.
+	
+1.  Wenn der Typ unbekannt ist (\matrefe{otherwise}), geben Sie mit dem Befehl \matrefe{error} folgende 
+	Fehlermitteilung aus: 
+	   
+	*Unbekannter Typ*
+
+	\matlab bricht dann die Ausführung des Programms dort ab. 
+
+
+# Mathematische Grundlagen
+
+  
+1. Tetraeder
+	$$
+	\begin{aligned}
+	&V = \frac{a^3}{12} \sqrt{2} 
+	&F = a^2 \sqrt{3} \\
+	&R = \frac{a}{4} \sqrt{6} 
+	&r = \frac{a}{12} \sqrt{6} 
+	\end{aligned}
+	$$
+  
+1. Würfel
+	$$
+    \begin{aligned}
+      &V = a^3 
+      &F = 6a^2  \\
+      &R = \frac{a}{2} \sqrt{3} 
+      &r = \frac{a}{2} 
+    \end{aligned}
+    $$
+  
+1. Oktaeder
+	$$
+    \begin{aligned}
+      &V = \frac{a^3}{3} \sqrt{2} 
+      &F = 2a^2 \sqrt{3} \\
+      &R = \frac{a}{2} \sqrt{2} 
+      &r = \frac{a}{6} \sqrt{6} 
+    \end{aligned}
+    $$
+  
+1. Dodekaeder
+	$$
+    \begin{aligned}
+      &V = \frac{a^3}{4} \left(15 + 7\sqrt{5}\right) 
+      &F = 3a^2 \sqrt{5\left(5 + 2\sqrt{5}\right) } \\
+      &R = \frac{a}{4} \left( 1 + \sqrt{5} \right) \sqrt{3} 
+      &r = \frac{a}{4} \sqrt{ \frac{50 + 22\sqrt{5}}{5} } 
+    \end{aligned}
+    $$
+  
+1. Ikosaeder
+	$$
+    \begin{aligned}
+      &V = \frac{5a^3}{12} \left(3 + \sqrt{5}\right) 
+      &F = 5a^2 \sqrt{3} \\
+      &R = \frac{a}{4} \sqrt{ 2 \left( 5 + \sqrt{5} \right) } 
+      &r = \frac{a}{2} \sqrt{ \frac{7 + 3\sqrt{5}}{6} } 
+    \end{aligned}
+    $$
+
+
+
+\ges 
+
+Funktion °regpol.m° 
+ 
+	[V,F,R,r] = regpol(typ,a)
+		typ : String, Typ des Polyeders ('t','w','o','d' bzw. 'i')  
+		a   : Vektor, Kantenlänge des Polyeders  
+		V   : Vektor, Volumen des Polyeders  
+		F   : Vektor, Oberfläche des Polyeders  
+		R   : Vektor, Radius der umschreibenden Kugel  
+		r   : Vektor, Radius der einbeschriebenen Kugel  
+
+
+\bsp
+
+	[V,F,R,r] = regpol('w',3)
+		V = 27  
+		F = 54  
+		R = 2.5981  
+		r = 1.5000
+
+\bsp
+
+	[V,F,R,r] = regpol('w',[1,2,3,10])
+		V = 1         8         27        1000  
+		F = 6    	  24    	54   	  600  
+		R = 0.8660    1.7321    2.5981    8.6603  
+		r = 0.5000    1.0000    1.5000    5.0000  
+
+
+	

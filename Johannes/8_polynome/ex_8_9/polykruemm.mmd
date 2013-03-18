@@ -1,0 +1,24 @@
+  
+
+# Krümmung und Schmiegekreis an ein Polynom
+
+Schreiben Sie eine \python-\pyref{Funktion}{def}
+ 
+		[kappa,mx,my] = polykruemm(p,x),
+ 
+welche die Krümmung (°kappa°)
+$$
+  \kappa = \left| \frac{y"(x)}{\left[1 + (y'(x))^2\right]^{3/2}}\right|
+$$
+und den Mittelpunkt des Schmiegekreises (°mx°,°my°)
+$$
+\begin{aligned}
+  m_x & = & x - \frac{y'(x)\cdot(1+(y'(x))^2)}{y"(x)} \\
+  m_y & = & y + \frac{1+(y'(x))^2}{y"(x)} 
+\end{aligned}
+$$
+in den Punkten °x° berechnet. Sie müssen die Funktion also so schreiben, 
+dass °x° als Vektor zugelassen wird.
+
+
+

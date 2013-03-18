@@ -1,0 +1,113 @@
+# Mathematische Identitäten - V4
+Erzeugen ein \matlab-Skript °basis5°,
+welches einige mathematische Identitäten überprüft.
+
+Das Skript soll folgende Dinge tun:
+
+* Lesen sie zwei Zahlen °x° und °y° von der Tastatur ein
+(\matrefe{input}). Im Testbetrieb erfolgt die Eingabe automatisch ohne eine Aktion von ihnen. 
+
+	Der Text für die Eingabeaufforderung sollte
+
+		Bitte geben Sie x ein:  
+		Bitte geben Sie y ein:  
+
+	sein. Dies wird im Test überprüft. Sie dürfen hier auf keinen Fall die zweite
+	Variante von \matrefe{input} verwenden, da das Ergebnis eine Zahl und keine
+	Zeichenkette sein muss, also, z.B.,
+
+		num = input('Text fuer num: ');
+
+	und nicht
+
+		num = input('Text fuer num: ','s');
+
+	Überlegen sie sich auch durch Ausprobieren in der Konsole was der Unterschied
+	ist.
+	
+* Prüfen Sie durch Ausrechnen der linken und rechten Seite der
+  unten angeführten Identitäten die Richtigkeit der Formeln nach. Die Konstante
+  $i = \sqrt{-1}$ steht in \matlab zur Verfügung, sofern nicht vorher durch
+  eine Anweisung °i=...° der Wert überschrieben wurde. Beachten Sie auch
+  folgende \mltutorhint{imag}{Hinweise} zu imaginären Zahlen. Dieser Hinweis erklärt,
+  warum man besser °5i° statt `5*i`verwendet.
+ 
+* Verwenden Sie die
+  Variablennamen °left° (links) und °right° (rechts) für die
+  Berechnungen und benutzen °n° aus der Tabelle als Index, z.B.
+  °left(1)° oder °right(5)°.
+
+	Vorher geben sie bitte die Programmzeilen
+
+		left  = zeros(1,7);  
+		right = zeros(1,7);  
+
+	ein. Sie erzeugen damit zwei Felder mit jeweils einer Zeile und sieben Spalten
+	mit lauter Nullen. Damit erreicht man, dass danach die Felder nicht bei jedem
+	Schritt im Speicher vergrößert werden müssen.
+
+    | n   | left    | right    |  
+    | :-: | ------- | -------- |  
+    | 1   | $\log(x / y)$ | $\log(x) - \log(y)$ |
+    | 2   | $e^{-i x}$ | $\cos(x) - i \sin(x)$ |
+    | 3   | $e^{x-y}$ | $e^x / e^y$ |
+    | 4   | $\cosh(x+y)$ | $\cosh(x)\cdot\cosh(y) + \sinh(x)\cdot\sinh(y)$ |
+    | 5   | $\sinh(x)$ | $(e^{x} - e^{-x})/2$ |
+    | 6   | $\cos(2*x)$ | $2*\cos^{2}(x)-1$ |
+    | 7   | $\sinh(2*x)$ | $2 \cdot \sinh(x) \cosh(x)$ |  
+  
+	Sie sollten nun zwei Vektoren der Länge °7° haben.
+  
+* Man kann die Gleichheit von zwei Zahlen (oder gleich großen Matrizen) im Prinzip mit dem 
+  Operator °==° überprüfen. Das führt aber nicht immer zum gewünschten 
+  Ergebnis, da bei unterschiedlichen numerischen Berechnungen manchmal
+  Differenzen in den letzten Kommastellen auftreten. Eine alternative
+  Möglichkeit ist daher zu überprüfen, ob die Differenz von zwei Zahlen
+  kleiner als die sehr kleine Zahl \matrefe{eps} ist. In wenigen Fällen reicht
+  sogar \matrefe{eps} noch nicht aus um numerisch die Äquivalenz von zwei
+  Ergebnissen zu zeigen, mit °10*eps° ist man aber meist auf der sicheren Seite. 
+  
+* Eine bessere Prognose hängt aber
+  von der Größe der zu vergleichenden Zahlen ab. 
+  
+	Die zwei Alternativen können also so geschrieben werden:
+
+		v_exakt = left == right;  
+		v_eps   = abs(left-right) < 10*eps;  
+ 
+	In beiden Fällen bekommt man eine logische Variable (°v_exakt° bzw.
+	°v_eps°). Logische Variablen
+	haben entweder den Wert °0° (falsch) oder °1° (wahr). In diesem Beispiel sind sie
+	Vektoren mit Vergleichsergebnissen für die neun Formeln. Die \matlab-Hilfe zu
+	\matref{Vergleichsoperatoren}{relationaloperators} oder das \appsoftkapitel{4}
+	liefern nähere Details.
+  
+* Geben Sie die Ergebnisse von °v_exakt° und °v_eps° formatiert mit der Funktion
+\matrefe{disp} aus. Hinweise dazu gibt es unter folgenden
+\mltutorhint{disp}{Formatierungshinweisen}, wo die Verwendung der eckigen Klammern und der Befehl
+\matrefe{num2str} erklärt ist. Hier sollen vor den Vektoren °v_exakt° und
+  °v_eps° folgende Zeichenketten stehen
+
+		Exakter Vergleich: "Ergebnis von v_exakt"  
+		Vergleich mit eps: "Ergebnis von v_eps"  
+
+	Geben sie diesen Text ohne das Zeichen °"° ein.
+
+\hw 
+
+Die Zeichnungen werden automatisch vom Test erzeugt und sollen die Ergebnisse 
+anschaulich machen.
+
+\hw 
+
+Vergessen Sie nicht den Strichpunkt am Ende einer Anweisungszeile. 
+Kein abgegebenes Beispiel soll eine Ausgabe erzeugen, die nur durch das Weglassen des 
+Strichpunktes am Ende einer Zeile entsteht (Infos dazu auch 
+im \wikilink unter:
+\mltutorhint{Strichpunkt}{MLTutor Hints}).
+
+\hw 
+
+Wenn sie das Programm in der Konsole testen, werden sie in einem eigenen
+Fenster nach einer \matref{Eingabe}{input} gefragt. Sie können dort eine Zahl
+eingeben und das Fenster mit °ctrl return° schließen.

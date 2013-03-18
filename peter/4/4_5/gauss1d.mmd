@@ -1,0 +1,92 @@
+# Gaussverteilung
+
+Schreiben Sie eine \matlab-Funktion \tt{gauss1d}, die mit folgendem Aufruf
+
+		[g] = gauss1d(x,x0,sig)
+
+die Gaussverteilung als Funktion des Vektors °x° berechnet.
+
+\ein 
+In der Wahrscheinlichkeitsrechnung und auch in der Physik hat die
+Normalverteilung bzw. Gaussverteilung eine große Bedeutung. Sie ist definiert
+durch
+$$
+ 
+  g(x)= \frac{1}{\sigma \sqrt{2\pi}}
+  \exp\left\{-\frac{(x-x_{0})^2}{2 \sigma^2}\right\} \; ,
+$$
+wobei $x_{0}$ und $\sigma$ die Parameter der Verteilung sind. In $x_{0}$
+liegt sowohl das Maximum als auch das Symmetriezentrum, und $\sigma$ ist
+der Abstand von diesem Zentrum zu den Wendepunkten. Wie für jede
+Wahrscheinlichkeitsverteilung gilt
+$$
+
+  \int_{-\infty}^{\infty} g(x) dx = 1 \; . 
+$$
+In der Physik verwendet man häufig auch eine Summation über mehrere
+Gaussfunktionen mit jeweils unterschiedlichen Parametern. Dies hat den Sinn,
+dass man gleichzeitig mehrere Maxima darstellen kann. Allgemein kann man
+die Funktion dann definieren als 
+$$
+
+  g(x)= \frac{1}{n} \sum_{k=1}^{n}
+  \frac{1}{\sigma_k \sqrt{2\pi}}
+  \exp\left\{-\frac{(x-x_{0k})^2}{2 \sigma_k^2}\right\} \; ,
+$$
+wobei $x_{0k}$ und $\sigma_k$ die gleiche Bedeutung wie vorher haben. Die
+Summation erfolgt über alle $n$ Werte der Parameter $x_{0k}$ und $\sigma_k$.
+Daher wird - um die Normierung aufrecht zu erhalten - noch durch $n$
+dividiert. 
+
+\default
+
+
+		x0 = [-1.0, 1.0]
+		sig = [ 0.5, 1.0]
+
+
+Zum Setzen der Defaultwerte sind die Funktionen \matrefe{nargin} und
+\matref{isempty}{is} zu verwenden. Weitere Informationen finden Sie im Tab
+"Hints und Links", oder \mltutorhint{Setzen_von_Defaultwerten}{hier}.
+
+\err 
+Verwenden sie die Funktion \matrefe{error} um eine
+Fehlermitteilung zu generieren, wenn gewisse Inputparameter nicht den
+gewünschten Forderungen entsprechen. Die unten angegebenen
+Texte müssen in der jeweiligen Mitteilung enthalten sein.
+
+Problem|Fehlertext muss enthalten
+-|-
+kein °x°-Vektor bzw. ein leeres Feld als Inputparameter | °x values° 
+°x0° und °sig° haben unterschiedliche Längen | °same length°
+  
+
+\prog
+
+*  Initialisieren Sie °g° als Feld mit Nullen in der Größe von
+  °x°.
+
+*  Bilden Sie die Summe über alle $k$-Werte der Parameter ($k = 1\dots n$) mit
+  Hilfe einer einzigen \matrefe{for}-Schleife. Vergessen Sie dabei nicht,
+  dass $x$ ein Array sein kann.
+    
+\hw 
+   Eine \matrefe{for}-Schleife hilft bei der Summation über
+  die einzelnen Beiträge zur Summe. Dabei ist es
+  praktisch, wenn man noch vor der Schleife ein Feld erzeugt, das gleich
+  groß ist wie die Inputvariable °x°, das aber ausschließlich Nullen
+  enthält. Der sinnvollste Befehl dafür ist: 
+  °  g = zeros(size(x))° 
+  Dann kann man in der Schleife 
+  °  g = g + ...° 
+  schreiben und bei jedem Durchlauf werden die Werte für einen Peak
+  addiert. Nach dem Ende der Schleife muss man durch die Anzahl der Peaks
+  °n°, also durch die Länge des Vektors °x0° (oder °sig°),
+  dividieren. Damit ist dann die Normierung auch bei mehreren Peaks
+  sichergestellt. 
+
+
+
+
+
+

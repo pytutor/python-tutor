@@ -1,0 +1,77 @@
+
+
+# Einfache logische Indizierung - P2
+
+Gegeben ist eine Matrix °M°. Falls Sie zu Testzwecken eine erzeugen wollen, bietet sich
+der \matlab-Befehl °M=reshape(1:24,4,6)° an. Bei den automatischen Tests ist °M° aber
+vorgegeben.
+
+Erzeugen Sie ein \matlab-Skript °slogic°, das folgende Aufgaben erfüllt:
+
+
+  
+1.  Speichern Sie in den Variablen °L1° bis °L8° die logischen Felder für folgende
+  Aufgabenstellungen bezüglich der Werte in °M°
+   
+	* [°L1 °:] Werte größer als 9 
+	* [°L2 °:] Werte größer gleich 7 und kleiner gleich 24 
+	* [°L3 °:] Werte durch sechs teilbar (\matrefe{mod})
+	* [°L4 °:] Werte durch sieben und fünf teilbar 
+	* [°L5 °:] Werte durch sieben oder fünf teilbar 
+	* [°L6 °:] Werte nicht durch sechs teilbar 
+	* [°L7 °:] Werte größer als der Durchschnitt der Werte (\matrefe{mean}) 
+	* [°L8 °:] Werte größer gleich 60  Prozent des Maximalwertes
+  (\matrefe{max}) 
+    
+1.  Berechnen Sie die Anzahl der Werte für die obige Bedingungen gelten in den Variablen
+  °anz_L1° bis °anz_L8°. Berechnen Sie in °anz_L1_L5° die
+  Anzahl der Werte für die die Bedingungen \verb°L1° und \verb°L5° gelten (\matrefe{sum}).
+  Die Verwendung von Konstrukten wie sum(sum()), mean(mean()), \ldots ist dabei
+  unerwünscht.
+  
+1.  Erzeugen Sie je einen Spaltenvektor mit Werten der Matrix M, die folgende Bedingung erfüllen:
+	(a) °L5° (Variable: °w_L5°), (b) nicht
+	°L8° (Variable: °w_L8°), (c)
+	\verb°L1° und \verb°L3° (Variable: °w_L1_L3°).
+  
+1.  Berechnen Sie den linearen (einfachen) Index der Werte für die die Bedingung °L2° gilt
+  in der Variablen °i2° (\matrefe{find}).
+  
+1.  Berechnen Sie den Zeilen- und Spaltenindex der Werte für die die Bedingung °L2° gilt
+  in den Variablen °iz2° und °is2° (\matrefe{find}). 
+  
+1.  Erzeugen Sie eine Matrix °M8° die gleich der Matrix
+  °M° ist. Ersetzen Sie in °M8° alle Werte für die die Bedingung °L8°
+  gilt durch die Zahl 68.
+  
+1.  Erzeugen Sie eine Matrix °M4° die gleich der Matrix °M° ist. Ersetzen Sie in
+  °M4° alle Werte für die die Bedingung °L4° gilt durch das
+  Doppelte des jeweiligen Wertes.
+  
+1.  Erzeugen Sie eine Matrix °M7° die gleich der Matrix °M° ist. Ersetzen Sie in
+  °M7° alle Werte für die die Bedingung °L7° gilt durch einen Wert, der um eins größer ist
+  als der Durchschittswert von °M°. Ersetzen Sie dann in
+  °M7° alle Werte für die die Bedingung °L7° nicht gilt durch einen Wert, der um eins
+  kleiner ist als der Durchschittswert von °M°.   
+  
+1.  Speichern Sie in der Variable °eines_L3° die logische Antwort auf die Frage, ob
+  zumindest für ein Element in °M° die Bedingung °L3° gilt.
+  
+1.  Speichern Sie in der Variable °keines_L3° die logische Antwort auf die Frage, ob
+  für kein Element in °M° die Bedingung °L3° gilt.
+  
+1.  Speichern Sie in der Variable °alle_L2° die logische Antwort auf die
+  Frage, ob für alle Elemente in °M° die Bedingung °L2° gilt.
+  
+1.  Speichern Sie in der Variable °nicht_alle_L2° die logische Antwort auf die Frage, ob
+  nicht für alle Elemente in °M° die Bedingung °L2° gilt.
+
+
+\hw Den Befehl \matrefe{find} kann man wahlweise mit einem Ausgabewert oder mit mehreren
+Ausgabewerten aufrufen.
+
+\hw Praktisch sind auch die Befehle \matrefe{all} und \matrefe{any}. Denken sie bei deren Verwendung, wie Befehle dieser Art 
+angewandt werden müssen (siehe z.B. auch \matrefe{sum}).
+
+
+

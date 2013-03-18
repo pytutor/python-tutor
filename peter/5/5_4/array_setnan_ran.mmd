@@ -1,0 +1,73 @@
+
+# NaN- Setzen - P4
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °array_setnan°, die 
+folgende Aufgaben erfüllt:
+
+  
+*  Übergabeparameter sind °m° und °n°.
+  
+*  Erzeugen Sie damit eine Matrix der Größe $m \times n$ mit folgender 
+  Gestalt: $$ A =
+  \begin{bmatrix}
+  nan & 1   & 1   & 1   & 1   & nan \\
+  1   & nan & nan & nan & nan & 1   \\
+  1   & nan & nan & nan & nan & 1   \\
+  1   & nan & nan & nan & nan & 1   \\
+  nan & 1   & 1   & 1   & 1   & nan \end{bmatrix} \; . $$
+  
+  
+*  Setzen Sie Defaultwerte °m=4° und °n=9°, wenn das 
+  entsprechende Argument nicht übergeben wird oder ein leeres Feld ist.
+  
+*  Beginnen Sie mit einer Matrix mit lauter Einsen und setzen Sie dann mit 
+  Hilfe der \matref{Doppelpunkt}{colon}-Notation in zwei Befehlszeilen einmal 
+  die Eckpunkte und dann den Mittelbereich auf \matrefe{nan}. Verwenden Sie dabei 
+  das Keyword \matrefe{end}.
+ 
+  
+  \hw °A(1,[1,end])=nan° 
+  setzt das erste und letzte Element der ersten Zeile auf \matrefe{nan}.
+  Ganz ähnlich lassen sich gleichzeitig alle Eckpunkte auf \matrefe{nan} setzen. 
+  Lesen Sie zu diesem Thema am besten das 
+  [Kapitel
+  3.6](http://itp.tugraz.at/LV/kernbich/AppSoft-1/Kapitel/appsoft1-kapitel-3.pdf) aus dem Skriptum.
+  
+\hw Der Wert \matrefe{nan} symbolisiert in \matlab "Not a Number".
+Mit \matrefe{nan} kann man ganz normal rechnen, wobei dabei die Regel
+gilt, dass jede Rechenoperation mit \matrefe{nan} wieder \matrefe{nan}
+ergibt.
+
+\hw
+ Die Verwendung von \matrefe{for}- und \matrefe{while}-Schleifen ist nicht
+ erlaubt. Beachten Sie dazu die Variable °count_test°, bzw., Hinweise
+ unter °MLTutor_TEST_MESSAGE°.
+ 
+\hw
+Die Befehle \matrefe{if}, \matrefe{nargin} und \matrefe{isempty} müssen am
+Anfang beim Setzen der Defaultwerte jeweils genau zweimal vorkommen. Die Befehle
+\matrefe{else}, \matrefe{elseif}, \matrefe{switch} sind nicht erlaubt. Die
+Defaultwerte sollen in der kompaktesten Form, wie am Ende dieses
+\mltutorhint{Setzen_von_Defaultwerten}{Links} erläutert, gesetzt werden.
+
+
+\ges 
+Funktion °array_setnan.m°
+
+	[A] = array_setnan(m,n)
+		m        : Zeilenanzahl
+		n        : Spaltenanzahl
+		A        : Rückgabematrix
+
+
+\bsp
+
+	A = array_setnan(4,7)
+	
+	A =
+		NaN    1     1     1     1     1   NaN
+		 1    NaN   NaN   NaN   NaN   NaN   1
+		 1    NaN   NaN   NaN   NaN   NaN   1
+		NaN    1     1     1     1     1   NaN
+
+
+

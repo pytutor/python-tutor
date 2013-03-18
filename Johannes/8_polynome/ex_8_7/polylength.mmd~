@@ -1,0 +1,23 @@
+
+
+# Bogenlänge eines Polynoms
+
+Schreiben Sie eine \python-\pyref{Function}{def}
+ 
+		polylength(x1,x2,p),
+
+welche die Bogenlänge °s° des Polynoms °p° zwischen °x1° und °x2° 
+berechnet. Die Bogenlänge einer Kurve ist durch
+$$
+  s = \int_{x_1}^{x_2}\sqrt{ 1 + (y'(x))^2}dx
+$$
+gegeben. 
+
+\hw
+
+Die Integration kann hier nicht mit \numpyref{polyint} durchgeführt
+werden (es ist kein Polynom zu integrieren). Um diese Funktion zu
+integrieren, benötigt man eine \pyref{Anonyme-Funktion}{lambda}, die mit der
+\python-Routine \scipyref{quad} integriert wird.
+
+

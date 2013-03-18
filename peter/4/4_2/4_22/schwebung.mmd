@@ -1,0 +1,108 @@
+
+
+# Setzen von Default-Werten - Schwebung
+Die Übung beschäftigt sich mit dem Setzen von Default-Werten in Funktionen.
+Hierfür ist eine \matlab-\matref{Funktion}{function} °schwebung° und
+ein \matlab-Skript °plotschwebung°, das die Ergebnisse der Funktion
+°schwebung° visualisert, zu erzeugen.
+Beachten Sie, dass \red{2 verschiedene m-Files} (2 Tabs) von Ihnen zu erstellen
+sind!
+
+1. Schreiben Sie eine \matlab-\matref{Funktion}{function} °schwebung°, die mit dem Aufruf
+
+		[x,y] = schwebung(t,nu1,nu2,A)
+
+	folgende Funktionen berechnet:
+	$$
+	\begin{aligned}
+  	x(t) &= A \left( \sin(2 \pi \nu_1 t) + \cos(2 \pi \nu_2 t) \right) \\
+ 	 y(t) &= A \left( \sin(2 \pi \nu_1 t) - \cos(2 \pi \nu_2 t) \right) 
+	\end{aligned}
+	$$
+	
+	°t° ist ein Zeitvektor.
+
+	\default
+
+	$$
+	\begin{aligned}
+    nu1 & = & 5.0 \\
+    nu2 & = & 4.5 \\
+    A   & = & 1.0
+	\end{aligned}
+	$$
+
+	Zum Setzen der Defaultwerte sind die Funktionen \matrefe{nargin} und
+	\matref{isempty}{is} zu verwenden. Weitere Informationen finden Sie im Tab
+	"Hints und Links", oder \mltutorhint{Setzen_von_Defaultwerten}{hier}.
+
+	\err
+	
+	Für den Zeitvektor wird kein Defaultwert gesetzt. Wird kein
+	°t°-Vektor oder ein leeres Array als Inputparameter übergeben, dann
+	soll eine Fehlermitteilung ausgegeben werden. Diese Fehlermitteilung
+	muss die Zeichenfolge °"time vector"° enthalten und kann mit der
+	\matlab-Funktion \matrefe{error} erzeugt werden.
+
+ 1. Schreiben Sie ein \matlab-Skript
+
+		plotschwebung
+
+	das die Ergebnisse der Funktion °schwebung° darstellt.
+
+	Erzeugen Sie mit der Funktion \matrefe{linspace} einen Vektor °t° der 400 
+	Stützstellen im Bereich von 0 bis 4 enthält. 
+	Rufen Sie °schwebung° so auf, dass abgesehen von °t° die Default-Werte verwendet werden.
+
+	\graph 
+
+	Es sind zwei Plots in getrennten Fenstern zu erstellen. Die erste 
+	Graphik soll eine Schwebung, und die zweite eine Lissajous-Figur darstellen. 
+	Um ein neues Fenster für einen Plot zu initialisieren existiert die Funktion 
+	\matrefe{figure}. Diese ist wie folgt zu verwenden:
+
+    	...
+		figure
+    	% Plotbefehle für den ersten Plot
+    	...
+		figure
+    	% Plotbefehle für den zweiten Plot
+    	...
+
+
+## Figure 1 
+Stellen Sie °x° und °y° als Funktion von °t° in einem 
+Achsensystem dar. Die erste Linie soll $x(t)$ und die zweite Linie $y(t)$ darstellen. Der 
+$y(t)$-Graph ist außerdem in roter Farbe zu zeichnen.
+
+Weitere Eigenschaften des Plots:
+
+|Element|Wert|Hinweis| 
+|-|-|-|
+|Titel|Schwebung|\matrefe{title}|
+|Beschriftung x-Achse|t|\matrefe{xlabel}|
+|Beschriftung y-Achse|Amplitude|\matrefe{ylabel}|
+
+\hw 
+
+Beispiele zum Plotten finden Sie auch in dieser \matlabpublish{simplestart2}{Zusammenfassung}.
+
+![Schwebung Bild](data/schwebung.png "Schwebung") 
+
+## Figure 2
+Stellen Sie in diesem Plot $y(x)$ dar. Das Ergebnis ergibt eine Lissajous-Figur 
+(vorausgesetzt, °nu1° und °nu2° bilden ein rationales Verhältnis).
+
+Eigenschaften des Plots:
+
+|Element|Wert|Hinweis| 
+|-|-|-|
+|Titel|Lissajous-Figur|\matrefe{title}|
+|Beschriftung x-Achse|x|\matrefe{xlabel}|
+|Beschriftung y-Achse|y|\matrefe{ylabel}|
+
+\hw
+
+Um eine bessere Darstellung zu erhalten, empfiehlt es sich \matref{axis equal}{axis} zu verwenden. 
+
+![Lissajous Bild](data/lissajous.png "Lissajous")

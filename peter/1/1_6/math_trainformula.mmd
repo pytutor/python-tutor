@@ -1,0 +1,62 @@
+
+ 
+# Trainieren von Formeln
+Führen Sie im \matlab-Skript °formt° (File: °formt.m°)
+einige einfache Definitionen von Variablen durch. Dabei sollen den Variablen
+folgende Werte zugewiesen werden:
+$$ 
+\begin{aligned}
+\verb°x°           & = \pi/4 \\
+\verb°y°           & = \pi/3 \\
+\verb°tan_x°       & = \tan x \\
+\verb°tan_y°       & = \tan y \\
+\verb°tan2_x°      & = \tan^2 x \\
+\verb°tan2_xp1° & = \tan^2 x + 1 \\
+\verb°sq_tan2_xp1° & = \sqrt{1 + \tan^2 x} \\
+\verb°f_1°         & = \frac{\tan x}{\sqrt{1 + \tan^2 x}}  \\
+\verb°f_2°         & = \frac{1}{\sqrt{1 + \tan^2 x}}  \\
+\verb°f_3°         & = \frac{\tan x + \tan y}{1 - \tan x \tan y} \\
+\verb°f_4°         & = \frac{\tan x - \tan y}{1 + \tan x \tan y} \\
+\verb°f_5°         & = \frac{2\tan x}{1 + \tan^2 x} \\
+\verb°f_6°         & = \frac{1 - \tan^2 x}{1 + \tan^2 x} \\
+\end{aligned}
+$$
+Stellen Sie beim Programmieren der Formeln sicher, dass Sie bereits definierte
+Variablen auch wieder verwenden. Konkret heißt das, dass Sie die Funktion
+\matrefe{tan} nur zweimal und die Funktion \matrefe{sqrt} nur einmal verwenden 
+dürfen. Falls diese Anzahl nicht stimmt, sind im Test die Variablen
+°count_test° und °count° falsch.
+
+Probieren Sie das Programm in der \matlab-Konsole aus, bevor Sie es testen.
+
+\hw \matlab-Hilfe zu einzelnen Befehlen finden Sie unter \matrefe{tan}
+und \matrefe{sqrt}. Die Operatoren °+°,  °-°, °*°,
+°/° und °^° bezeichnet man als \matref{arithmetische
+Operatoren}{arithmeticoperators}. 
+
+Eine sehr praktische Form der Hilfe bekommt man im
+\matlab-\matrefe{helpbrowser}. Man kann z.B. die \matlab-Hilfe für $\tan$
+einfach durch \matref{doc tan}{doc} aufrufen. Im linken Baum sieht man dann
+auch gleich andere ähnliche Befehle.
+
+\hw 
+
+Einen Überblick über \MatlabReferenceMathematics und
+im Speziellen über \MatlabReferenceMathematicsElementaryMath bietet die \matlab-Hilfe.
+
+\hw 
+
+Das entsprechende Kapitel im Skriptum ist \appsoftkapitel{2}.
+
+\hw 
+
+Zur Vorbereitung auf die Übung gibt es \matlabpublish{simplestart1}{hier} noch ein einfaches Beispiel, das sich mit
+Skalaren beschäftigt. 
+
+\hw 
+
+Vergessen Sie nicht den Strichpunkt am Ende einer Anweisungszeile. 
+Kein abgegebenes Beispiel soll eine Ausgabe erzeugen, die nur durch das Weglassen des Strichpunktes am 
+Ende einer Zeile entsteht (Infos dazu auch im \wikilink 
+unter: \mltutorhint{Strichpunkt}{MLTutor Hints}).
+

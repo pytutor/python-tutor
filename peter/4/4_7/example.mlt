@@ -1,0 +1,152 @@
+<example>
+  <generalinfo>
+    <version>1.0.0</version>
+    <name>Dopplereffekt</name>
+    <author></author>
+    <authoremail></authoremail>
+    <studentemail></studentemail>
+    <authorhomepage></authorhomepage>
+    <platform>0</platform>
+  </generalinfo>
+  <exampleinfo>
+    <type>0</type>
+    <standardexample>
+      <nrtries>5</nrtries>
+      <parenttries>true</parenttries>
+      <relevance>5</relevance>
+      <parentrelevance>true</parentrelevance>
+      <difficulty>5</difficulty>
+      <parentdifficulty>true</parentdifficulty>
+    </standardexample>
+    <testexample>
+      <type>0</type>
+      <parenttype>true</parenttype>
+      <from></from>
+      <to></to>
+      <parentfromto>true</parentfromto>
+      <difficulty>5</difficulty>
+      <parentdifficulty>true</parentdifficulty>
+      <points>1</points>
+      <showalways>false</showalways>
+      <optional>false</optional>
+      <showafter>false</showafter>
+    </testexample>
+    <examexample>
+      <type>0</type>
+      <parenttype>true</parenttype>
+      <from></from>
+      <to></to>
+      <parentfromto>true</parentfromto>
+      <points>1</points>
+      <showafter>false</showafter>
+      <optional>false</optional>
+    </examexample>
+  </exampleinfo>
+  <mainscript>schall.m</mainscript>
+  <links/>
+  <dependencies>
+    <dependency>
+      <name>2011.appsoft.kreisf1</name>
+      <exportall>true</exportall>
+      <exports/>
+    </dependency>
+  </dependencies>
+  <usedfunctions>
+    <string>linspace</string>
+    <string>colon</string>
+    <string>figure</string>
+    <string>plot</string>
+    <string>hold</string>
+    <string>for</string>
+    <string>length</string>
+    <string>axis</string>
+    <string>zeros</string>
+    <string>size</string>
+    <string>fliplr</string>
+    <string>title</string>
+    <string>num2str</string>
+  </usedfunctions>
+  <forbiddenfunctions/>
+  <studentfiles>
+    <string>schall.m</string>
+  </studentfiles>
+  <extrafiles/>
+  <isscriptexample>true</isscriptexample>
+  <latexproject>2012.appsoft.schall.de</latexproject>
+  <tests>
+    <test>
+      <name>Variablen</name>
+      <description>Überprüft, ob Variablen richtig gesetzt wurden.</description>
+      <Links>
+        <link>
+          <name>Schallgeschwindigkeit korrekt?</name>
+          <description>Ist die Schallgeschwindigkeit (c) korrekt definiert?</description>
+          <link></link>
+        </link>
+        <link>
+          <name>&quot;n&quot; korrekt?</name>
+          <description>Ist n richtig definiert?</description>
+          <link></link>
+        </link>
+      </Links>
+      <Hints/>
+      <before>schall_test1_before.m</before>
+      <after>nothing_to_do.m</after>
+      <vars>
+        <string>c</string>
+        <string>n</string>
+      </vars>
+    </test>
+    <test>
+      <name>Graph in figure 1</name>
+      <description>Überprüft die Daten, welche in figure 1 dargestellt werden</description>
+      <Links>
+        <link>
+          <name>Richtige Reihenfolge?</name>
+          <description>Die Kreise und Mittelpunkte mï¿½ssen genau in der Reihenfolge erstellt werden, wie in der Angabe verlangt.</description>
+          <link></link>
+        </link>
+      </Links>
+      <Hints/>
+      <before>schall_test2_before.m</before>
+      <after>nothing_to_do.m</after>
+      <vars>
+        <string>MLTutor_GRAPHICS_RESULTS</string>
+      </vars>
+    </test>
+    <test>
+      <name>Graph in figure 2</name>
+      <description>Überprüft die Daten, welche in figure 2 dargestellt werden</description>
+      <Links>
+        <link>
+          <name>Richtige Reihenfolge?</name>
+          <description>Sind figures, Kreise und Mittelpunkte in der Richtigen Reihenfolge erstellt worden?</description>
+          <link></link>
+        </link>
+      </Links>
+      <Hints/>
+      <before>schall_test3_before.m</before>
+      <after>nothing_to_do.m</after>
+      <vars>
+        <string>MLTutor_GRAPHICS_RESULTS</string>
+      </vars>
+    </test>
+    <test>
+      <name>Graph in figure 3</name>
+      <description>Überprüft die Daten, welche in figure 3 dargestellt werden</description>
+      <Links>
+        <link>
+          <name>Richtige Reihenfolge?</name>
+          <description>Sind figures, Kreise und Mittelpunkte in der Richtigen Reihenfolge erstellt worden?</description>
+          <link></link>
+        </link>
+      </Links>
+      <Hints/>
+      <before>schall_test4_before.m</before>
+      <after>nothing_to_do.m</after>
+      <vars>
+        <string>MLTutor_GRAPHICS_RESULTS</string>
+      </vars>
+    </test>
+  </tests>
+</example>

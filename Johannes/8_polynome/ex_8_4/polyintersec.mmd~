@@ -1,0 +1,20 @@
+
+
+# Schnittpunkte zweier Polynome
+
+Schreiben Sie eine \pyref{Funktion}{def}
+
+		[x,y] = polyintersec(p1,p2), 
+ 
+welche die reellen Schnittpunkte zweier Polynome berechnet und deren Koordinaten 
+in den Vektoren °x° und °y° zurückgibt. Verwenden Sie ihre Funktion °polyadd°.
+
+\hw 
+
+$y_1 = y_2 \Longleftrightarrow y_1 - y_2 = 0$   
+
+Nullstellen findet man bei Polynomen mit \numpyref{roots}.
+Ob eine Nullstelle komplex oder imaginär ist können Sie mit den Befehlen \numpyref{isreal} bzw. \numpyref{iscomplex} herausfinden.
+
+
+Die $y$-Koordinate eines Schnittpunktes können Sie wieder mit \numpyref{polyval} berechnen.

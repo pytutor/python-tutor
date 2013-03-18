@@ -1,0 +1,51 @@
+
+# Polynome/Polynomfunktionen
+
+Ein Polynom
+$$
+  P = c_n x^n + c_{n-1} x^{n-1} + \ldots + c_1 x + c_0
+$$
+wird in \python durch den dazugehörigen Koeffizientenvektor $p$ beschrieben. Koeffizentenvektoren sind Zeilenvektoren, die den Koeffizienten zur höchsten Potenz von $x$ an Position 1 enthalten, den Koeffizenten zur zweithöchsten Potenz an Position 2 usw.
+$p$ ist demnach ein Vektor mit $n+1$ Elementen und der Gestalt
+$$ 
+  p = 
+  \begin{bmatrix}
+   c_n, & c_{n-1,} & \ldots & c_1, & c_0
+ \end{bmatrix}
+$$ 
+
+Schreiben Sie nun ein Skript
+
+		polyueb
+
+welches die Polynomfunktion
+$$
+\begin{aligned}
+  f(x) =  x^3 + 6\cdot x^2 - 2\cdot x - 20
+\end{aligned}
+$$
+auf dem Intervall [-5,4] mit 400 Stützstellen darstellt.
+Erstellen Sie dazu den zu obigem Polynom passenden Koeffizientenvektor °p3° und Werten Sie diesen mit \numpyrefe{polyval} aus. Die Funktion soll als blaue Linie gezeichnet werden. Beschriften Sie die Koordinatenachsen passend und erstellen Sie eine sinnvolle Überschrift. Erweitern Sie nun das Skript (Darstellungen im gleichen Achsensystem und auf demselben Intervall wie °p3°):
+
+
+* Erstellen Sie aus °p3° einen neuen Koeffizientenvektor °p2°,
+indem sie die erste Stelle von °p3° abschneiden. Stellen Sie dieses Polynom als grüne Linie dar.
+
+* Leiten Sie die Polynomfunktion, welche durch °p2° beschrieben wird, ab, und stellen Sie das resultierende Polynom °p1° rot dar.
+
+* Berechnen Sie die Nullstellen von °p2° und zeichnen Sie diese mit nur einer \mplotrefe{plot}-Anweisung als grüne * ein.
+
+* Erstellen Sie eine Legende, welche die drei gezeichneten Funktionen wie folgt beschriftet:
+	* Polynom °p3°: "*kubisch*"
+	* Polynom °p2°: "*quadratisch mit Nullstellen*"
+	* Polynom °p1°: "*linear durch Ableitung*"
+
+
+* Fügen Sie zur besseren Darstellung Ihrem Skript die Zeile
+°line([-5,4],[0,0],'Color','k')°
+hinzu. Dies bewirkt, dass im Intervall (-5,4) eine schwarze Linie an
+der Position der Abszisse eingezeichnet wird.
+
+\hw Zur Durchführung der Ableitung und Berechnung der Nullstellen werden Sie folgende \python-Routinen brauchen: \numpyrefe{polyder}, \numpyrefe{roots}. 
+   
+\hw Beachten Sie die Reihenfolge, in der die Polynome dargestellt werden! 

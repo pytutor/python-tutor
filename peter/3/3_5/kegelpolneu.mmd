@@ -1,0 +1,133 @@
+
+# Berechnung von Ellipse und Hyperbel in Polardarstellung (Funktion)
+
+Die Übung beschäftigt sich mit der Berechnugn von Kegelschnitten (Ellipse und Hyperbel) in Polardarstellung.
+Hierfür sind von Ihnen zwei \matlab-\matref{Funktionen}{function} °ellipse° und
+°hyperbel° zu erzeugen.
+Beachten Sie, dass \red{2 verschiedene m-Files} (2 Tabs) von Ihnen zu erstellen
+sind!
+
+
+### Ellipse
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °ellipse.m°, die mit dem Aufruf     
+
+°[phi,r] = ellipse(n_points,a,b)°   
+
+folgende Aufgaben erfüllt:  
+
+1.  Es soll  die Polargleichung des Kegelschnitts Ellipse in Hauptachsenlage ausgewertet werden. 
+Übergabeparameter sind die Kegelschnittparameter °a° und °b°, sowie
+die Anzahl der auszurechnenden Punkte °n_points°.
+
+1.  Der °phi°-Vektor soll dabei genau °n_points° von $\phi_{min}$ bis $\phi_{max}$
+enthalten (siehe unten). Mit diesem Vektor wird dann die zweite Outputgröße °r° berechnet.
+
+1.  Die Funktion muss nur für skalare Übergabeparameter °n_points°,
+°a° und °b° funktionieren.
+
+1. Stellen Sie sicher, dass überprüft wird, ob $a\ge b$ gilt. 
+
+1. Ist die Bedingung nicht erfüllt, so soll die Funktion mit einer Fehlermeldung abbrechen.
+		Verwenden Sie dazu die Funktion \matrefe{error}. Es muss \textbf{genau} folgender Fehlertext ausgegeben 
+		werden, damit die automatische Beispielüberprüfung funktioniert!  
+			
+		error('a >= b ist nicht erfuellt');
+
+1. Im Einführungsbeispiel zu dieser Übung *''Steuerstrukturen: if-Entscheidung''* können
+	Sie im Tab *Extra Files* mehrere Beispiele für \matref{if} ausprobieren.
+
+
+### Hyperbel
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °hyperbel.m°, die mit dem Aufruf   
+
+°[phi,r] = hyperbel(n_points,a,b,r_0)°  
+
+folgende Aufgaben erfüllt:
+	
+1. Es soll  die Polargleichung des Kegelschnitts Hyperbel in Hauptachsenlage ausgewertet werden. 
+Übergabeparameter sind die Kegelschnittparameter °a° und °b°,
+die Anzahl der auszurechnenden Punkte °n_points° und der größte gewünschte
+Radius °r_0°.
+
+1. Der °phi°-Vektor soll dabei genau °n_points° von $\phi_{min}$ bis $\phi_{max}$
+enthalten (siehe unten). Mit diesem Vektor wird dann die zweite Outputgröße °r° berechnet.
+
+1. Die Funktion muss nur für skalare Übergabeparameter °n_points°, °r_0°, °a° und °b° funktionieren.
+
+1. Stellen Sie für die Hyperbel sicher, dass überprüft wird, ob $r_0 > a$ gilt.
+
+1. Ist die Bedingung nicht erfüllt, so soll die Funktion mit einer Fehlermeldung abbrechen.
+	Verwenden Sie dazu die Funktion \matrefe{error}:   
+	
+		error('r_0 > a ist nicht erfuellt');  
+	
+	Es muss \textbf{genau} dieser Fehlertext ausgegeben werden, damit die
+	automatische Beispielüberprüfung funktioniert!
+
+## Mathematische Grundlagen
+
+   
+1. Ellipse
+	$$
+    \begin{aligned}
+      r^2      &= \frac{b^2}{1-E^2 \cos^2 \phi} \\
+      e        &= \sqrt{a^2-b^2} \\
+      E &= \frac{e}{a} \\
+      a        &\ge b\\
+      \phi_{min,max} &= 0,  2\pi \\
+    \end{aligned}
+	$$
+	
+1. Hyperbel
+	$$
+    \begin{aligned}
+      r^2      &= \frac{b^2}{E^2 \cos^2 \phi - 1} \\ 
+      e        &= \sqrt{a^2+b^2} \\
+      E &= \frac{e}{a} \\
+      \phi_{min,max} &= \mp  \arccos \left( \left( \frac{1+b^2/r_0^2}{E^2} \right)^{1/2} \right) \\
+      r_0 &> a 
+    \end{aligned}
+	$$
+
+% 1. Parabel
+%	$$
+%    \begin{aligned}
+%      r        &= \frac{a}{1 - \cos \phi} \\
+%      \phi_{min,max} &= \pi \mp  
+%        		\left| \arccos \left( \frac{a}{r_0} - 1 \right) \right|  \\ 
+%  		r_0 &> a
+%    \end{aligned}
+%    $$
+
+\ges 
+
+Funktion °ellipse.m°
+
+*[phi,r] = ellipse(n_points,a,b)*
+> *n_points : Skalar, Anzahl der auszurechnenden Punkte*  
+> *a	: Skalar, Kegelschnittparameter a*  
+> *b        : Skalar, Kegelschnittparameter b*  
+> *phi      : Vektor, Winkelwerte*  
+> *r        : Vektor, Radien*  
+
+
+\ges
+
+Funktion °hyperbel.m°
+
+*[phi,r] = hyperbel(n_points,a,b,r_0)*
+> *n_points : Skalar, Anzahl der auszurechnenden Punkte*  
+> *a        : Skalar, Kegelschnittparameter a*  
+> *b        : Skalar, Kegelschnittparameter b*  
+> *r_0      : Skalar, Grösster Radius*  
+> *phi      : Vektor, Winkelwerte*  
+> *r        : Vektor, Radien*  
+
+
+\hw 
+
+Falls Sie in irgendeinem Fall komplexe Zahlen
+erhalten, dann haben Sie mit Sicherheit eine Formel falsch programmiert, oder es
+ wurde $a \ge b$ bzw. $r_0 > a$ nicht überprüft.
+ 
+

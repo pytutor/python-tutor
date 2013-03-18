@@ -1,0 +1,49 @@
+
+# Durchnummerierte Matrix - P2
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °array_numberst°, 
+die mit den Übergabeparametern °m° und °n° folgende $m \times 
+n$-Matrix (Default $4 \times 5$) erzeugt:
+$$ 
+	A =
+  	\begin{bmatrix}
+	0       & 2      & 0     & 4       & 0      \\   6       & 0      & 8      & 0   & 10     \\   0     & \dots    & 0    & \dots     & 0 \\   \dots     & 0    & \dots    & 0     & \dots
+	\end{bmatrix}
+	\; ,
+$$ 
+Setzen Sie die Defaultwerte, wenn das entsprechende Argument gar nicht 
+oder als leeres Feld übergeben wird.
+
+**Empfohlenes Vorgehen:**    
+Erzeugen Sie mit Hilfe der \matref{Doppelpunkt}{colon}-Notation einen Vektor,
+den Sie dann mit den Befehlen \matrefe{reshape} und \matrefe{transpose}
+in die gewünschte Matrix umwandeln. 
+
+\hw
+Informationen zum Transponieren von Matrizen findet man in der
+[Wikipedia](http://de.wikipedia.org).
+
+\hw
+ Die Verwendung von \matrefe{for}- und \matrefe{while}-Schleifen ist nicht
+ erlaubt. Beachten Sie dazu die Variable °count_test°, bzw., Hinweise
+ unter °MLTutor_TEST_MESSAGE°.
+ 
+\hw
+Die Befehle \matrefe{if}, \matrefe{nargin} und \matrefe{isempty} müssen am
+Anfang beim Setzen der Defaultwerte jeweils genau zweimal vorkommen. Die Befehle
+\matrefe{else}, \matrefe{elseif}, \matrefe{switch} sind nicht erlaubt. Die
+Defaultwerte sollen in der kompaktesten Form, wie am Ende dieses
+\mltutorhint{Setzen_von_Defaultwerten}{Links} erläutert, gesetzt werden.
+
+
+
+\ges 
+Funktion °array_numberst.m°
+
+	[A] = array_numberst(m,n)
+		m        : Zeilenanzahl
+		n        : Spaltenanzahl
+		A        : Rückgabematrix
+
+
+
+

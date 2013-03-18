@@ -1,0 +1,107 @@
+
+# Datentypen (Klassen) in \matlab
+
+Erzeugen Sie ein \matlab-Skript °datentypen° (File: °datentypen.m°),
+in welchem Sie Variablen verschiedener Datentypen erzeugen, den Datenyp der Variablen überprüfen und die Variablen 
+umdeklarieren. 
+Diese Übung richtet sich vor allem an jene, die bereits
+Programmiererfahrung haben und Matlab etwas besser verstehen wollen. 
+Detailliertere Informationen kann man der \matlab-Hilfe (\matrefe{doc} in
+Konsole eingeben) unter "Matlab -> User Guide -> Programming Fundamentals -> Classes" entnehmen.
+
+\ein
+
+Die 15 fundamentalen Klassen (Datentypen) in Matlab umfassen die Untergruppen
+Boolean (logical), Numeric, Text (char), Function Handle und Heterogeneous
+Container. Der Typ Boolean \matrefe{logical} tritt bei Vergleichen (z.B. ==, <=,>=,\ldots) und der logischen Indizierung, 
+die in Übung 6 behandelt wird, auf. 
+Die Gruppe Numeric gliedert sich in Floating Point (Gleitkommazahlen) und
+Integer (Ganzzahlen). Die Gleitkommazahlen beinhalten die Datentypen \matrefe{single} und \matrefe{double}. 
+Variablen, die nicht speziell deklariert werden, interpretiert Matlab standardmäßig als double-Datentyp. 
+Die Ganzzahlen beinhalten die signed (vorzeichenbehafteten, z.B.: \matrefe{int8}, \matrefe{int16}) 
+und unsigned (nicht vorzeichenbehafteten, z.B.: \matrefe{uint8}, \matrefe{uint16}) Integer. 
+Die unsigned Integer werden u.a. für den Zugriff auf Matrix-Elemente verwendet. 
+Der Datentyp char ermöglicht das Abspeichern von Zeichen (z.B. Buchstaben,\ldots). 
+Vektoren vom Typ char (sogenannte Zeichenketten oder auch Strings genannt) treten u.a. bei der Beschriftung von Plots auf 
+(z.B. \matrefe{xlabel}). 
+
+Der Datentyp Function Handle (\matrefe{functionhandle})
+entspricht einem Funktionspointer und wird uns in Übung 12 beim Nichtlinearen Fitten häufig begegnen. 
+Die Gruppe der Heterogeneous Container beinhaltet die Zellen (\matrefe{cell}) und Strukturen (\matrefe{struct}). 
+Zellen und Strukturen funktionieren wie ein Sammelbehälter und können mehrere Datentypen 
+(\matrefe{functionhandle}, \matrefe{double}, \matrefe{logical},\ldots)
+umfassen. Mehr Details dazu gibt es in der Zusatzübung zum Thema Zellen und Strukturen.
+
+Matlab bietet aber auch die Möglichkeit eigene Klassen (Datentypen) zu erzeugen
+(z.B. Klasse Polynome). In dieser Klasse kann man beispielsweise eine Methode zur Addition von Polynomen definieren. 
+Dadurch kann man auch Operatoren wie + (plus.m) überladen. 
+Ein +-Operator, angewendet auf ein Objekt der Klasse Polynome, würde dann die Polynomaddition durchführen.
+
+Mit dem Befehl \matrefe{whos} können Sie sich in der Konsole die Variablen anzeigen lassen. 
+Zusätzlich erhalten Sie Informationen über die Datentypen der Variablen, 
+ihren datentypabhängigen Speicherbedarf und ihre Größe 
+(z.B.: 1x1 (Skalar), 1x6 (Zeilenvektor), 5x5 (Matrix),...).
+
+##Programmierung
+
+1. Deklarieren Sie folgende 6 Variablen unterschiedlicher Datentypen mit folgenden Werten. 
+Für das automatische Testen ist es unbedingt notwendig, dass Sie \red{genau diese Namen} für Ihre Variablen verwenden! 
+Benutzen Sie die Konsole zum Testen Ihres Programms!
+
+			a  = 77  (int8) 
+			b  = 65  (uint8) 
+			c  = 84  (uint16) 
+			d  = 76  (double) 
+			e  = 65  (double) 
+			f  = 66  (single) 
+  
+	\hw 
+
+	Die Deklaration erfolgt in Matlab einfach in Form von °var=datentyp(wert)° (z.B. °var=single(1.13)°)
+
+1. Der Datentyp einer Variablen kann mit dem Befehl \matrefe{class} festgestellt werden (°datentyp=class(var)°).
+	Der Rückgabewert (°datentyp°) ist eine Zeichenkette. Speichern Sie nun die
+	Datentypen der eben deklarierten Variablen °a° bis °f° unter den Namen
+	°typ_a° bis °typ_f° ab.
+
+1. Analog zur Deklaration von Variablen kann man sie auch umdeklarieren
+	(einen neuen Datentyp zuweisen). Dies nennt man auch cast (z.B. °var=single(1.34); var2=double(var)°). Es ist
+	sofort einsichtig, dass das nicht immer gefahrlos ist. 
+	Als nächstes deklarieren sie die Variablen °a° bis °f° auf den
+	Datentyp char um. Speichern Sie das Ergebnis unter den Variablen °char_a° bis °char_f°
+	ab. Man kann auch einen ganzen Vektor umdeklarieren (Vektoren werden in Übung 2 genauer besprochen).
+	Probieren Sie das anhand des Beispiels °wort=char([a,b,c,d,e,f])° aus und speichern Sie das Ergebnis ab.
+
+1. Nun gehen wir auf die Gefahren dieser casts ein. 
+	Betrachtet man die Variablen im workspace (\matrefe{whos}), so sieht man sofort,
+	dass diese unterschiedlich viel Speicherplatz benötigen. 
+	Daher kann beim Umdeklarieren (casten) Information verloren gehen. Definieren Sie folgende Variablen:
+
+			test1  = 1.8e-60 	(double) 
+			test2  = 1.4  		(double) 
+			test3  = 1.5  		(double) 
+			test4  = 128  		(double) 
+  
+	Casten Sie die Variable °test1° auf den Typ \matrefe{single} und speichern
+	Sie das Ergebnis als °cast_test1° ab.  
+	Was passiert mit °test1°?  
+	Versuchen Sie die Variablen °test2° bis °test4° auf den Typ
+	\matrefe{uint8} zu casten (°cast_test2° bis °cast_test4°).    
+	Was fällt Ihnen auf?  
+	Was passiert, wenn Sie °test4° auf den Typ \matrefe{int8}
+	casten (°cast_test5°)?
+
+1. Zuletzt beschäftigen wir uns mit Kombinationen verschiedener Datentypen 
+	(z.B. Multiplikation einer \matrefe{single}-Variablen mit einer
+	\matrefe{double}-Variablen). 
+	Bei solchen Operationen ist stets Vorsicht geboten, da oft eigenwillige Sachen geschehen können. 
+	An dieser Stelle wird auf die automatischen Tests verzichtet, 
+	da hier vor allem die Fehlermeldungen in der Konsole interessant sind.
+
+	Multiplizieren Sie die Variablen °e° und °f° miteinander. Welchen Datentyp
+	(\matrefe{class}) hat das Ergebnis?
+	Was passiert, wenn Sie °f° mit °c° oder °c° mit °b° multiplizieren?
+
+
+
+

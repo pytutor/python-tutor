@@ -1,0 +1,67 @@
+
+# Stern 1 - P1
+Schreiben Sie eine \matlab-\matref{Funktion}{function} °array_star°, die 
+Folgendes erfüllt:
+
+  
+*  Übergabeparameter ist °m°.
+ 
+*  Sie erzeugt eine Matrix der Größe $2m \times 2m$ (Defaultwert $m=5$) 
+ mit folgender Gestalt:
+  $$
+  A = 
+  \begin{bmatrix}
+    1 & 0 & 0 & 0 & 0 & 1 \\
+    0 & 2 & 0 & 0 & 2 & 0 \\
+    0 & 0 & 3 & 3 & 0 & 0 \\
+    0 & 0 & 3 & 3 & 0 & 0 \\
+    0 & 2 & 0 & 0 & 2 & 0 \\
+    1 & 0 & 0 & 0 & 0 & 1   
+  \end{bmatrix} \; .
+  $$
+
+
+*  Setzen Sie den Defaultwert wie immer, wenn °m° gar nicht oder leer
+übergeben wird. 
+
+
+\hw
+ Die Verwendung von \matrefe{for}- und \matrefe{while}-Schleifen ist nicht
+ erlaubt. Beachten Sie dazu die Variable °count_test°, bzw., Hinweise
+ unter °MLTutor_TEST_MESSAGE°.
+ 
+\hw
+Die Befehle \matrefe{if}, \matrefe{nargin} und \matrefe{isempty} müssen am
+Anfang beim Setzen der Defaultwerte jeweils genau einmal vorkommen. Die Befehle
+\matrefe{else}, \matrefe{elseif}, \matrefe{switch} sind nicht erlaubt. Die
+Defaultwerte sollen in der kompaktesten Form, wie am Ende dieses
+\mltutorhint{Setzen_von_Defaultwerten}{Links} erläutert, gesetzt werden.
+
+
+\ges 
+Funktion °array_star.m°
+
+	[A] = array_star(m)
+		m        : Zeilenanzahl und Spaltenanzahl
+		A        : Rückgabematrix
+
+
+ 
+\bsp
+
+	array_star(5)
+	ans =
+
+		1     0     0     0     0     0     0     0     0     1
+		0     2     0     0     0     0     0     0     2     0
+		0     0     3     0     0     0     0     3     0     0
+		0     0     0     4     0     0     4     0     0     0
+		0     0     0     0     5     5     0     0     0     0
+		0     0     0     0     5     5     0     0     0     0
+		0     0     0     4     0     0     4     0     0     0
+		0     0     3     0     0     0     0     3     0     0
+		0     2     0     0     0     0     0     0     2     0
+		1     0     0     0     0     0     0     0     0     1
+
+
+

@@ -1,0 +1,1 @@
+MLTutor_FIGURE_HIDE = 1;

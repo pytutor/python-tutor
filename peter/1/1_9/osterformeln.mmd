@@ -1,0 +1,107 @@
+
+# Gaußsche Osterformel
+Erzeugen Sie ein \matlab-Skript °osterformel°,
+welches das Datum des Ostersonntages in einem bestimmten Jahr mit der Gaußschen
+Osterformel berechnet.
+
+\ein
+
+Bei der Gaußschen Osterformel handelt es sich um einen Satz von Gleichungen und
+nicht um eine einzige Formel. Im folgenden werden nur die Gleichungen
+wiedergegeben (Variable °X° ist die Jahreszahl). Nähere Informationen
+zum Algorithmus findet man in diesem [Wikipedia-Artikel](http://de.wikipedia.org/wiki/Osterformel).
+
+$$
+\begin{aligned}
+\verb°a° & = \verb°X° mod 19 \\
+\verb°b° & = \verb°X° mod 4 \\
+\verb°c° & = \verb°X° mod 7 \\
+\verb°k° & = \verb°X° div 100; \\
+\verb°p° & = (8\verb°k°+13) div 25 \\
+\verb°q° & = \verb°k° div 4 \\
+\verb°M° & = (15+\verb°k°-\verb°p°-\verb°q°) mod 30 \\
+\verb°N° & = (4+\verb°k°-\verb°q°) mod 7 \\
+\verb°d° & = (19\verb°a°+\verb°M°) mod 30 \\
+\verb°e° & = (2\verb°b°+4\verb°c°+6\verb°d°+\verb°N°) mod 7 \\
+\verb°Ostersonntag° & = 22+\verb°d°+\verb°e° \\
+\end{aligned}
+$$
+
+Bei diesen Formeln ist zu beachten, dass das Ergebnis von °Ostersonntag°
+das Datum des Ostersonntages in Märztagen darstellt (d.h. 32. März = 1. April,
+usw.). Die Operation div stellt die Ganzzahldivision (Division ohne Rest) dar
+(\matrefe{fix}). Unter \matrefe{mod} versteht man die Modulodivision
+(Divisionsrest).
+
+\prog
+
+Das Skript soll folgende Dinge tun:
+
+
+* Lesen Sie die Jahreszahl unter der Variablen °X° von der Tastatur ein
+	(\matrefe{input}). Im Testbetrieb erfolgt die Eingabe automatisch ohne eine Aktion von ihnen. 
+
+	Der Text für die Eingabeaufforderung sollte
+
+	*Jahr fuer die Berechnung des Osterfestes:*
+
+	sein. Dies wird im Test überprüft. Sie dürfen hier auf keinen Fall die zweite
+	Variante von \matrefe{input} verwenden, da das Ergebnis eine Zahl und keine
+	Zeichenkette sein muss, also, z.B.,
+
+			num = input('Text fuer num: ');
+
+	und nicht
+
+			num = input('Text fuer num: ','s');
+
+	Überlegen sie sich auch durch Ausprobieren in der Konsole was der Unterschied
+	ist.
+
+* Berechnen Sie die Formeln aus dem Einführungsteil. Verwenden Sie dabei
+	die gleichen Variablennamen.
+
+* Wie im Einführungsteil beschrieben, erhält man das Datum des
+	Ostersonntages in Märztagen. Schöner wäre es aber die Trennung in die Monate
+	März und April vorzunehmen. Fügen Sie dazu bitte vor dem \matrefe{disp}-Befehl
+	die Programmzeilen
+
+		if (Ostersonntag<=31)
+			Monat='Maerz';
+		else
+			Ostersonntag=Ostersonntag-31;
+			Monat='April';
+		end
+
+	ein. Die obige if-else-Steuerstruktur, welche die Zuordnung zum richtigen Monat
+	vornimmt, wird in Übung 3 näher behandelt und soll Sie hier nicht weiter
+	beirren.  
+
+* Geben Sie das Datum des Ostersonntages formatiert mit der Funktion
+	\matrefe{disp} aus. Hinweise dazu gibt es unter folgenden
+	\mltutorhint{disp}{Formatierungshinweisen}, wo die Verwendung der eckigen Klammern und der Befehl
+	\matrefe{num2str} erklärt ist. Folgender Satz (Zeichenkette) sollte von
+	\matrefe{disp} ausgegeben werden:
+
+	*Der Ostersonntag ist im Jahr "Wert von X" am "Wert von Ostersonntag". "Wert von Monat"*
+
+	Geben sie diesen Text ohne das Zeichen °"° ein.
+
+
+
+
+\hw 
+
+Vergessen Sie nicht den Strichpunkt am Ende einer Anweisungszeile. 
+Kein abgegebenes Beispiel soll eine Ausgabe erzeugen, die nur durch das Weglassen des 
+Strichpunktes am Ende einer Zeile entsteht (Infos dazu auch 
+im [Wiki](http://itp.tugraz.at/wiki/index.php/Main_Page) unter:
+\mltutorhint{Strichpunkt}{MLTutor Hints}).
+
+\hw 
+
+Wenn Sie das Programm in der Konsole testen, werden sie in einem eigenen
+Fenster nach einer \matref{Eingabe}{input} gefragt. Sie können dort eine Zahl
+eingeben und das Fenster mit °ctrl return° schließen.
+
+

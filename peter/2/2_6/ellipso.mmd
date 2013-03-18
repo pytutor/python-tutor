@@ -1,0 +1,26 @@
+# Ellipse - Funktion
+Diese Übung beschäftigt sich mit der Berechnung der Koordinaten einer Ellipse, wenn die Ellipsenparameter $a$ und $b$ (große und kleine Halbachse) gegeben sind.
+Erzeugen Sie die \matlab-Funktion °ellipso° (Datei:
+°ellipso.m°), welche aus den Inputparametern $a$ und $b$ die kartesischen Koordinaten $x$ und $y$ einer Ellipse in erster Hauptlage berechnet:
+
+	[x,y] = ellipso(a,b)  
+	a,b: Skalar  
+	x,y: Vektoren der Länge 100  
+
+Die kartesischen Koordinaten einer Ellipse in erster Hauptlage berechnen sich in Parameterform mit:
+$$
+\begin{aligned}
+  x &= a\cdot(\cos t) \\
+  y &= b\cdot(\sin t) 
+\end{aligned}
+$$
+wobei $t$ der Parameter ist und $0\leq t \leq 2\pi$ gilt. In Ihrer Funktion
+soll der Parameter also über 100 Punkte von 0 bis 2$\pi$ gehen (die Werte sollen
+dabei bei 0 starten und danach immer größer werden).
+
+\hw 
+
+Der Unterschied zu den bisher behandelten Funktionen ist jener, dass diese
+Funktion mehr als eine Outputvariable enthält. Wichtig ist, dass **jede**
+Outputvariable in der Funktion definiert werden muss bzw. einen Wert erhalten
+muss.

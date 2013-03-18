@@ -1,0 +1,31 @@
+<html><head><script type="text/x-mathjax-config">  MathJax.Hub.Config({    extensions: ["tex2jax.js"],    jax: ["input/TeX", "output/HTML-CSS"],    tex2jax: {      inlineMath: [ ['$','$'], ["\\(","\\)"] ],      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],      processEscapes: true    },    "HTML-CSS": { availableFonts: ["TeX"] }  });</script> <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script><script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script><link href="http://itptutor.tugraz.at:8080/mltutor/example/css/common.css" media="screen" rel="stylesheet" type="text/css" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><h1>Visualisierung Dopplerefekt</h1><p>Der Dopplereffekt ist jener Effekt, der die Frequenz eines Tons, welcher von einer Schallquelle ausgeht, scheinbar verändert, wenn sich der Beobachter relativ zur Schallquelle bewegt. Sie sollen nun ein <sc>matlab</sc>-Script</p>
+<pre><code>    schall
+</code></pre><p>schreiben, welches mithilfe der Funktion <code>kreisf1</code> diesen Effekt visualisiert. Dafür müssen Sie zuerst die Aufgaben <strong>Kreisparametrisierung</strong> und <strong>Errormeldung Kreis</strong> abgeben, weil <code>kreisf1</code> dort erstellt wird.</p><p>Die Visualisierung soll durch eine Momentaufnahme der bewegten Schallquelle und den davor ausgesandten Wellenfronten geschehen (siehe Grafik). Die Vorgaben sind folgende: Die Schallquelle bewegt sich vom Koordinatenursprung von Links nach Rechts, mit einer bestimmten Geschwindigkeit $v$. Die Momentaufnahme wird nach genau einer Sekunde gemacht. Darin sollen 50 Wellenfronten dieser ersten Sekunde der Bewegung erkennbar sein, sowie die Positionen der Schallquelle, an denen die betrachteten Wellenfronten ausgesandt wurden (gleichmäßige Abstände). Die Schallgeschwindigkeit beträgt 337,5 m/s (bei angenommenen 10°C). Speichern Sie diesen Wert als Variable $c$. Programmieren Sie das Skript zuerst nur für eine Geschwindigkeit $v=c/2$. Zeichnen Sie die Kreise mit <code>kreisf1</code> mit jeweils <code>n = 50</code> Punkten. Verwenden Sie auf jeden Fall zur besseren Darstellung <matref>axis</matref> und <matref>axis</matref>. Dann sollte Ihr Bild in etwa so aussehen:</p><p><img src="doppler.jpg"  alt="Bild Doppler"/></p><p>Danach erweitern Sie Ihr Skript, sodass drei <matref>figure</matref> nacheinander erstellt weden. Die Geschwindigkeiten der Schallquelle sollen dabei folgende Werte annehmen:</p>
+<table>
+  <thead>
+    <tr>
+      <th>figure-Nummer</th>
+      <th>v</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>$c/2$</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>$c$</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>$2\cdot c$</td>
+    </tr>
+  </tbody>
+</table><p>Die Mittelpunkte sollen als rote * eingezeichnet werden. Betiteln Sie den <matrefe>plot</matrefe> im jeweiligen <matrefe>figure</matrefe> mit dem verwendeten Geschwindigkeitswert ($v=\ldots$).</p><p><textbf>Wichtig:</textbf> Die Beziehung zwischen <matref>figure</matref> und den Geschwindigkeiten muss genau so wie in der obigen Tabelle sein. Weiters müssen - um den automatischen test zu bestehen - in der <matrefe>figure</matrefe> zuerst einzeln die Kreise (beginnend mit dem größten), und nach allen Kreisen die Mittelpunkte gezeichnet werden. Zeichnen Sie die Mittelpunkte mit nur einem Befehl und ohne Schleife (Vektor mit den Koordinaten Mx bzw. My).</p><p><hw/> </p><p>Die Gleichung, mit der Sie zu den x-Werten der Mittelpunktskoordinaten kommen, ist:</p>
+$$
+Mx=v\cdot t
+$$<p>Verwenden Sie zur Berechnung von <code>My</code> den Befehl <matrefe>zeros</matrefe>.</p><p><hw/> </p><p>Bedenken Sie, dass die Kreise vom größten zum kleinsten gezeichnet werden sollen. Die Werte im Zeitvektor <code>t</code> sind allerdings aufsteigend (<code>t(1)</code> ist der kleinste Wert, <code>t(50)</code> der größte). Verwenden Sie also die Gleichung</p>
+$$
+r=c\cdot t
+$$<p>zur Berechnung der Radien, so sind auch die Werte im Vektor <code>r</code> aufsteigend. Sie müssen also den erhaltenen Vektor noch &ldquo;umdrehen&rdquo;, damit die Werte - wie verlangt - absteigend im Vektor stehen. Dafür eignet sich der Befehl <matrefe>fliplr</matrefe> sehr gut. </p></body><script type="text/javascript" src="http://itptutor.tugraz.at:8080/mltutor/example/js/footer.js"></script></html>

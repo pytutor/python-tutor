@@ -1,0 +1,76 @@
+
+
+# Darstellung zweier Polynome, der eingschlossenen Fläche und deren Umfang - P2 
+
+Schreiben Sie ein Skript 
+ 
+		spolyarea,
+
+und berechnen Sie darin:
+ 
+  
+*  Die Schnittpunkte $x_i$ (Variablen: °x_inter°, °y_inter°) der
+  beiden Polynome
+ $$
+ \begin{aligned}
+	p1 & = & 0.2x^3 + 0.5x^2 - 2.4x - 1.2 \\
+	p2 & = & -0.4x^2 - 1.5x + 0.7
+\end{aligned}
+$$
+
+
+*  Sortieren Sie die Schnittpunkte aufsteigend (\numpyref{sort}) und
+modifizieren Sie die Variablen °x_inter° und °y_inter° entsprechend.
+
+*  Die Fläche °A° des von den Polynomen eingeschlossenen Bereiches der
+zwischen dem ersten, $x_i(1)$, und dem zweiten Schnittpunkt, $x_i(2)$, liegt.
+
+*  Den Umfang (circumference) °C° dieser Fläche.
+
+
+\hw
+
+Verwenden Sie die eigenen Funktionen 
+°polyintersec°, °poly_area° und °polylength°.
+
+\graph 
+
+Erzeugen Sie einen Vektor °x°, der im Intervall $[x_{min},x_{max}]$
+100 Stützstellen enthält. Der Wert $x_{min}$ soll jener ganzzahlige Wert sein,
+der kleiner gleich $x_i(1)-1$ ist. Entsprechend soll $x_{max}$ jener ganzzahlige Wert sein,
+der größer gleich $x_i(2)+1$ ist. (\numpyref{floor}, \numpyref{ceil})
+  
+*  Stellen Sie das Polynom °p1° als Funktion 
+  von °x° dar (rot, punktiert). 
+  
+*  Stellen Sie °p2° als Funktion von °x° 
+  dar (blau, punktiert).
+  
+*  Färben Sie die oben berechnete Fläche mit dem Befehl \mplotref{fill} 
+  grau ein. Erzeugen Sie dafür einen Vektor der zwischen den beiden 
+  betrachteten Schnittpunkten eine passende Anzahl an Stützstellen enthält. Mit 
+  diesem könne Sie nun die Funktionswerte der beiden Polynome im gefragten 
+  Bereich berechnen (Diese stellen ja den Rand des zu füllenden Polygons dar). 
+  Bedenken Sie, dass Sie \mplotref{fill} den Rand des zu füllenden Bereiches 
+  vorgeben müssen. Berechnen Sie deshalb ein Polynom von links nach rechts, und 
+  das andere von rechts nach links (polynom[::-1]). Machen Sie das nicht, 
+  werden Sie einen Strich quer durch die Fläche sehen. Geben Sie als Farbe 
+  grün an.
+  
+*  Schreiben Sie den Wert der berechneten Fläche als \mplotref{Text}{text} 
+  in den Plot: 'A = °Wert der Variablen A°' (str()).
+  
+*  Schreiben Sie auch den Wert des Umfangs in den Plot: 'C = °Wert von C°'
+  
+*  Beschriften Sie die Achsen mit einem beliebigen sinnvollen Text.
+  
+*  Erzeugen Sie einen beliebigen sinnvollen Titel.
+
+
+\hw 
+
+Beim Test der eingefärbten Fläche wird lediglich überprüft, ob eine Fläche 
+mit der geforderten Farbe existiert. Ob diese tatsächlich im richtigen Bereich 
+liegt wird von den Tutoren überprüft. Auch bei den Texten wird von den Tutoren 
+überprüft ob diese an einer sinnvollen Position liegen.
+

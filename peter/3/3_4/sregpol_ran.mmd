@@ -1,0 +1,60 @@
+
+
+# Aufruf für reguläre Polyeder - P5
+
+Schreiben Sie ein \matlab-Skript °sregpol°, das mit mehreren Aufrufen von °regpol° nur
+folgende Variablen berechnet: 
+
+
+
+| Polyeder | Groesse | Variable |
+| --   | :----: | ----: |
+| Dodekaeder | Volumen | °Volumen_d° |
+| | | |
+| Würfel | Volumen | °Volumen_w° |
+| Würfel | Oberfläche | °Flaeche_w° | 
+| | | | 
+| Oktaeder | Volumen | °Volumen_o° |
+| Oktaeder | Oberfläche | °Flaeche_o° |
+| Oktaeder | Radius (außen) | °Radius_o° |
+| | | |
+| Ikosaeder | Oberfläche | °Flaeche_i° |
+| Ikosaeder | Radius (außen) | °Radius_i° |
+| Ikosaeder | Radius (innen) | °radius_i° |
+| | | |
+| Tetraeder | Radius (außen) | °Radius_t° |
+| Tetraeder | Radius (innen) | °radius_t° |
+
+Die Variable für die Kantenlänge \red{°Kante°} soll dabei ein Vektor mit
+den Einträgen °[1:3]° sein.
+
+Es ist erlaubt in der Outputliste jene Outputgrößen wegzulassen, die
+\textbf{hinter} den benötigten Outputgrößen liegen.
+Outputgrößen, die \textbf{vor} den benötigten liegen, kann man nicht
+einfach weglassen. 
+Es gibt aber immer die Möglichkeit die Outputgrößen, die in der Liste vor den
+benötigten stehen, mit einer beliebigen Dummy-variable (z.B.:
+°dummy°) aufzufüllen. Diese braucht später nicht verwendet werden, und
+müsste in diesem Beispiel mit
+\matrefe{clear}
+gelöscht werden, damit nur die gewünschten Variablen überbleiben.
+
+Der Tab "Problems" zeigt aber in diesem Fall einen Fehler an, da eine Variable 
+(°dummy°) nicht mehr verwendet wird und weil die jetzige Version von
+\matlab eine bessere Strategie empfiehlt. Man kann die Position nicht
+benötigter Outputvariablen mit dem Zeichen °~° (Tilde) markieren, d.h. man
+kann schreiben  
+> °[~,~,Rad,rad] = regpol('Tetra',[1:3])°  
+
+und bekommt als Ergebnis nur die beiden Radien, das Volumen und die Fläche
+hingegen stehen nicht zur Verfügung, belegen also auch keinen Speicherplatz im
+aufrufenden Programm.
+
+\hw 
+
+Für jeden Polyeder muss man die Funktion °regpol° einmal aufrufen.
+Entscheidend ist die Reihenfolge der Outputgrößen, wobei man so viele Resultate bekommt, wie man Outputgrößen angibt.
+Natürlich funktioniert das in diesem Beispiel mit maximal vier Outputgrößen.
+
+
+

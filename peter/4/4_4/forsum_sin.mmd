@@ -1,0 +1,48 @@
+
+
+# Summen und Schleifen
+
+Erzeugen Sie ein \matlab-Skript °forsum_sin°, das folgende Aufgaben
+erfüllt:
+  
+1. Erzeugen Sie ein Vektor $x$ mit $100$ Punkten zwischen $-\pi$ und $\pi$
+  und einen gleich großen Vektor $y$ mit lauter Nullen.
+  
+1. Erzeugen Sie eine \matrefe{figure} und plotten Sie $y(x)$. Setzen Sie
+  \matrefe{hold} auf °on°. 
+  
+1. Addieren Sie nun in einer \matrefe{for}-Schleife von $n=0$ bis $n=6$
+  jeweils eine Teilsumme $s_n$ der Reihe für den Sinus
+  $$
+  s_n(x) = (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+  $$
+  zum vorherigen Wert von $y$ und plotten Sie dann $y(x)$.
+  
+1. Nach der Schleife plotten Sie noch $\sin(x)$ in einer ander Farbe und
+  setzen dann \matrefe{hold} auf °off°. 
+
+
+\hw 
+
+Im Plot sollte man die Linie bei Null und
+$$
+\begin{aligned}
+S_0 & = s_0 \\
+S_1 & = s_0 + s_1 \\
+S_2 & = s_0 + s_1 + s_2 \\
+    & \vdots
+\end{aligned}
+$$ 
+sehen. Schlussendlich nähert sich $S_n(x)$ dem Sinus an.
+
+\hw 
+
+Getestet werden nur die Linien in den Plots.
+
+\hw 
+
+Sie werden in einer späteren Übung andere Methoden kennenlernen um Reihen
+zu berechnen. Hier soll nur verstanden werden, wie das mit Hilfe einer
+\matrefe{for}-Schleife bewerkstelligt wird.
+
+

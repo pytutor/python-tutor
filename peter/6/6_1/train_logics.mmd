@@ -1,0 +1,44 @@
+
+ 
+# Training von logischen Ausdrücken
+In diesem Beispiel sind die drei Felder °A°, °B° und °C° vom Test vorgegeben. Alle drei sind vom Datentyp \matrefe{logical}. Im \matlab-Skript °train_logics° sollen nun einige Identitäten aus dem Bereich der Boolschen Logik überprüft werden.
+
+In der folgenden Tabelle werden die in der Mathematik üblichen Symbole
+verwendet. Diese sind $\wedge$ (UND), $\vee$ (ODER) und $\neg$ (NICHT). In der Mathematik verwendet man auch das einfache °=° für Vergleiche. Wählen Sie also die richtigen \matref{logischen Operatoren}{logicaloperatorselementwise} und \matref{Vergleichsoperatoren}{relationaloperators} und achten Sie auch auf das richtige Setzen von Klammern, das wegen der unterschiedlichen Priorität der Operatoren wichtig ist. Überlegen Sie in diesem Zusammenhang den Unterschied zwischen °A & B == C° und °(A & B) == C°. Die Namen in der dritten Spalte sind die Variablennamen für die jeweiligen Vergleiche (Felder vom Typ \matrefe{logical}).
+
+
+| Gesetz | Logische Darstellung | Variable |
+| :--- | :----: | ----: |
+|Assoziativität | $A \vee (B \vee C) = (A \vee B) \vee C$ | °L_ass1° |        
+| | $A \wedge (B \wedge C) = (A \wedge B) \wedge C$ | °L_ass2° |
+|Kommutativität | $A \vee B      = B \vee A    $  | °L_comm1° |    
+| | $A \wedge B = B \wedge A$ | °L_comm2°|     
+|Absorption | $A \vee (A \wedge B) = A$ | °L_abs1°|     
+| | $A \wedge (A \vee B) = A$ | °L_abs2°|    
+|Distributivität | $A \vee (B \wedge C) = (A \vee B) \wedge (A \vee C)$ | °L_dist1°|    
+| | $A \wedge (B \vee C) = (A \wedge B) \vee (A \wedge C)$|°L_dist2°| 
+|Komplementarität | $A \vee \neg A = 1$ | °L_comp1°| 
+| | $A \wedge \neg A = 0$ | °L_comp2°| 
+|Idempotenz  | $A \vee A = A$ | °L_ide1°| 
+| | $A \wedge A = A$ | °L_ide2°| 
+|Abgeschlossenheit  | $A \vee 0 = A$ | °L_bound10°| 
+| | $A \vee 1 = 1$ | °L_bound11°| 
+| | $A \wedge 1 = A$ | °L_bound21°| 
+| | $A \wedge 0 = 0$ | °L_bound20°| 
+| Umkehrung | $\neg\neg A = A$ | °L_inv°| 
+| Gesetz von de Morgan | $\neg (A \vee B) = \neg A \wedge \neg B$ | °L_mor1°| 
+| | $\neg (A \wedge B) = \neg A \vee \neg B$ | °L_mor2°| 
+
+
+
+Berechnen Sie nun noch in der Variablen °L_1°
+$$
+\neg ( (A \wedge B) \vee (A \wedge C) \vee (B \wedge C) )  
+$$
+und überlegen Sie sich mit Hilfe des Gesetzes von de Morgan die Umkehrung dieser
+Formel und speichern Sie das Resultat in °L_2° (in der Endversion sollen
+die Negationen nur mehr vor den logischen Variablen stehen). Zeigen Sie nun mit
+Hilfe eines \matrefe{all}-Befehls, dass diese beiden Felder identisch sind (Skalar: °L_12°)
+
+\hw Der Test überprüft zwar alle Variablen, kann aber nicht sicherstellen, ob Sie alle Formeln richtig geschrieben haben. Dies benötigt eine Korrektur durch einen Betreuer.
+
