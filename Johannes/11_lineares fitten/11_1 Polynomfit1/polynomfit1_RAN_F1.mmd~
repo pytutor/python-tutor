@@ -1,0 +1,61 @@
+
+# Lineares Fitten mit Polynomen 1
+Schreiben Sie ein \python-\pyref{Script}{script} °polynomfit1.m°, das
+folgende Aufgaben erfüllt:
+
+  
+1. Die vom Python-Tutor zur verfügung gestellte Datei °polydat1.dat° enthält
+	folgende Messkurve:
+
+	*  Erste Spalte: $x$ Werte 
+	*  Zweite Spalte: $y$ Werte
+	*  Dritte Spalte: $\Delta y$ Fehler der $y$ Werte
+     
+1. Laden Sie die Datei mit \numpyrefe{loadtxt} 
+    
+1. Erzeugen Sie eine Grafik, die $y$ als Funktion von $x$ darstellt.
+    
+1. Benutzen Sie \mplotrefe{errorbar}, um Fehlerbalken einzeichnen zu
+    können. Die Datenpunkte sollen nicht mit Linien verbunden sein. Die Far
+   be soll gruen und die Marker sollen Stern sein.
+	
+1. Bestimmen Sie mit \numpyrefe{polyfit} die besten Polynome nullter, erster,
+	zweiter und
+  	dritter Ordnung, die durch diese Daten passen. Die Polynome sollen °pol_0° 
+  	bis °pol_3° heissen. 
+ 	
+1. Zeichnen Sie die gefitteten Polynome in der oberen Reihenfolge
+ 	 mit \mplotrefe{plot} und °y_fit_1=np.polyval(pol_1,x_fit)° usw.
+ 	 
+1. Die Fitplots sollten die Farben blau, rot, schwarz und cyan in dieser
+ 	 Reihenfolge haben.
+    
+1. Für die x Werte der Plots nehmen Sie $x_{fit} = \left[ 1.1 \cdot min(x) \cdots 1.1 \cdot max(x) \right] $ mit 100 $x_{fit}$-Punkten (\numpyrefe{linspace}).
+    
+1. Schalten Sie die Gitternetzlinien (\mplotrefe{grid}) für die Grafik ein.
+    
+1. Beschriften Sie die Achsen und den gesamten Plot (Überschrift) mit einem
+    	beliebigen Text.
+   	
+1. Erstellen Sie eine Legende mit °Messdaten°, °p_0°, °p_0+p_1*x°, 
+		°p_0+p_1*x+p_2*x^2° und °p_0+p_1*x+p_2*x^2+p_3*x^3°.
+
+
+\hw 
+Das Erstellen der \matref{Legende}{legend} für \matrefe{errorbar}s funktioniert so:
+
+		he1=errorbar(...);
+		he2=plot(...
+		 ...
+		legend([he1,he2,...],'Messdaten','p_0',...);
+
+
+
+ 
+\ges 
+Script °polynomfit1.m°
+
+\bsp
+![Plot](plot.png)
+
+

@@ -1,0 +1,84 @@
+
+
+# Lineare Gleichungssysteme, Diagonalmatrix, Probe
+
+Schreiben Sie ein \python-Skript 
+
+		diagmatrix,
+
+das ein gegebenes Gleichungssystem löst und das Ergebnis einer Probe
+unterzieht.
+
+Die Größe der Matrix und des Inhomogenitätsvektors wird durch die
+Variable °n° festgelegt, die Sie mit der Routine \pyrefe{input}
+von der Konsole einlesen. Als Defaultwert setzen Sie den Wert $5$
+(z.B. mittels \pyrefe{try}, \pyrefe{except}).
+
+$\mathbf{M}$ ist eine $2n \times 2n$ Matrix, deren Hauptdiagonale aus
+Einsern besteht und deren Nebendiagonalen ausschließlich $0.5$
+enthalten. Erzeugen Sie diese Matrix mit dem Befehl \numpyrefe{eye} oder \numpyrefe{diag}.
+$$
+  M = 
+  \begin{bmatrix}
+    1      & 0.5    & 0      & 0      & \ldots \\
+    0.5    & 1      & 0.5    & 0      & \ldots \\
+    0      & 0.5    & 1      & 0.5    & \ldots \\
+    0      &  0     & 0.5    & 1      & \ldots \\
+    \vdots & \vdots & \vdots & \vdots & \ddots
+  \end{bmatrix}
+$$
+
+Der Vektor $\mathbf{v}$ soll folgende Gestalt haben:
+$$
+  \mathbf{v} = 
+  \begin{bmatrix}
+    0 \\
+    1 \\
+    0 \\
+    2 \\
+    0 \\
+    3 \\
+    \vdots \\
+    0 \\
+    n \\
+  \end{bmatrix}
+$$
+Erzeugen Sie $\mathbf{v}$ mit \matrefe{zeros} und der
+Doppelpunkt-Notation (v[1::2] = ...).
+
+
+
+*  Lösen Sie nun die Gleichung $\mathbf{My} = \mathbf{v}$.
+
+*  Machen Sie die Probe $\mathbf{check} = \mathbf{My - v}$. 
+    
+*  Überprüfen Sie, ob °check° tatsächlich ausschließlich
+    Nullen enthält. Geben Sie den logischen Vektor dieses Vergleichs
+    in der Form    
+    °check: 'Werte des Vergleichs'°      
+	formatiert aus. Enthält er nur Einser? Wandeln Sie den Vektor gegebenenfalls in einen Zeilenvektor um.
+  
+
+
+Bei der Ausgabe von °check° sieht man, dass diese Probe
+fehlschlägt. Dies liegt daran, dass durch die endliche Genauigkeit der
+Zahlen stets Rundungsfehler auftreten. Aus diesem Grund ist es **nicht
+sinnvoll** auf **Gleichheit** zu prüfen. Es macht lediglich Sinn auf
+**beinahe Gleichheit** zu prüfen. Dazu kann der *relative* oder
+der *absolute* Fehler verwendet werden. Hier soll eine absolute
+Fehlerschranke verwendet werden.
+
+		error_limit = 1.0e-8;
+
+Damit ist nun die Durchführung einer sinnvollen Probe der Form
+
+		if all ( abs(check) < error_limit )
+			disp('Check successful')
+		else
+			disp('Check not successful')
+		end
+
+möglich.
+ 
+Führen Sie am Ende Ihres Skrips die Probe auf diese Art durch.
+

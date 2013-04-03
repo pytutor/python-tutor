@@ -1,0 +1,52 @@
+
+ 
+# RLC-Kreis: Band-Pass Filter
+In dieser Übung soll die Frequenzabhängigkeit eines speziellen RLC-Kreises programmiert werden, wie er z.B. 
+im [Wiki](http://en.wikipedia.org/wiki/Band-pass_filter) erklärt wird.
+
+Dazu muss man wissen, dass RLC-Kreise entsprechend den 
+[Kirchhoffschen Gesetzen](http://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws) behandelt werden können, wobei man für die Kapazität $C$ und die Induktion $L$ eine komplexe Impedanz, $Z_C$, bzw. $Z_L$ definieren muss, die auch von der Frequenz $\Omega$ abhängen ([elektrische Impedanz](http://en.wikipedia.org/wiki/Electrical_impedance)).
+Ein idealer Widerstand $R$ hat eine rein reelle Impedanz, die nicht von der Frequenz abhängt,
+$$
+\begin{aligned}
+Z_R & = R \\
+Z_L  & = j \Omega L \\
+Z_C & = \frac{1}{j \Omega C} 
+\end{aligned}
+$$
+wobei hier $j=\sqrt{-1}$ für die komplexe Einheit verwendet wurde, um die Gefahr einer Verwechslung mit dem Strom $i$ zu vermeiden. 
+
+
+Die Kirchhoffschen Gesetze ergeben nun für diesen Schwingkreis folgende Gleichungen:
+$$
+\begin{aligned}
+0    & = - i_1 + i_2 + i_3 \\
+0    & = i_2 - i_4 + i_5 \\
+u    & = i_1 \left( j \Omega L_1 +  \frac{1}{j \Omega C_1} \right) + i_4 \left( j \Omega L_2 \right) \\
+0    & = i_4 \left( j \Omega L_2 \right) + i_5 \left( \frac{1}{j \Omega C_2} \right) \\
+0    & = i_3 \left( j \Omega L_3 + \frac{1}{j \Omega C_3} + R_3 \right) + i_5 \left(\frac{1}{j \Omega C_2} \right)
+\end{aligned}
+$$
+
+Bringen Sie nun dieses lineare Gleichungssystem in die Form
+$$
+M(\omega,R,L,C) I = U \; ,
+$$
+wobei die Matrix °M° durch eine anonyme Funktion 
+
+		M = RLC_func(om,R,L,C)
+
+bereitgestellt werden soll. Die Variable °om° ($\Omega$) ist ein Skalar und °R°, °L° und °C° sind Vektoren mit drei Elementen. Diese Funktion wird im Test überprüft.
+
+Setzen Sie nun die Variablen °u=1°, °R=[nan,nan,1]°, °L=[1,1,1]° und °C=[1,1,1]°. Definieren Sie außerdem einen Vektor °om_v° mit $201$ Werten zwischen $10^{-1}$ und $10^{+1}$ (logarithmisch equidistant, 
+\numpyrefe{logspace}) für die Frequenzen.
+
+Definieren Sie die Variable °U° für die rechte Seite des Gleichungssystems (Inhomogenitätsvektor) und eine Variable °I° mit $5$ Zeilen für die Ströme und $201$ Spalten (Frequenzen). Vergessen Sie nicht den Typ (dtype) auf complex zu stellen. Lösen Sie nun in einer Schleife für alle Frequenzen das Gleichungssystem, wobei °M° jeweils mit °RLC_func° berechnet werden soll. Im folgenden Plot interessiert uns nun der Strom $i_3$ also die dritte Zeile des Feldes °I°. Interessant sind dabei zwei Größen, die Amplitude $|i_3|$ und die Phase $\Theta$ entsprechend der Darstellung von komplexe Zahlen
+$$
+z = |z| e^{j\Theta},
+$$
+wobei man in \matlab die Phase mit dem Befehl \matrefe{angle} bekommt.
+
+Plotten Sie nun in einer \mplotrefe{figure} zwei Achsensysteme (\mplotrefe{subplot}) und zeichnen Sie im ersten $|i_3(\Omega)|$ (durchgehend, blau, logarithmische x-Skala) und im zweiten  $\Theta(\Omega)$ (durchgehend, blau, logarithmische x-Skala). Die Labels sind $\Omega$, $|i_3|$ und $\Theta$. Die Titel für die beiden Plots sind:
+*Amplitude* und *Phase*      
+Es ist darauf zu achten, dass in den Labels die griechischen Buchstabe $\Omega$ (Omega) und $\Theta$ (Theta) geschrieben werden (Verwendung von \$-Zeichen am Anfang und am Ende) und dass der Index tiefgestellt ist. Die Limits der y-Achse des zweiten Plots sollten auf $[-\pi,\pi]$ gesetzt werden.

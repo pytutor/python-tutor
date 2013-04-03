@@ -1,0 +1,54 @@
+
+# Nichtlinearer Fit - einfache Exponentialfunktion
+
+Eine Dämpfungsfunktion ist eine Exponentialfunktion der Art
+$$
+y(t)=e^{-\beta\cdot t}
+$$
+Z.B. die Einhüllende einer gedämpften harmonischen Schwingung kann dadurch 
+beschrieben werden. $\beta$ ist der sogenannte Dämpfungsfaktor.
+Liegen Daten einer Messung vor, so dienen diese meist dazu, die unbekannten 
+Parameter einer Modellfunktion festzulegen. Im obigen Fall hat die Modellfunktion 
+nur einen Parameter, und dieser ist $\beta$. Scipy stellt einige nützliche 
+Routinen zur Verfügung, mit denen man Parameter einer Modellfunktion gegebenen 
+Daten anpassen kann. Eine solche Routine ist \scipyrefe{curve_fit}. 
+Diese Routine benötigt die gemessenen Daten, die gewünschte Modellfunktion und 
+geeignete Startwerte für die Parameter. Ausgegeben werden von ihr die optimierten 
+Parameter, welche die Modellfunktion optimal an die Daten fitten.
+
+Laden Sie das Datenfile °'daten_nlin_exp.dat'° mithilfe von \numpyrefe{loadtxt}
+und speichern Sie die erste Spalte davon unter °t° und die zweite unter
+°y° ab. Definieren Sie obige Funktion mit \pyrefe{def} oder \pyref{lambda}. Optimieren Sie anschließend mit 
+\scipyrefe{curve_fit} 
+den Modellparameter $\beta$.
+\graph
+Erstellen Sie abschließend einen Plot, der folgendes zeigt:
+
+
+*  Die Datenpunkte markiert mit blauem *
+
+*  Die Funktion $y(t)=e^{-\beta\cdot t}$ mit optimierten Parameter als schwarze Linie über einem 
+Vektor °t1°, der im Intervall $[0,15]$ 300 Stützstellen enthält.
+
+Halten Sie sich bitte wie immer an diese Reihenfolge.
+Beschriften Sie die Koordinatenachsen sinnvoll und geben Sie dem Plot folgende 
+Überschrift:
+°Daempfungsfaktor = WERT VON BETA_OPT°
+Beschränken Sie zur besseren Darstellung die y-Achse auf das Intervall $[-0.1, 
+1.1]$.    
+
+\hw 
+Achten Sie bei der Definition der Modellfunktion darauf, in welcher
+Reihenfolge die Funktionsargumente °t° und $\beta$ angeführt werden müssen.
+
+\hw 
+Um die Funktionswerte der optimierten Modellfunktion zu den gewünschten 
+Argumenten °t1° zu bekommen, brauchen Sie nur die Funktion °f° mit dem 
+optimierten Parameter °beta_opt° und °t1° aufzurufen.
+
+\hw 
+Die Daten wurden mit einem Dämpfungsfaktor von $0.385$ generiert. 
+Vergleichen Sie Ihr °beta_opt° mit diesem Wert.
+
+\bsp    
+![Bild](expfit.jpg)

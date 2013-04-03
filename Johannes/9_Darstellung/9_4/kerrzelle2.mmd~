@@ -1,0 +1,115 @@
+
+# Kerrzelle 2
+Schreiben Sie ein \python-\pyref{Skript}{script}    
+		
+		kerrzelle2,    
+
+in dem Sie die Daten eines Laborversuchs auswerten: 
+
+1.  Bringt man isotrope Dielektrika in ein homogenes elektrisches Feld,
+  so erhalten diese die optischen Eigenschaften eines einachsigen
+  Kristalls und werden [doppelbrechend](http://de.wikipedia.org/wiki/Doppelbrechung). Für den
+  Phasenunterschied $\Delta\varphi$ von ordentlichem und außerordentlichem
+  Strahl folgt nach dem *empirischen Gesetz von Kerr*:
+  $$ 
+    \Delta \varphi = c\cdot U^2 \quad
+    \begin{array}{rcl}
+      c  & \ldots & \mbox{Konstante, die aber von der Wellenlänge des Lichtes
+        abhängt}\\
+      U &\ldots   & \mbox{Spannung an einem Kondensator, der das elektrische Feld
+        erzeugt}\\
+    \end{array}
+  $$	
+
+1.  Die Datei °kerrtab-pu.dat° enthält folgende Daten:
+  
+	Spalte 1: $U^2$    
+  	Spalte 2: $\Delta\varphi$ für grünes Licht
+  	Spalte 3: Fehler für grünes Licht
+  	Spalte 4: $\Delta\varphi$ für gelbes Licht
+  	Spalte 5: Fehler für gelbes Licht
+  	Spalte 6: $\Delta\varphi$ für blaues Licht
+ 	Spalte 7: Fehler für blaues Licht
+  
+1.  Verwenden Sie \numpyrefe{loadtxt}, um diese Datei zu laden.
+
+1. Erzeugen Sie eine Grafik, die für die einzelnen Farben
+  $\Delta\varphi$ als Funktion von $U^2$ darstellt (alle drei in einem
+  Achsensystem).
+
+1. Verwenden Sie die Farben grün, gelb und blau für die Linien und 
+  \mplotrefe{errorbar} zum Plotten. Die Datenpunkte sollen nicht 
+  mit Linien verbunden sein. Rufen Sie die \mplotrefe{errorbar}-Befehle
+  für grünes, gelbes und blaues Licht in dieser Reihenfolge auf. 
+
+1. Führen Sie für die Konstanten °c_gruen°,°c_gelb° und 
+  °c_blau° einen linearen Fit durch. Bitte verwenden Sie genau diese
+  Variablennamen. Wie das lineare Fitten 
+  geht, finden Sie unten in den Hinweisen.
+
+1. Geben Sie alle Konstanten formatiert in der obigen
+  Reihenfolge auf folgende Art aus:
+  °U^2 Abhaengigkeit von phi fuer gruenes Licht: 0.027028°
+  Achten Sie dabei auf die genaue Schreibweise!
+  
+1. \mplotref{Plotten}{plot} Sie die 3 Ausgleichsgeraden
+  °y_gruen = c_gruen*x° usw., über einem Vektor  
+  $x \epsilon \left[0 \quad 1.1*max(U^2) \right]$ 
+  mit 100 Stützstellen (\numpyrefe{linspace}).
+
+1. Schalten Sie das \mplotref{Gitternetz}{grid} für die Grafik ein.
+
+1. Beschriften Sie die Achsen mit °\$U^2\$° und \$\\°Delta°\$ \$\\°phi°\$
+  (und zwar genau so inklusive °\$°, °\° und °^°. Dies bewirkt, dass die Eingabe in Latex-Code erfolgt, das Hochstellen der 2 und griechische Buchstaben für °Delta° und °phi°).
+
+1. Betiteln Sie die Grafik mit °Linearer Fit°
+
+1. Speichern Sie die Grafik unter dem Dateinamen °spannungsabhaengigkeit.eps°.
+
+
+\hw 
+Erstellen Sie zuerst alle Errorbars und anschließend die drei
+Ausgleichsgeraden.
+
+\hw 
+Es ist auch möglich, den Befehl \numpyrefe{polyfit} zum
+linearen Fitten zu verwenden, dabei wird jedoch die Ausgleichsgerade nicht unbedingt
+durch den Ursprung gelegt. Wenn man das erreichen will, darf man für
+die Gerade nur die Formel $y = kx$ verwenden. Damit bleibt dann als
+einziger zu fittender Parameter die Steigung $k$. Diese ergibt sich aus
+$$k = \frac{\sum_{n=1}^{N}x_n y_n}{\sum_{n=1}^{N}x_n^2},$$
+wobei N die Anzahl der Datenpunkte ist.
+
+\hw 
+Das Erstellen der \mplotref{Legende}{legend} für \matrefe{errorbar}s funktioniert so:
+
+		he1=errorbar(u2,phi_gruen,d_phi_gruen,'g*');
+		he2=errorbar(...
+		...
+		legend([he1,he2,...],'gruen','gelb',...);
+
+Dem Befehl \matrefe{legend} wird also zuerst ein Vektor aus Handles
+auf die errorbar-Elemente des Plots übergeben. Die Legende wird in
+diesem Fall nur für diese Elemente erstellt. Genau so können auch
+Handles von \matrefe{plot} in anderen Grafikbefehlen verwendet werden.
+
+\hw
+Mit dem Befehl °print -deps2 -tiff -r300 Grafikdateiname° wird
+die aktuelle \matrefe{figure} in der Datei °Grafikdateiname.eps° im
+eps-container tiff-komprimiert und mit einer Auflösung von 300 dpi
+gespeichert.
+
+\ges 
+Skript °kerrzelle2.m°
+
+\bsp
+**Textausgabe:**
+
+U^2 Abhaengigkeit von phi fuer gruenes Licht: 0.00047174    
+U^2 Abhaengigkeit von phi fuer gelbes Licht: 0.00044188    
+U^2 Abhaengigkeit von phi fuer blaues Licht: 0.00062186    
+
+
+**Grafik:**    
+![Kerrzelle](kerrzelle2_grafik.jpg)
+

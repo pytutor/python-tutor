@@ -16,7 +16,7 @@ a = np.linspace(0,np.pi,n)
 a = np.sin(a)
 
 plt.figure()
-line, = plt.plot(0,0)
+line, = plt.plot()
 plt.xlim((min(x),max(x)))
 plt.ylim((0,1))
 

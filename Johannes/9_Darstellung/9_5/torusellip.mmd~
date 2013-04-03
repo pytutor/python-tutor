@@ -1,0 +1,50 @@
+
+# Plot eines elliptischen Torus
+
+Die Oberfläche eines [Torus](http://de.wikipedia.org/wiki/Torus)
+ist definiert durch:
+$$
+\begin{aligned}
+  x & = & [ R + a \cdot \cos(\theta) ] \cos(\phi) \\
+  y & = & [ R + a \cdot \cos(\theta) ] \sin(\phi) \\
+  z & = & b \cdot \sin(\theta) .
+\end{aligned}
+$$
+
+mit den Toruskoordinaten:  
+  
+* $\phi$ (toroidaler Winkel; entspricht °t° auf Wikipedia)   
+  
+* $\theta$ (poloidaler Winkel; entspricht °p° auf Wikipedia). 
+
+Anstatt des kleinen
+Radiuses $r$ werden hier die Längen der beiden Hauptachsen einer Ellipse $a$
+(in $x$ bzw. $y$-Richtung) und $b$ (in $z$-Richtung) verwendet.
+
+Schreiben Sie nun ein Skript °torusellip°, in dem Sie einen Torus 
+darstellen.
+
+Die Wahl der Stützstellen, und die Details der Darstellung im Plot
+bleiben Ihnen überlassen.
+
+Im Test werden Eigenschaften überprüft, die ein korrekt erstellter Torus
+haben sollte. Kommt es zu einer Unstimmigkeit wird eine Fehlernachricht angezeigt.
+Beachten Sie dazu °MLTutor_TEST_MESSAGE°.
+
+\hw
+Um 3D-Darstellungen zu fabrizieren gehen sie wie folgt vor:
+* Importieren sie die notwendigen Module
+from mpl_toolkits.mplot3d import Axes3D # um 3d-Objekte auf 2D-figures plotten zu können
+from matplotlib import cm # Farb-mapping
+...
+fig = plt.figure() # erzeugen er figure
+ax = fig.gca(projection='3d') # "get current axes", erzeugt die Achsen für den 3D-Plot
+
+\bsp
+Beispieldarstellung eines Torus. Zur Farbskalierung wurde hier  $R+\sqrt{a^2 + b^2} \cos(2 \theta) \cos(2 \phi)$ verwendet.    
+![Torus](torusellip_plot.jpg)    
+
+  	
+	
+
+

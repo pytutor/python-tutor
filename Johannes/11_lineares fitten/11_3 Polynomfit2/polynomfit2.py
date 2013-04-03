@@ -18,13 +18,6 @@ N = 100
 plt.figure()
 plt.errorbar(x,y,dy,fmt='g*')
 
-#Gleichung zu lösen: y = A*p mit A = [[1,x,x²,x³]] und p = [[p_0...p_3]]
-#A = np.vstack([np.ones(x.shape),x]).T # da 2. und 3. Ordnung vorgegeben
-#p = np.linalg.lstsq(A,y)[0]
-#pol = np.append(p,[-3.2,1])
-#pol = pol[::-1]
-
-
 p_2 = -3.2
 p_3 = 1
 X = np.vstack([np.ones(x.shape),x]).T

@@ -1,0 +1,79 @@
+
+# Fitten eines verrauschten Polynoms
+Schreiben Sie ein \python-\pyref{Script}{script} °polyrausch.m°, das folgende Aufgaben
+erfüllt:
+
+ 
+1.  Gegeben ist ein Polynom °p_test° und der Skalar °sig°
+ (Stärke des Rauschens); sie werden vom MLTutor vorgegeben. Um ihr
+ Skript in der Konsole
+ zu testen, können sie diese Variablen natürlich selbst definieren. Vergessen
+ sie aber nicht, die Variablen vor der Abgabe auszukommentieren. Mit Hilfe
+ von °p_test° und °sigma° sollen "verrauschte" Testdaten
+ generiert werden:
+ 
+1. 
+ Erzeugen Sie dazu einen $x$-Vektor $x = \left[ -7 ... 7 \right]$ mit
+ 15 Werten und berechnen Sie die dazugehörigen $y$-Werte des Polynoms.
+ 
+1.  
+ Verrauschen Sie die $y$-Daten, indem Sie einen normalverteilten Zufallsvektor
+ mit der Standardabweichung $\sigma$ zum  $y$-Vektor addieren.
+ Die Funktion \numpyrefe{randn} liefert Zufallszahlen mit der Standardabweichung
+ 1. Durch Multiplikation mit °sig° erhält man die gewünschte
+ Standardabweichung. Damit die automatische Überprüfung funktioniert, sollten
+ Sie den Zufallszahlengenerator in diesem Skript nur einmal, auf diese Art, verwenden.
+  
+     
+1. 
+    Erzeugen Sie eine Grafik, die das verrauschte $y$ als Funktion von $x$
+    darstellt.
+    
+1.  Benutzen
+    Sie \mplotrefe{errorbar} um Fehlerbalken darzustellen. Die
+    Datenpunkte sollen dabei nicht mit Linien verbunden sein, die Marker rot
+    sein, und das Markersymbol soll ein Kreis sein. Als Werte für die Fehler
+    $\Delta y$ verwenden Sie °sig°.
+	
+1.  Fitten Sie ein Polynom °p_fit°, das die gleiche Ordnung wie °p_test°
+	haben soll, mit \numpyrefe{polyfit} in die erzeugten verrauschten Daten.
+	
+1.  Zeichnen Sie zuerst das gefittete Polynom in der Farbe gruen, mit
+ 	 \mplotrefe{plot} und °y_fit=np.polyval(p_fit,x_fit)°.
+ 	
+1.  Zeichnen Sie dann das gegebene Polynom in der Farbe blau, mit
+ 	 °y_test=np.polyval(p_test,x_fit)°.
+  
+	* $x_{fit} = \left[ 2 \cdot min(x) \cdots 2 \cdot max(x) \right] $ und 100 $x_{fit}$-Punkten
+    	(\matrefe{linspace}).
+    * Schalten sie das \mplotref{Gitternetz}{grid} für die Grafik ein.
+    * Beschriften Sie die Achsen mit beliebigem Text.
+  	
+1.  Betiteln Sie die Grafik ebenfalls beliebig.
+ 	
+1.  Erstellen sie eine Legende mit °Testdaten° , °Fitpolynom°
+ 	und °Testpolynom°.
+	
+1.  Experimentieren Sie mit den Werten für °p_test° und °sig°.
+	
+1.  Vor der Beispielabgabe müssen Sie dann die Definitionen von °p_test°
+	und °sig° auskommentieren.
+
+
+
+\hw 
+Das Erstellen der \matref{Legende}{legend} für \matrefe{errorbar}s funktioniert so:
+
+		he1=errorbar(...);
+		he2=plot(...
+		 ...
+		legend([he1,he2,...],'errorbar-beschriftung','plot-beschriftung..',...);
+
+
+\ges 
+Skript °polyrausch.m°
+
+\bsp
+![Plot](plot.png)
+
+

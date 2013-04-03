@@ -16,9 +16,9 @@ I_zirk = data[:,2]
 I_ellip = data[:,3]
 
 plt.figure()
-plt.polar(phi,I_lin,'r*')
-plt.polar(phi,I_zirk,'bo')
-plt.polar(phi,I_ellip,'kx')
+plt.polar(phi,I_lin,'r*-')
+plt.polar(phi,I_zirk,'bo-')
+plt.polar(phi,I_ellip,'kx-')
 
 plt.title('Winkelabhaengigkeit der Intensitaet')
 plt.legend(('linear','zirkular','elliptisch'))

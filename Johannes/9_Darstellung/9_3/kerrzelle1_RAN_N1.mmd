@@ -1,0 +1,61 @@
+
+# Kerrzelle 1
+Schreiben Sie ein \python-\pyref{Skript}{script} 
+		kerrzelle1, 
+in dem Sie
+die Daten eines Laborversuchs auswerten:
+
+
+*  Die Datei °kerrtab.dat° enthält eine Matrix
+  mit folgendem Inhalt:
+  
+	*  Erste Spalte: Winkel in Grad
+  
+	*  Zweite Spalte: Intensität von linear polarisiertem Licht
+  
+	*  Dritte Spalte: Intensität von zirkular polarisiertem Licht
+  
+	*  Vierte Spalte: Intensität von elliptisch polarisiertem Licht
+  
+	Die Daten stammen von folgender Messung: Polarisiertes
+  Licht wird durch einen Analysator gestrahlt, und dahinter wird die
+  Intensität des transmittierten Lichtes detektiert. Ein Analysator lässt nur
+  Licht einer bestimmten Schwingungsrichtung (linearer Polarisation) durch. Wird
+  der Analysator gedreht, ändert sich die Intensität gemäß der oben gegebenen
+  Daten. Wikipedia: [Kerr-Effekt](http://de.wikipedia.org/wiki/Kerr-Effekt)
+
+*  Laden Sie den Datenfile °kerrtab.dat° mit dem Befehl \numpyref{loadtxt}.
+
+* Erzeugen Sie eine Grafik, in der drei Polarplots zu sehen sind. Halten
+  Sie sich dabei an die angegebene Reihenfolge, die jeweilige
+  Linienfarbe und die Datenmarker: 
+  
+	|Daten|Farbe|Marker |
+    |-|-|-|
+    |linear polarisiertes Licht     |     rot     | Stern(*) |
+    |zirkular polarisiertes Licht   |    blau     | Kreis(o) |
+    |elliptisch polarisiertes Licht |   schwarz   | x |
+  
+* Beschriften Sie die Grafik mit dem Titel
+  °Winkelabhaengigkeit der Intensitaet°.
+
+* Erzeugen Sie eine Legende mit den Texten °linear°, °zirkular° und °elliptisch°. 
+
+* Speichern Sie die Grafik unter dem Dateinamen °winkelabhaengigkeit.eps°.
+
+
+\hw
+Mit dem Befehl °savefig(Grafikdateiname.eps,dpi=300)° wird die 
+aktuelle \pyrefe{figure} in der Datei °Grafikdateiname.eps° im 
+eps-container mit einer Auflösung von 300 dpi
+gespeichert. Die Grafik kann später problemlos in [LaTeX](http://itp.tugraz.at/wiki/index.php/Latex)-Dokumente eingebunden 
+werden.
+
+\ges 
+Skript °kerrzelle1.m°
+
+\bsp
+ ![Kerrzelle](Kerrzelle1_grafik.jpg)  
+
+
+ 

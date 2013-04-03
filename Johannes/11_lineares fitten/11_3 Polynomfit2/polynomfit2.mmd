@@ -1,0 +1,60 @@
+
+# Lineares Fitten mit Polynomen 2
+Schreiben Sie eine \python-\pyref{Script}{script} °polynomfit2.m°, das
+folgende Aufgaben erfüllt:
+
+  
+1. Der Python-Tutor stellt die Datei °polydat.dat° zur Verfügung. Sie enthält
+	eine Messkurve:
+		
+	* Erste Spalte: $x$ Werte
+	* Zweite Spalte: $y$ Werte
+	* Dritte Spalte: $\Delta y$ Fehler der $y$ Werte
+    
+1. Laden Sie die Datei mit \numpyrefe{loadtxt} .
+    
+1. Erzeugen Sie eine Grafik, die $y$ als Funktion von $x$ darstellt.
+    
+1. Benutzen Sie \mplotrefe{errorbar}, um Fehlerbalken einzeichnen zu
+    können. Die Datenpunkte sollen nicht mit Linien verbunden sein, die Marker
+    grün und das Markersymbol soll ein * sein.  
+  	
+1. Fitten Sie ein Polynom 3. Ordnung, bei dem jedoch zwei
+  	Koeffizienten bekannt sind:
+		   
+	*  Koeffizient der 3. Ordnung (also der Koeffizient vor $x^3$):
+    $p_3=1$ (Achtung der Koeffizient zur höchsten vorkommenden Potenz von
+    $x$ steht in der Polynomdarstellung immer an erster Stelle im
+    Koeffizientenvektor)
+	
+	*  Koeffizient der 2. Ordnung (also der Koeffizient vor $x^2$):
+    $p_2=-3.2$
+
+1. Berechnen Sie das Fitpolynom °pol° durch Lösen des passenden
+	linearen Gleichungssystems (siehe Hinweis unten).
+ 	
+1. Zeichnen Sie das gefittete Polynom in roter Farbe mit
+ 	 \mplotrefe{plot} und °y_fit=np.polyval(pol,x_fit)°
+ 	 
+1. Als x- Werte für den Fit nehmen Sie $x_{fit} = \left[ 1.1 \cdot min(x)
+    	\cdots
+    	1.1 \cdot max(x) \right] $ mit 100 $x_{fit}$-Punkten (\numpyrefe{linspace}).
+    
+1. Schalten sie das \mplotref{Netz}{grid} für die Grafik ein.
+    
+1. Beschriften Sie die Achsen und den gesamten Plot (Überschrift) mit einem
+    beliebigen Text.
+ 	
+1. Erstellen Sie eine Legende mit °Messdaten° und
+ 	°p_0-p_1*x-3.2*x^2+1*x^3°.
+
+
+\hw
+  Sie sollen nun selbst ein lineares Gleichungssystem erstellen und
+  dieses mit Hilfe eines Least-Square-Verfahren (\numpyrefe{lstsq}) lösen. Dies liefert
+  Ihnen die gewünschten Koeffizienten.
+
+\bsp
+![Plot](plot.png)
+
+

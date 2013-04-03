@@ -37,17 +37,9 @@ xx,yy = np.meshgrid(x,y)
 
 zz = s[0]*xx**2 + s[1]*2*xx*yy + s[2]*yy**2 + s[3]*xx + s[4]*yy + s[5]
 plt.figure()
-plt.contour(xx,yy,zz,20, rstride=1, cstride=1, cmap=cm.jet,
-        linewidth=0, antialiased=False)
-#ax = fig.add_subplot(111,projection='3d')
-#surf = ax.contour(xx,yy,zz)
+plt.contourf(xx, yy, zz, levels=np.linspace(zz.min(),zz.max(),100))
+plt.plot(xd,yd,'ko')
+plt.colorbar()
+plt.contour(xx,yy,zz,[0,0])
 
 plt.show()
-
-#set(su_H,'EdgeColor','none') ;
-#view(2)
-#
-#line(xd,yd,'Marker','o','Color','k','LineStyle','none');
-#hold on
-#v = [0,0]; contour(xx,yy,zz,v,'LineColor','black');
-#hold off

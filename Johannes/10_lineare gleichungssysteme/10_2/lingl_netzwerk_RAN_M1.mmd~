@@ -1,0 +1,92 @@
+    
+
+# Lineareas Gleichungssystem, Kirchoffsche Regeln
+
+\ein
+Gegeben ist ein Netzwerk mit ohmschen Widerständen und Spannungsquellen.
+Die sich einstellenden Ströme kann man bequem über die Kirchhoffschen
+Regeln bestimmen:
+ 
+* *Knotenregel*: An jedem Knoten ist die Summe der
+  einfließenden Ströme gleich der Summe der ausfließenden Ströme. In
+  unserem Beispiel heißt das:
+	* Knoten P:
+	$$
+      i_1-i_2+i_3=0
+    $$    
+	* Knoten Q:
+    $$
+      -i_1+i_2-i_3=0
+    $$
+ 	In diesem Fall sind das äquivalente Gleichungen, wovon nur eine
+  	benötigt wird.
+
+* *Schleifenregel*: In jeder Schleife ist die Summe der
+  Spannungsabfälle gleich der Summe der Spannungsquellen.
+	* Rechte Schleife:
+    $$
+      10\, i_2 + (10+15) \, i_3 = U_1\label{eq:AMO_rechteschleife}
+    $$
+	* Linke Schleife:
+    $$
+      20\, i_1 + 10\, i_2 = U_2\label{eq:AMO_linkeschleife}
+    $$
+    
+    
+Netzwerk mit 4 ohmschen Widerständen und 2 Spannungsquellen:    
+![Stromkreis](stromkreis.jpg) 
+    
+  
+Wir können dieses lineare Gleichungssystem in Matrixform schreiben.
+$$
+ 
+  \begin{bmatrix}
+1 & -1 & 1 \\ 0 & 10 & 25 \\ 20 & 10 & 0 \end{bmatrix}  \, 
+ {\bf x} = 
+\begin{bmatrix} 0 \\ U_1 \\ U_2 \end{bmatrix} \; .
+$$
+Wie man lineare Gleichungssysteme dieser Art in Matlab löst finden Sie im 
+Skriptum in \appsoftkapitel{6}, oder in der \matref{\matlab Dokumentation}{mrdivide}.
+
+***
+
+Schreiben Sie nun ein Skript
+ 
+		netzwerk,
+
+das dieses Gleichungssystem für folgende Werte löst:
+
+
+* $U_1=90$, $U_2=80$; Speichern Sie das Ergebnis im Vektor I1.
+
+* $U_1=125$, $U_2=90$; Hier speichern Sie das Ergebnis im
+Vektor I2.
+
+* Kann man dieses Gleichungssystem auch für mehrere Vektoren
+  $$
+    \begin{bmatrix} 0 \\ U_1 \\ U_2 \end{bmatrix}
+  $$
+  zugleich lösen? Lösen Sie das System für die Vektoren I1, I2 und für
+  den Vektor mit $U_1=150$, $U_2=70$ mit einem Befehl. Das Ergebnis
+  ist in der Matrix °I° zu speichern.
+
+
+\hw
+Welche Dimension die beteiligten Vektoren haben müssen überlegt man sich 
+am besten direkt am Gleichungssystem $\mathbf{Ax}=\mathbf{b}$.
+
+\zus
+Lösen Sie das obige Lineare Gleichungssystem für folgende 
+Inhomogenitäten und verwenden Sie die angegebenen Variablen für die Ergebnisse:
+
+
+|Inhomogenität | Ergebnisvariable 
+|-|-|
+|°b = [0;  90; 80]° |°I1° (Vektor) 
+|°b = [0; 125; 90]° |°I2° (Vektor) 
+|°B° = Matrix aus obigen Vektoren  °[0; 150; 70]° | °I° (Matrix)
+  
+
+
+
+

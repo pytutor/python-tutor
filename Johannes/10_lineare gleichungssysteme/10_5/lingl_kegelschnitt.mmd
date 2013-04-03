@@ -1,0 +1,91 @@
+
+
+# Lineares Gleichungssystem, Kegelschnitte
+
+Als verallgemeinerte quadratische Formen bezeichnet man Funktionen folgender
+Form:
+$$
+   z(x,y) = s_1 x^2 + 2 s_2 x y + s_3 y^2 + s_4 x + s_5 y + s_6 \; .
+$$
+Schnitte einer solchen Fläche mit einer Ebene (z.B., $z(x,y)=0$) bezeichnet
+man als Kegelschnitte (Ellipsen, Kreise, Hyperbeln, Parabeln) bzw. als entartete
+Kegelschnitte (Geraden, Geradenpaare, Punkte).
+
+Bei bekannten Datenpunkten $x_d$ und $y_d$ kann man $z(x_d,y_d)=0$ als
+lineares Gleichungssystem für $s_i$ auffassen
+$$
+   s_1 x_d^2 + 2 s_2 x_d y_d + s_3 y_d^2 + s_4 x_d + s_5 y_d + s_6 = 0 \; .
+$$
+In dieser Form ist es ein homogenes Gleichungssystem, das immer die triviale
+Lösung $s_i=0$ liefern würde. Man kann sich aber helfen und einen der
+Koeffizienten $s_k=1$ setzen und den entsprechenden Term auf die rechte Seite
+bringen. Wählt man z.B. den dritten Term $s_3=1$ lautet das inhomogene
+Gleichungssystem
+$$
+  s_1 x_d^2 + 2 s_2 x_d y_d + s_4 x_d + s_5 y_d + s_6 = -y_d^2 \; ,
+$$
+das nun die Form $D s = b$ hat und mit \matlab gelöst
+werden kann. Da es nun fünf unbestimmte Koeffizienten gibt, benötigt
+man fünf
+Datenpunkte $(x_d,y_d)$, um den Kegelschnitt genau zu bestimmen.
+
+***
+
+Schreiben Sie nun ein Skript 
+		kegelgl
+in dem Sie folgende Aufgaben lösen:
+
+*  Erzeugen Sie zwei $(5\times 1)$-Vektoren °xd° und °yd° mit 
+  gleichverteilten Zufallszahlen zwischen $-0.5$ und $0.5$ (\numpyrefe{rand}).
+  Erzeugen Sie auf alle Fälle °xd° vor °yd°.
+
+*  Erzeugen Sie mit Hilfe dieser Vektoren die Hilfsmatrix $$ M = [x_d^2 , 2 
+  x_d y_d , y_d^2 , x_d , y_d , 1] \; , $$ wobei $x_d$, $y_d$ und $1$ jeweils 
+  Spaltenvektoren gleicher Länge sein müssen.
+
+*  Erzeugen Sie unter Verwendung von \numpyrefe{rand} und \numpyrefe{ceil} bzw. \numpyrefe{floor} eine 
+  ganzzahlige Zufallszahl (Variable: °n°) zwischen 1 und 6. Diese Zahl
+  stellt den 
+  Index jener Spalte dar, die auf die rechte Seite des Gleichungssystems gebracht 
+  werden soll.  Erzeugen Sie nun die Matrix $D$ und den Inhomogenitätsvektor 
+  $b$. Verwenden Sie dafür einen logischen Vektor (z.B.: $[0,0,1,0,0,0]$) und 
+  seine Negation.
+
+*  Lösen Sie das entsprechende Gleichungssystem $D s = b$ und 
+  fügen Sie im so erhaltenen $s$ an der richtigen Stelle $1$ ein (logische 
+  Indizierung). Damit ist das Problem gelöst und das Ergebnis muss noch 
+  visualisiert werden.
+
+*  Erzeugen Sie dafür zwei Vektoren $x$ und $y$ zwischen $-1$ und $1$ mit $30$ 
+  Punkten. Alle Kombinationen von $x$- und $y$-Werten (die man für einen 3 
+  dimensionalen Plot benötigt) kann man mit dem Befehl \matrefe{meshgrid} 
+  erzeugen und erhält damit die Matrizen $xx$ und $yy$. Durch Auswertung von 
+  ersterer obiger Gleichungen erhält man für diese Matrizen $zz(xx,yy)$.
+
+*  Stellen Sie die Fläche $zz$ mit dem Befehl \mplotrefe{contourf} graphisch dar, 
+  wobei die Farbe den Wert der Funktion repräsentiert. Setzen sie die Eigenschaft °levels° mittels \numpyrefe{linspace} zwischen dem Minimum und dem Maximum von zz mit genügend vielen Werte (z.B. 100).
+
+*  Zeichnen Sie die Datenpunkte mit schwarzen Ringen in diesen Plot ein. Dabei 
+  sollen die Ringe nicht durch Linien verbunden sein. Verwenden Sie dazu den 
+  Befehl \mplotrefe{plot}.
+  
+*   Zeichnen Sie den erhaltenen Kegelschnitt als schwarze Höhenschichtlinie 
+  ein. Dafür gibt es den Befehl \mplotref{contour(X,Y,Z)}{contour}. In 
+  dieser Form werden die $z$-Werte für die Höhenschichtlinien 
+  automatisch ausgewählt. Man kann aber auch einen weiteren Vektor {\tt v} mit 
+  gewünschten Höhenwerten übergeben:
+
+			v = [0,0]; contour(xx,yy,zz,v);
+
+*  Damit sollten nun die Höhe von $zz$ in Farbe dargestellt sein und die 
+  Datenpunkte und der Kegelschnitt als Höhenschichtlinie eingezeichnet sein. Der 
+  Kegelschnitt sollte genau durch die fünf Datenpunkte gehen und entlang einer 
+  gleichen Farbe verlaufen.
+
+\bsp
+
+![Cont_Ellipse](cont_ellipse.png)
+![Cont_Hyperbel](cont_hyperbel.png)
+![Cont_Parabel](cont_parabel.png)
+
+

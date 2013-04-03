@@ -10,24 +10,20 @@ import numpy as np
 import pylab as plt
 from scipy import optimize
 
-def f(beta,t):
-    return np.exp(-t*beta)
-
-def resid(beta, y, t):
-    return y - f(beta,t)
+f = lambda beta,t: np.exp(-t*beta)
 
 data = np.loadtxt('daten_nlin_exp.dat')
 t = data[:,0]
 y = data[:,1]
 
-beta_start = 1
-beta_opt,flag = optimize.leastsq(resid,beta_start,args=(y,t))
+beta_opt = optimize.curve_fit(f,t,y)[0][0]
 
-plt.plot(t,y,'*')
+plt.figure()
+plt.plot(t,y,'b*')
 tt = np.linspace(0,15,300)
 plt.plot(tt,f(beta_opt,tt),'k')
 plt.xlabel('t')
 plt.ylabel('y')
-plt.title('Daempfungsfaktor = ' + str(beta_opt[0]))
+plt.title('Daempfungsfaktor = ' + str(beta_opt))
 plt.ylim((-0.1,1.1))
 plt.show()

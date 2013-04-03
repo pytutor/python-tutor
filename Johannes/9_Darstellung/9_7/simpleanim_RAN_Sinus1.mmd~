@@ -1,0 +1,61 @@
+
+# Animation 
+In einem \python-\pyref{Skript}{script}
+
+		simpleanim 
+
+soll eine Kurve animiert werden.
+
+Erzeugen Sie dazu einen Vektor $x$ mit $100$ Punkten zwischen $0$ und
+$1\cdot \pi$, berechnen dann $y = sin  x$, erzeugen einen Vektor $a$ mit
+$34$ Punkten zwischen $0$ und $\pi$, und berechnen dann $a = sin  a$.
+
+Vor der eigentlichen Animation erzeugen Sie eine \mplotref{figure}. Um später die °xdata° und die°ydata° verändern zu können, benötigen Sie ein Objekt, das selbige enthält. Dies erhalten sie z.B. mit
+line, = plt.plot(0,0)
+Der Beistrich ist entscheidend, da die Funktion plot mehrere Argumente zurückgibt, wir aber nur am ersten, der line, interessier sind.
+Setzen Sie die Achsenlimits auf das Minimum und Maximum von $x$,
+bzw. auf $-1$ und $1$.
+
+In einer Schleife über alle Werte von $a_n$, setzen Sie nun für die Linie die
+°xdata° auf $x$ und die °ydata° auf $a_k \cdot y$ (line.set_xdata bzw. line.set_ydata).
+Führen Sie danach jeweils \mplotref{draw} und \mplotref{pause(t)}{pause}, wobei $t$
+eine sehr kurze Zeit in Sekunden ist.
+
+Nun sollte sich in der Graphik die Kurve von der Null-Linie zum Sinus mit der
+Amplitude $1$ und wieder zurück zur Null-Linie bewegen. 
+
+\hw
+Alle Graphikbefehle haben
+als Rückgabewert einen sogenannten Graphik-Handle, der einen späteren
+Zugriff auf das erstellte Objekt ermöglicht. Zum Beispiel:
+
+		fh = figure;
+		set(fh,'Color',[1,1,0.8]); % Setzt die Hintergrundfarbe des Plotfensters
+		set(fh,.........)
+
+Damit kann man also alle Eigenschaften von Graphikobjekten nach deren Erzeugung
+verändern. Dies gilt natürlich auch für die Daten von Linien. Eine Aufstellung
+aller Eigenschaften eines Graphikobjektes und deren mögliche Werte findet man 
+im \matrefe{helpbrowser} auf der
+Seite "Handle Graphics Property Browser".  Eine Einführung in dieses
+Konzept gibt es im Skriptum, \appsoftkapitel{15}.
+
+\hw
+Bitte im Test kein °clf reset° verwenden!
+
+\hw
+Der Befehl
+\matrefe{drawnow} stellt sicher, dass zu diesem Zeitpunkt ein Update der
+graphischen Ausgabe (Schirm) stattfindet. \matlab merkt sich ansonsten
+Graphikbefehle in einer Art Pipeline und optimiert die Umsetzung. In
+obigem Fall würde das das dazu führen, dass nur der letzte Plot angezeigt
+wird. Mit dem Befehl \matrefe{pause} ist es schließlich noch möglich,
+die Geschwindigkeit der Animation zu beeinflussen.
+
+\hw
+Um Animationen oder auch Videos zu erstellen, gibt es die
+Möglichkeit, \matrefe{movie} und \matrefe{avifile} zu verwenden. Dabei
+wird allerdings extrem viel Arbeitsspeicher benötigt. Es kann
+durchaus 1MB pro frame notwendig sein, weshalb eine automatische Überprüfung
+nicht realisierbar ist.
+
